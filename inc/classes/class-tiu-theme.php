@@ -14,6 +14,7 @@ class TIU_THEME {
 	protected function __construct() {
 		// Loading Classes
 		ASSETS::get_instance();
+		UTILITIES::get_instance();
 
 		// Actions & Filters
 		$this->setup_hooks();
@@ -62,7 +63,7 @@ class TIU_THEME {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'theological-international-university' ),
+				'header-navigation' => esc_html__( 'Header Navigation', 'theological-international-university' ),
 			)
 		);
 
