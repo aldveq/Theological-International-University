@@ -64,6 +64,8 @@ class TIU_THEME {
 		register_nav_menus(
 			array(
 				'header-navigation' => esc_html__( 'Header Navigation', 'theological-international-university' ),
+				'footer-primary-navigation' => esc_html__( 'Footer Primary Navigation', 'theological-international-university' ),
+				'footer-secondary-navigation' => esc_html__( 'Footer Secondary Navigation', 'theological-international-university' ),
 			)
 		);
 
