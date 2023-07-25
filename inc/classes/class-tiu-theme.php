@@ -14,6 +14,8 @@ class TIU_THEME {
 	protected function __construct() {
 		// Loading Classes
 		ASSETS::get_instance();
+		CARBON_FIELDS_SETUP::get_instance();
+		THEME_OPTIONS::get_instance();
 		UTILITIES::get_instance();
 
 		// Actions & Filters

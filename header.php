@@ -9,8 +9,13 @@
  * @package Theological_International_University
  */
 
+// Variables
 $utilities               = \TIU_THEME\Inc\Utilities::get_instance();
 $header_navigation_items = $utilities->get_menu_items_by_location( 'header-navigation' );
+$global_primary_phone_label = !empty(carbon_get_theme_option('tiu_primary_phone_label')) ? carbon_get_theme_option('tiu_primary_phone_label') : '';
+$global_primary_phone_number = !empty(carbon_get_theme_option('tiu_primary_phone')) ? carbon_get_theme_option('tiu_primary_phone') : '';
+$global_social_data = carbon_get_theme_option('socials_data');
+$global_header_copyright_text = carbon_get_theme_option('header_copyright_text');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -70,8 +75,14 @@ $header_navigation_items = $utilities->get_menu_items_by_location( 'header-navig
 			?>
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
-			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/phone-call.svg" alt="Main Office Telephone number of the Theological International University">
-			<span><a href="tel:+43 4566 7788 2457">+43 4566 7788 2457</a></span>
+			<?php
+				if(!empty($global_primary_phone_number)):
+				?>
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/phone-call.svg" alt="Main Office Telephone number of the Theological International University">
+				<span><a href="tel:<?php echo esc_attr($global_primary_phone_number); ?>"><?php echo esc_html($global_primary_phone_label); ?></a></span>
+				<?php
+				endif;
+			?>
 		</div>
 
 		<!-- Hamburger -->
@@ -107,18 +118,31 @@ $header_navigation_items = $utilities->get_menu_items_by_location( 'header-navig
 				?>
 
 				<!-- Menu Social -->
-				
-				<div class="menu_social_container menu_mm">
-					<ul class="menu_social menu_mm">
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
+				<?php
+					if (is_array($global_social_data) && count($global_social_data) > 0):
+					?>
+					<div class="menu_social_container menu_mm">
+						<ul class="menu_social menu_mm">
+							<?php
+								foreach($global_social_data as $g_social_data):
+								?>
+								<li class="menu_social_item menu_mm"><a href="<?php echo esc_url($g_social_data['social_url']); ?>" target="_blank"><i class="<?php echo esc_attr($g_social_data['social_icon']['class']); ?>"></i></a></li>
+								<?php
+								endforeach;
+							?>
+						</ul>
+					</div>
+					<?php
+					endif;
+				?>
 
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+				<?php
+					if (!empty($global_header_copyright_text)):
+					?>
+					<div class="menu_copyright menu_mm"><?php echo esc_html($global_header_copyright_text); ?></div>
+					<?php
+					endif;
+				?>
 			</div>
 
 		</div>
