@@ -9,40 +9,58 @@
  * @package Theological_International_University
  */
 
+// Variables
 $utilities               = \TIU_THEME\Inc\Utilities::get_instance();
 $footer_primary_navigation_items = $utilities->get_menu_items_by_location( 'footer-primary-navigation' );
 $footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'footer-secondary-navigation' );
+$is_footer_newsletter_section_disabled = carbon_get_theme_option('footer_disable_newsletter_section');
+$no_newsletter_section = $is_footer_newsletter_section_disabled ? 'no-newsletter' : '';
+$footer_disclaimer_text = carbon_get_theme_option('footer_disclaimer_text');
+$footer_copyright_text = carbon_get_theme_option('footer_copyright_text');
+$tiu_label_address = carbon_get_theme_option('tiu_label_address');
+$tiu_address_link = carbon_get_theme_option('tiu_address_link');
+$tiu_primary_email_label = carbon_get_theme_option('tiu_primary_email_label');
+$tiu_primary_email = carbon_get_theme_option('tiu_primary_email');
+$tiu_primary_phone_label = carbon_get_theme_option('tiu_primary_phone_label');
+$tiu_primary_phone = carbon_get_theme_option('tiu_primary_phone');
+$global_socials_data = carbon_get_theme_option('socials_data');
 ?>
 
-	<footer class="footer">
+	<footer class="footer <?php echo esc_attr( $no_newsletter_section ); ?>">
 		<div class="container">
-			<!-- Newsletter -->
-			<div class="newsletter">
-				<div class="row">
-					<div class="col">
-						<div class="section_title text-center">
-							<h1>Subscribe to newsletter</h1>
+			<?php
+				if (!$is_footer_newsletter_section_disabled):
+				?>
+				<!-- Newsletter -->
+				<div class="newsletter">
+					<div class="row">
+						<div class="col">
+							<div class="section_title text-center">
+								<h1>Subscribe to newsletter</h1>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="col text-center">
-						<div class="newsletter_form_container mx-auto">
-							<form action="post">
-								<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-									<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
-									<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
-								</div>
-							</form>
+					<div class="row">
+						<div class="col text-center">
+							<div class="newsletter_form_container mx-auto">
+								<form action="post">
+									<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
+										<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
+										<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
 
-			</div>
+				</div>
+				<?php
+				endif;
+			?>
 
 			<!-- Footer Content -->
-			<div class="footer_content">
+			<div class="footer_content <?php echo esc_attr( $no_newsletter_section ); ?>">
 				<div class="row">
 
 					<!-- Footer Column - About -->
@@ -67,7 +85,13 @@ $footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'fo
 							?>
 						</div>
 
-						<p class="footer_about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum, tempor lacus.</p>
+						<?php
+							if (!empty($footer_disclaimer_text)):
+							?>						
+							<p class="footer_about_text"><?php echo esc_html($footer_disclaimer_text); ?></p>
+							<?php
+							endif;
+						?>
 
 					</div>
 
@@ -122,22 +146,48 @@ $footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'fo
 						<div class="footer_column_content">
 							<ul>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg" alt="Location of the Theological International University">
-									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									<?php
+										if (!empty($tiu_label_address)):
+										?>
+										<div class="footer_contact_icon">
+											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg" alt="Location of the Theological International University">
+										</div>
+										<?php 
+											if (!empty($tiu_address_link)):
+											?>
+												<a href="<?php echo esc_url($tiu_address_link); ?>" target="_blank"><?php echo esc_html($tiu_label_address); ?></a>
+											<?php
+											else:
+												echo esc_html($tiu_label_address);
+											endif;
+										?>
+										<?php
+										endif;
+									?>
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg" alt="Phone number of the Theological International University">
-									</div>
-									<a href="tel:+0034 37483 2445 322">+0034 37483 2445 322</a>
+									<?php
+										if (!empty($tiu_primary_phone_label)):
+										?>
+										<div class="footer_contact_icon">
+											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg" alt="Phone number of the Theological International University">
+										</div>
+										<a href="tel:<?php echo esc_attr($tiu_primary_phone); ?>"><?php echo esc_html($tiu_primary_phone_label); ?></a>
+										<?php
+										endif;
+									?>
 								</li>
 								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg" alt="Email of the Theological International University">
-									</div>
-									<a href="mailto:hello@company.com">hello@company.com</a>
+									<?php
+										if (!empty($tiu_primary_email_label)):
+										?>
+										<div class="footer_contact_icon">
+											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg" alt="Email of the Theological International University">
+										</div>
+										<a href="mailto:<?php echo esc_attr($tiu_primary_email); ?>"><?php echo esc_html($tiu_primary_email_label); ?></a>
+										<?php
+										endif;
+									?>
 								</li>
 							</ul>
 						</div>
@@ -148,19 +198,31 @@ $footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'fo
 
 			<!-- Footer Copyright -->
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
-				<div class="footer_copyright">
-					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-				</div>
+				<?php
+					if (!empty($footer_copyright_text)):
+					?>
+					<div class="footer_copyright">
+						<span><?php echo do_shortcode(esc_html($footer_copyright_text)); ?></span>
+					</div>
+					<?php
+					endif;
+				?>
 				<div class="footer_social ml-sm-auto">
-					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
+					<?php
+						if(is_array($global_socials_data) && count($global_socials_data) > 0):
+						?>
+						<ul class="menu_social">
+							<?php
+								foreach($global_socials_data as $gs_data):
+								?>
+								<li class="menu_social_item"><a href="<?php echo esc_url($gs_data['social_url']); ?>" target="_blank"><i class="<?php echo esc_attr($gs_data['social_icon']['class']); ?>"></i></a></li>
+								<?php
+								endforeach;
+							?>
+						</ul>
+						<?php
+						endif;
+					?>
 				</div>
 			</div>
 		</div>

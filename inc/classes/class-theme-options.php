@@ -69,8 +69,10 @@ class THEME_OPTIONS {
 		Container::make( 'theme_options', __('Footer', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
+				Field::make( 'checkbox', 'footer_disable_newsletter_section', __('Disable newsletter?', 'theological-international-university') ),
 				Field::make( 'textarea', 'footer_disclaimer_text', __('Footer Disclaimer Text', 'theological-international-university') ),
 				Field::make( 'text', 'footer_copyright_text', __( 'Footer Copyright', 'theological-international-university' ) )
+				 ->help_text('Use shortcode [year] to display the current year.')
 			));
 	}
 }

@@ -12,6 +12,15 @@ class Utilities
 {
 	use Singleton;
 
+	protected function __construct() {
+		// Actions & Filters
+		$this->setup_hooks();
+	}
+
+	protected function setup_hooks() {
+		add_action( 'init', [$this, 'setup_shortcode_current_year'] );
+	}
+
 	public function get_menu_id_by_location($menu_location)
 	{
 		$locations = get_nav_menu_locations();
@@ -26,5 +35,13 @@ class Utilities
 		$navigation_items = wp_get_nav_menu_items($navigation_id);
 
 		return $navigation_items;
+	}
+
+	public function setup_shortcode_current_year() {
+		add_shortcode( 'year', [$this, 'shortcode_get_current_year'] );
+	}
+
+	public function shortcode_get_current_year() {
+		return current_time( 'Y' );
 	}
 }
