@@ -150,7 +150,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 										if (!empty($tiu_label_address)):
 										?>
 										<div class="footer_contact_icon">
-											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg" alt="Location of the Theological International University">
+											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg) no-repeat center;"></span>
 										</div>
 										<?php 
 											if (!empty($tiu_address_link)):
@@ -170,7 +170,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 										if (!empty($tiu_primary_phone_label)):
 										?>
 										<div class="footer_contact_icon">
-											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg" alt="Phone number of the Theological International University">
+											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg) no-repeat center;"></span>
 										</div>
 										<a href="tel:<?php echo esc_attr($tiu_primary_phone); ?>"><?php echo esc_html($tiu_primary_phone_label); ?></a>
 										<?php
@@ -182,7 +182,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 										if (!empty($tiu_primary_email_label)):
 										?>
 										<div class="footer_contact_icon">
-											<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg" alt="Email of the Theological International University">
+											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg) no-repeat center;"></span>
 										</div>
 										<a href="mailto:<?php echo esc_attr($tiu_primary_email); ?>"><?php echo esc_html($tiu_primary_email_label); ?></a>
 										<?php

@@ -16,6 +16,17 @@ $global_primary_phone_label = !empty(carbon_get_theme_option('tiu_primary_phone_
 $global_primary_phone_number = !empty(carbon_get_theme_option('tiu_primary_phone')) ? carbon_get_theme_option('tiu_primary_phone') : '';
 $global_social_data = carbon_get_theme_option('socials_data');
 $global_header_copyright_text = carbon_get_theme_option('header_copyright_text');
+
+// Global Colors
+$tiu_primary_color = carbon_get_theme_option('tiu_primary_color');
+$tiu_secondary_color = carbon_get_theme_option('tiu_secondary_color');
+$tiu_third_color = carbon_get_theme_option('tiu_third_color');
+$tiu_fourth_color = carbon_get_theme_option('tiu_fourth_color');
+$tiu_fifth_color = carbon_get_theme_option('tiu_fifth_color');
+$tiu_sixth_color = carbon_get_theme_option('tiu_sixth_color');
+$tiu_seven_color = carbon_get_theme_option('tiu_seven_color');
+$tiu_eight_color = carbon_get_theme_option('tiu_eight_color');
+$tiu_nine_color = carbon_get_theme_option('tiu_nine_color');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,6 +34,20 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<style type="text/css" media="screen">
+		:root {
+			--primary-color: <?php echo $tiu_primary_color; ?>;
+			--secondary-color: <?php echo $tiu_secondary_color; ?>;
+			--third-color: <?php echo $tiu_third_color; ?>;
+			--fourth-color: <?php echo $tiu_fourth_color; ?>;
+			--fifth-color: <?php echo $tiu_fifth_color; ?>;
+			--sixth-color: <?php echo $tiu_sixth_color; ?>;
+			--seven-color: <?php echo $tiu_seven_color; ?>;
+			--eight-color: <?php echo $tiu_eight_color; ?>;
+			--nine-color: <?php echo $tiu_nine_color; ?>;
+		}
+	</style>
 
 	<?php wp_head(); ?>
 </head>
