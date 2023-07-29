@@ -25,6 +25,45 @@ class THEME_OPTIONS {
 	public function crb_attach_theme_options() {
 		// Main Theme Options Settings
 		$main_theme_options_container = Container::make( 'theme_options', __( 'Theme Options', 'theological-international-university' ) )
+			->add_tab( __('Styles', 'theological-international-university'), array(
+				Field::make( 'separator', 'separator_global_colors', __( 'Global Colors', 'theological-international-university' ) ),
+				Field::make( 'color', 'tiu_primary_color', __( 'Primary', 'theological-international-university' ) )
+					->set_palette( array( '#ff8800' ) )
+					->set_default_value( '#ff8800' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_secondary_color', __( 'Secondary', 'theological-international-university' ) )
+					->set_palette( array( '#000244' ) )
+					->set_default_value( '#000244' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_third_color', __( 'Third', 'theological-international-university' ) )
+					->set_palette( array( '#ffffff' ) )
+					->set_default_value( '#ffffff' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_fourth_color', __( 'Fourth', 'theological-international-university' ) )
+					->set_palette( array( '#cac7c7' ) )
+					->set_default_value( '#cac7c7' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_fifth_color', __( 'Fifth', 'theological-international-university' ) )
+					->set_palette( array( '#3a3a3a' ) )
+					->set_default_value( '#3a3a3a' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_sixth_color', __( 'Sixth', 'theological-international-university' ) )
+					->set_palette( array( '#1a1a1a' ) )
+					->set_default_value( '#1a1a1a' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_seven_color', __( 'Seven', 'theological-international-university' ) )
+					->set_palette( array( '#a5a5a5' ) )
+					->set_default_value( '#a5a5a5' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_eight_color', __( 'Eight', 'theological-international-university' ) )
+					->set_palette( array( '#f8f9fb' ) )
+					->set_default_value( '#f8f9fb' )
+					->set_width( 25 ),
+				Field::make( 'color', 'tiu_nine_color', __( 'Nine', 'theological-international-university' ) )
+					->set_palette( array( '#eaebec' ) )
+					->set_default_value( '#eaebec' )
+					->set_width( 25 ),
+			))
 			->add_tab( __( 'Contact Information', 'theological-international-university' ), array(
 				Field::make( 'separator', 'separator_emails', __( 'Emails', 'theological-international-university' ) ),
 				Field::make( 'text', 'tiu_primary_email_label', __( 'Primary Email Label', 'theological-international-university' ) )
