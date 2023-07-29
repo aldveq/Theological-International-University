@@ -17,6 +17,8 @@ class ASSETS {
 	}
 
 	protected function setup_hooks() {
+		add_action('admin_head', [$this, 'theological_international_university_editor_css_styles']);
+		add_action('enqueue_block_editor_assets', [$this, 'theological_international_university_editor_block_assets']);
 		add_action( 'wp_enqueue_scripts', [$this, 'theological_international_university_scripts'] );
 	}
 
@@ -44,6 +46,40 @@ class ASSETS {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+	}
+
+	public function theological_international_university_editor_block_assets() {
+		wp_enqueue_style('theological-international-university-block-editor-styles', get_template_directory_uri() . '/editor/style.css', array(), _S_VERSION);
+		wp_enqueue_style( 'theological-international-university-style-bundle', get_template_directory_uri() . '/build/style-index.css', array(), _S_VERSION );
+	}
+
+	public function theological_international_university_editor_css_styles() {
+		// Global Colors
+		$tiu_primary_color = carbon_get_theme_option('tiu_primary_color');
+		$tiu_secondary_color = carbon_get_theme_option('tiu_secondary_color');
+		$tiu_third_color = carbon_get_theme_option('tiu_third_color');
+		$tiu_fourth_color = carbon_get_theme_option('tiu_fourth_color');
+		$tiu_fifth_color = carbon_get_theme_option('tiu_fifth_color');
+		$tiu_sixth_color = carbon_get_theme_option('tiu_sixth_color');
+		$tiu_seven_color = carbon_get_theme_option('tiu_seven_color');
+		$tiu_eight_color = carbon_get_theme_option('tiu_eight_color');
+		$tiu_nine_color = carbon_get_theme_option('tiu_nine_color');
+
+		echo "
+			<style type='text/css' media='screen'>
+				:root {
+					--primary-color: $tiu_primary_color;
+					--secondary-color: $tiu_secondary_color;
+					--third-color: $tiu_third_color;
+					--fourth-color: $tiu_fourth_color;
+					--fifth-color: $tiu_fifth_color;
+					--sixth-color: $tiu_sixth_color;
+					--seven-color: $tiu_seven_color;
+					--eight-color: $tiu_eight_color;
+					--nine-color: $tiu_nine_color;
+				}
+			</style>
+		";
 	}
 
 }

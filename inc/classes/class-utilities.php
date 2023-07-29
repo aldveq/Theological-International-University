@@ -44,4 +44,12 @@ class Utilities
 	public function shortcode_get_current_year() {
 		return current_time( 'Y' );
 	}
+
+	public function highlight_text_with_primary_color( $text ) {
+		return preg_replace(
+			'~__\*(.*?)\*__~s',
+			'<span>$1</span>',
+			$text
+		);
+	}
 }

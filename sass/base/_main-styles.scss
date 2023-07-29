@@ -706,11 +706,11 @@ section {
 .hero_slide_content h1 {
 	font-size  : 72px;
 	font-weight: 400;
-	color      : #FFFFFF;
+	color      : var(--third-color);
 }
 
 .hero_slide_content h1 span {
-	background   : #ffb606;
+	background   : var(--primary-color);
 	padding-left : 13px;
 	padding-right: 13px;
 	margin-left  : -12px;
@@ -751,17 +751,17 @@ section {
 	transform        : translateY(calc(-50% + 30px));
 	width            : 58px;
 	height           : 58px;
-	background       : #FFFFFF;
+	background       : var(--third-color);
 	z-index          : 9;
 	cursor           : pointer;
 }
 
 .hero_slider_nav:hover {
-	background: #ffb606;
+	background: var(--primary-color);
 }
 
 .hero_slider_nav:hover span {
-	color: #FFFFFF;
+	color: var(--third-color);
 }
 
 .hero_slider_nav span {
@@ -802,13 +802,13 @@ section {
 .hero_box {
 	width       : 100%;
 	height      : 161px;
-	background  : #1a1a1a;
+	background  : var(--sixth-color);
 	padding-left: 50px;
 	cursor      : pointer;
 }
 
 .hero_box:hover {
-	background: #ffb606;
+	background: var(--primary-color);
 }
 
 .hero_box img {
@@ -818,7 +818,7 @@ section {
 }
 
 .svg path {
-	fill: #ffb606;
+	fill: var(--primary-color);
 }
 
 .hero_box svg {
@@ -827,7 +827,7 @@ section {
 }
 
 .hero_box:hover svg path {
-	fill: #FFFFFF;
+	fill: var(--third-color);
 }
 
 .hero_box_content {
@@ -839,7 +839,7 @@ section {
 .hero_box_title {
 	font-size    : 24px;
 	font-weight  : 500;
-	color        : #FFFFFF;
+	color        : var(--third-color);
 	margin-bottom: 7px;
 }
 
@@ -847,7 +847,7 @@ section {
 	font-size     : 12px;
 	font-weight   : 500;
 	text-transform: uppercase;
-	color         : #FFFFFF;
+	color         : var(--third-color);
 	padding-left  : 3px;
 }
 

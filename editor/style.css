@@ -1,0 +1,19 @@
+/*Reseting Editor Styles - Start */
+.components-button svg path {
+	fill: currentColor !important;
+}
+
+.wp-block {
+	max-width: initial;
+}
+/*Reseting Editor Styles - End */
+
+/* Hero Slider Styles - Start */
+.hero_slider.owl-carousel {
+	display: block;
+}
+
+.hero_slider.owl-carousel .hero_slide:not(:first-child) {
+	display: none;
+}
+/* Hero Slider Styles - End */

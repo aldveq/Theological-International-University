@@ -16,6 +16,7 @@ class TIU_THEME {
 		ASSETS::get_instance();
 		CARBON_FIELDS_SETUP::get_instance();
 		THEME_OPTIONS::get_instance();
+		CUSTOM_GUTENBERG_BLOCKS::get_instance();
 		UTILITIES::get_instance();
 
 		// Actions & Filters
@@ -117,6 +118,8 @@ class TIU_THEME {
 				'flex-height' => true,
 			)
 		);
+
+		add_image_size('hero_slider_img_size', 1920, 1080, true);
 	}
 
 	/**
