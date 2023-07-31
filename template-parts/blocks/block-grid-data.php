@@ -1,7 +1,4 @@
 <?php
-	// Utilities class instance
-	$utilities = \TIU_THEME\Inc\Utilities::get_instance();
-
 	// Block Variables
 	$grid_data_title = $args['grid_data']['grid_data_title'];
 	$grid_data_source = $args['grid_data']['grid_data_source'];

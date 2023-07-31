@@ -77,6 +77,32 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'grid-data', array('grid_data' => $fields) );
 			});			
 		// Grid Data Block - End
+		// Split View Block - Start
+		Block::make( __('Split View Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'separator', 'left_content', __( 'Left Content', 'theological-international-university' ) ),
+				Field::make( 'text', 'split_view_left_content_title', __( 'Title', 'theological-international-university' ) )
+					->help_text('Wrap text in __* to distinguish it with the global primary color of the theme styles. Example: The wrapped text has a __*different color*__.'),
+				Field::make( 'textarea', 'split_view_left_content_description', __( 'Description', 'theological-international-university' ) ),
+				Field::make( 'text', 'split_view_left_content_link_label', __('Link Label', 'theological-international-university') )
+					->set_width(33),
+				Field::make( 'text', 'split_view_left_content_link_url', __('Link URL', 'theological-international-university') )
+					->set_width(33),
+				Field::make( 'checkbox', 'split_view_left_content_link_target', __('Open in new tab?', 'theological-international-university') )
+					->set_width(33),
+				Field::make( 'separator', 'right_content', __( 'Right Content', 'theological-international-university' ) ),
+				Field::make( 'image', 'split_view_right_content_image_bg', __( 'Background Image' , 'theological-international-university' ) )
+					->help_text('Optional'),
+				Field::make( 'text', 'split_view_right_content_title', __( 'Title', 'theological-international-university' ) )
+			))
+			->set_description( __( 'Split View Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'columns' )
+			->set_keywords( [ __( 'Split View', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'split-view', array('split_view_data' => $fields) );
+			});
+		// Split View Block - End
 	}
 
 }

@@ -1008,7 +1008,7 @@ section {
 
 .register_section {
 	width         : 100%;
-	background    : #ffb606;
+	background    : var(--primary-color);
 	padding-top   : 156px;
 	padding-bottom: 161px;
 }
@@ -1018,7 +1018,7 @@ section {
 }
 
 .register_title {
-	color        : #FFFFFF;
+	color        : var(--third-color);
 	margin-bottom: 16px;
 	line-height  : 1.63;
 }
@@ -1028,11 +1028,11 @@ section {
 }
 
 .register_title span {
-	color: #1a1a1a;
+	color: var(--sixth-color);
 }
 
 .register_text {
-	color        : #FFFFFF;
+	color        : var(--third-color);
 	font-weight  : 500;
 	margin-top   : 32px;
 	padding-left : 25px;
@@ -1041,12 +1041,13 @@ section {
 }
 
 .register_button {
-	background: #1a1a1a;
-	margin-top: 65px;
+	background: var(--sixth-color) !important;
+	margin-top: 65px !important;
+	border: none !important;
 }
 
 .register_button a {
-	color: #FFFFFF;
+	color: var(--third-color);
 }
 
 /*********************************
@@ -1056,7 +1057,7 @@ section {
 .search_section {
 	width     : 100%;
 	height    : 100%;
-	background: #ececec;
+	background: var(--nine-color);
 }
 
 .search_content {
