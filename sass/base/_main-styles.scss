@@ -51,6 +51,9 @@ COLOR PALETTE
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow   : rgba(0, 0, 0, .01) 0 0 1px;
 	text-shadow           : rgba(0, 0, 0, .01) 0 0 1px;
+	-webkit-box-sizing    : border-box;
+	-moz-box-sizing       : border-box;
+	box-sizing            : border-box;
 }
 
 body {
@@ -59,14 +62,6 @@ body {
 	font-weight: 400;
 	background : #FFFFFF;
 	color      : #a5a5a5;
-}
-
-div {
-	display           : block;
-	position          : relative;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing   : border-box;
-	box-sizing        : border-box;
 }
 
 ul {
@@ -790,6 +785,7 @@ section {
 	height     : 0px;
 	z-index    : 9;
 	padding-top: 0px;
+	position   : relative;
 }
 
 .hero_boxes_inner {
@@ -864,11 +860,9 @@ section {
 	padding-bottom: 117px;
 }
 
-.section_title {}
-
 .section_title h1 {
 	display    : block;
-	color      : #1a1a1a;
+	color      : var(--sixth-color);
 	font-weight: 500;
 	padding-top: 24px;
 }
@@ -886,7 +880,7 @@ section {
 	width            : 55px;
 	height           : 4px;
 	content          : '';
-	background       : #ffb606;
+	background       : var(--primary-color);
 }
 
 /*********************************
@@ -1138,7 +1132,8 @@ input:last-of-type {
 *********************************/
 
 .services {
-	padding-bottom: 76px;
+	padding-bottom  : 76px;
+	background-color: var(--third-color);
 }
 
 .services_row {
@@ -1153,14 +1148,14 @@ input:last-of-type {
 	font-family  : 'Roboto', sans-serif;
 	font-size    : 22px;
 	font-weight  : 500;
-	color        : #1a1a1a;
+	color        : var(--sixth-color);
 	margin-bottom: 13px;
 }
 
 .service_item p {
 	font-size    : 14px;
 	font-weight  : 500;
-	color        : #a5a5a5;
+	color        : var(--seven-color);
 	max-width    : 100%;
 	margin-bottom: 0px;
 }
@@ -1171,8 +1166,13 @@ input:last-of-type {
 	margin-bottom: 30px;
 }
 
-.icon_container img {
-	height: 100%;
+.icon_container span.icon {
+	width            : 42px;
+	height           : 42px;
+	display          : block;
+	background       : var(--primary-color);
+	mask-size        : contain !important;
+	-webkit-mask-size: contain !important;
 }
 
 /*********************************

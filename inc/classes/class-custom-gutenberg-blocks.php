@@ -53,6 +53,30 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'hero-slider', array('hero_slider_data' => $fields) );
 			});
 		// Hero Slider Block - End
+		// Grid Data Block - Start
+		Block::make( __('Grid Data Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'text', 'grid_data_title', __( 'Title', 'theological-international-university' ) ),
+				Field::make( 'complex', 'grid_data_source', __('Grid Data', 'theological-international-university') )
+					->set_layout( 'tabbed-horizontal' )
+					->setup_labels(array(
+						'plural_name' => 'Items',
+						'singular_name' => 'Item',
+					))
+					->add_fields( array(
+						Field::make( 'image', 'icon', __( 'Icon', 'theological-international-university' ) ),
+						Field::make( 'text', 'title', __( 'Title', 'theological-international-university' ) ),
+						Field::make( 'textarea', 'description', __( 'Description', 'theological-international-university' ) ),
+					)),
+			))
+			->set_description( __( 'Grid Data Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'grid-view' )
+			->set_keywords( [ __( 'Grid', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'grid-data', array('grid_data' => $fields) );
+			});			
+		// Grid Data Block - End
 	}
 
 }
