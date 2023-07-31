@@ -17,3 +17,13 @@
 	display: none;
 }
 /* Hero Slider Styles - End */
+
+/* Reviews Slider Styles - Start */
+.testimonials .owl-carousel {
+	display: block;
+}
+
+.testimonials .owl-carousel .testimonial-item:not(:first-child) {
+	display: none;
+}
+/* Reviews Slider Styles - End */

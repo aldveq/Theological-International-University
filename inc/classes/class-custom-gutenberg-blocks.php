@@ -103,6 +103,33 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'split-view', array('split_view_data' => $fields) );
 			});
 		// Split View Block - End
+		// Reviews Block - Start
+		Block::make( __('Reviews Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'image', 'reviews_image_bg', __('Background Image', 'theological-international-university') )
+					->help_text('Optional'),
+				Field::make( 'text', 'reviews_title', __( 'Title', 'theological-international-university' ) ),
+				Field::make( 'complex', 'reviews_data_source', __('Reviews Data', 'theological-international-university') )
+					->set_layout( 'tabbed-horizontal' )
+					->setup_labels(array(
+						'plural_name' => 'Reviews',
+						'singular_name' => 'Review',
+					))
+					->add_fields( array(
+						Field::make( 'textarea', 'review_text', __( 'Text', 'theological-international-university' ) ),
+						Field::make( 'image', 'review_user_img', __( 'User Image', 'theological-international-university' ) ),
+						Field::make( 'text', 'review_user_name', __( 'User Name', 'theological-international-university' ) ),
+						Field::make( 'text', 'review_user_role', __( 'User Role', 'theological-international-university' ) ),
+					)),
+			))
+			->set_description( __( 'Reviews Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'slides' )
+			->set_keywords( [ __( 'Reviews', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'reviews', array('reviews_data' => $fields) );
+			});
+		// Reviews Block - End
 	}
 
 }
