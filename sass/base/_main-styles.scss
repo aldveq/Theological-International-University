@@ -74,7 +74,7 @@ p {
 	font-size             : 14px;
 	line-height           : 2.29;
 	font-weight           : 400;
-	color                 : #a5a5a5;
+	color                 : var(--seven-color);
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow   : rgba(0, 0, 0, .01) 0 0 1px;
 	text-shadow           : rgba(0, 0, 0, .01) 0 0 1px;
@@ -1367,7 +1367,7 @@ input:last-of-type {
 }
 
 .footer .section_title h1 {
-	color: #FFFFFF;
+	color: var(--third-color);
 }
 
 /*********************************
@@ -1394,22 +1394,22 @@ input:last-of-type {
 }
 
 .newsletter_email:focus {
-	outline: solid 2px #ffb606;
+	outline: solid 2px var(--primary-color);
 }
 
 .newsletter_submit_btn {
 	width      : 164px;
 	height     : 42px;
 	border     : none;
-	background : #ffb606;
-	color      : #FFFFFF;
+	background : var(--primary-color);
+	color      : var(--third-color);
 	font-size  : 14px;
 	font-weight: 500;
 	cursor     : pointer;
 }
 
 .newsletter_submit_btn:focus {
-	border: solid 2px #FFFFFF;
+	border: solid 2px var(--third-color);
 }
 
 /*********************************
@@ -1525,4 +1525,125 @@ input:last-of-type {
 
 .footer_social .menu_social_item:last-child {
 	margin-right: 0px;
+}
+
+/*********************************
+16. Contact
+*********************************/
+
+.contact {
+	background-color: var(--third-color);
+	padding-top     : 106px;
+	padding-bottom  : 117px;
+}
+
+.contact_title {
+	font-size  : 36px;
+	font-weight: 500;
+	color      : var(--sixth-color);
+}
+
+.contact_form_container {
+	margin-top: 70px;
+}
+
+.input_field {
+	width        : 100%;
+	background   : #f8f4f4 !important;
+	border       : solid 2px transparent !important;
+	margin-bottom: 24px !important;
+	height       : 42px;
+	padding-left : 33px;
+}
+
+.input_field:focus {
+	outline     : none !important;
+	border-color: var(--primary-color);
+}
+
+.text_field {
+	width        : 100%;
+	height       : 189px;
+	background   : #f8f4f4;
+	border       : solid 2px transparent;
+	padding-left : 33px;
+	margin-bottom: 24px;
+}
+
+.text_field:focus {
+	outline     : none !important;
+	border-color: var(--primary-color);
+}
+
+.contact_send_btn {
+	width         : 100%;
+	height        : 48px;
+	background    : var(--primary-color);
+	font-size     : 14px;
+	font-weight   : 700;
+	text-transform: uppercase;
+	color         : var(--third-color);
+	cursor        : pointer;
+	border        : none;
+}
+
+.contact_send_btn:focus {
+	outline: solid 1px var(--primary-color);
+	border : green !important;
+}
+
+/*********************************
+17. About
+*********************************/
+
+.about_title {
+	font-size  : 36px;
+	font-weight: 500;
+	color      : var(--sixth-color);
+}
+
+.about_text {
+	margin-top: 20px;
+}
+
+.about_text p {
+	color: var(--seven-color);
+}
+
+.contact_info {
+	margin-top  : 64px;
+	padding-left: 46px;
+}
+
+.contact_info_item {
+	font-size    : 14px;
+	font-weight  : 400;
+	color        : var(--seven-color);
+	margin-bottom: 22px;
+	list-style   : none !important;
+
+	a {
+		color: var(--seven-color);
+	}
+}
+
+.contact_info_item:last-child {
+	margin-bottom: 0px;
+}
+
+.contact_info_icon {
+	display       : inline-block;
+	width         : 24px;
+	height        : 24px;
+	vertical-align: middle;
+	margin-right  : 10px;
+}
+
+.contact_info_icon span.icon {
+	width            : 100%;
+	height           : 100%;
+	display          : block;
+	background       : var(--primary-color);
+	mask-size        : contain !important;
+	-webkit-mask-size: contain !important;
 }

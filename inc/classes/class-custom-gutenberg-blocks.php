@@ -130,6 +130,22 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'reviews', array('reviews_data' => $fields) );
 			});
 		// Reviews Block - End
+		// Contact Form Block - Start
+		Block::make( __('Contact Form Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'text', 'contact_form_title', __( 'Title', 'theological-international-university' ) ),
+				Field::make( 'separator', 'contact_form_separator', __( 'Courses Info', 'theological-international-university' ) ),
+				Field::make( 'text', 'contact_form_courses_title', __( 'Courses Title', 'theological-international-university' ) ),
+				Field::make( 'textarea', 'contact_form_courses_desc', __( 'Courses Description', 'theological-international-university' ) ),
+			))
+			->set_description( __( 'Contact Form Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'forms' )
+			->set_keywords( [ __( 'Contact Form', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'contact-form', array('contact_form_data' => $fields) );
+			});
+		// Contact Form Block - End
 	}
 
 }
