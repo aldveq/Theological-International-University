@@ -1647,3 +1647,70 @@ input:last-of-type {
 	mask-size        : contain !important;
 	-webkit-mask-size: contain !important;
 }
+
+/*********************************
+18. Become
+*********************************/
+
+.become {
+	width         : 100%;
+	padding-top   : 117px;
+	padding-bottom: 117px;
+}
+
+.become_title {
+	position: relative;
+}
+
+.become_title h1 {
+	display    : block;
+	color      : var(--sixth-color);
+	font-weight: 500;
+	padding-top: 24px;
+}
+
+.become_title h1::before {
+	display   : block;
+	position  : absolute;
+	top       : 0;
+	left      : 0;
+	width     : 55px;
+	height    : 4px;
+	content   : '';
+	background: var(--primary-color);
+}
+
+.become_text {
+	font-weight  : 500;
+	color        : var(--seven-color);
+	margin-top   : 48px;
+	margin-bottom: 0px;
+}
+
+.become_button {
+	width     : 188px;
+	height    : 53px;
+	background: var(--primary-color);
+	margin-top: 37px;
+}
+
+.become_button a {
+	display    : block;
+	font-size  : 16px;
+	font-weight: 700;
+	color      : var(--third-color);
+	line-height: 53px;
+}
+
+.become_button:hover {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.become_image {
+	width     : 100%;
+	margin-top: 85px;
+}
+
+.become_image img {
+	width: 100%;
+}

@@ -123,6 +123,7 @@ class TIU_THEME {
 		add_image_size('split_view_img_size', 1140, 760, true);
 		add_image_size('review_bg_img_size', 1920, 1080, true);
 		add_image_size('review_user_img_size', 100, 100, true);
+		add_image_size('content_text_img_size', 540, 320, true);
 	}
 
 	/**

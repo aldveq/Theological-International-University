@@ -146,6 +146,27 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'contact-form', array('contact_form_data' => $fields) );
 			});
 		// Contact Form Block - End
+		// Content Text/Image Block - Start
+		Block::make( __('Content Text/Image Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'image', 'content_text_image_src', __( 'Image', 'theological-international-university' ) ),
+				Field::make( 'text', 'content_text_image_title', __( 'Title', 'theological-international-university' ) ),
+				Field::make( 'textarea', 'content_text_image_desc', __( 'Description', 'theological-international-university' ) ),
+				Field::make( 'text', 'content_text_image_link_label', __( 'Link Label', 'theological-international-university' ) )
+					->set_width(33),
+				Field::make( 'text', 'content_text_image_link_url', __( 'Link URL', 'theological-international-university' ) )
+					->set_width(33),
+				Field::make( 'checkbox', 'content_text_image_link_target', __( 'Open in new tab?', 'theological-international-university' ) )
+					->set_width(33),
+			))
+			->set_description( __( 'Content Text/Image Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'columns' )
+			->set_keywords( [ __( 'Text', 'theological-international-university' ), __( 'Image', 'theological-international-university' ), __( 'Text/Image', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'content-text-image', array('content_text_image_data' => $fields) );
+			});
+		// Content Text/Image Block - End
 	}
 
 }
