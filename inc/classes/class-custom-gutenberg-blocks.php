@@ -167,6 +167,32 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'content-text-image', array('content_text_image_data' => $fields) );
 			});
 		// Content Text/Image Block - End
+		// Milestone Block - Start
+		Block::make( __('Milestone Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make( 'image', 'milestone_bg_img', __( 'Background Image', 'theological-international-university' ) )
+					->help_text('Optional'),
+				Field::make( 'complex', 'milestone_data_source', __('Milestone Data', 'theological-international-university') )
+					->set_layout( 'tabbed-horizontal' )
+					->set_max( 4 )
+					->setup_labels(array(
+						'plural_name' => 'Milestones',
+						'singular_name' => 'Milestone',
+					))
+					->add_fields( array(
+						Field::make( 'image', 'milestone_icon', __( 'Icon', 'theological-international-university' ) ),
+						Field::make( 'text', 'milestone_counter', __( 'Counter', 'theological-international-university' ) ),
+						Field::make( 'text', 'milestone_text', __( 'Text', 'theological-international-university' ) ),
+					)),
+			))
+			->set_description( __( 'Milestone Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'chart-bar' )
+			->set_keywords( [ __( 'Milestone', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'milestone', array('milestone_data' => $fields) );
+			});
+		// Milestone Block - End
 	}
 
 }

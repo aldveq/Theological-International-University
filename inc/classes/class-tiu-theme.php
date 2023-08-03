@@ -124,6 +124,8 @@ class TIU_THEME {
 		add_image_size('review_bg_img_size', 1920, 1080, true);
 		add_image_size('review_user_img_size', 100, 100, true);
 		add_image_size('content_text_img_size', 540, 320, true);
+		add_image_size('milestone_bg_size', 1920, 1080, true);
+		add_image_size('milestone_icon_size', 70, 70, true);
 	}
 
 	/**
