@@ -193,6 +193,19 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				get_template_part( 'template-parts/blocks/block', 'milestone', array('milestone_data' => $fields) );
 			});
 		// Milestone Block - End
+		// Professors Block - Start
+		Block::make( __('Professors Block', 'theological-international-university') )
+			->add_fields(array(
+				Field::make('text', 'professors_title', __('Title', 'theological-international-university')),
+			))
+			->set_description( __( 'Professors Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'businessperson' )
+			->set_keywords( [ __( 'Professors', 'theological-international-university' ) ] )
+			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+				get_template_part( 'template-parts/blocks/block', 'professors', array('professors_data' => $fields) );
+			});
+		// Professors Block - End
 	}
 
 }

@@ -15,6 +15,7 @@ class TIU_THEME {
 		// Loading Classes
 		ASSETS::get_instance();
 		CARBON_FIELDS_SETUP::get_instance();
+		CUSTOM_POST_TYPES::get_instance();
 		THEME_OPTIONS::get_instance();
 		CUSTOM_GUTENBERG_BLOCKS::get_instance();
 		UTILITIES::get_instance();
@@ -126,6 +127,7 @@ class TIU_THEME {
 		add_image_size('content_text_img_size', 540, 320, true);
 		add_image_size('milestone_bg_size', 1920, 1080, true);
 		add_image_size('milestone_icon_size', 70, 70, true);
+		add_image_size('professor_img_size', 350, 270, true);
 	}
 
 	/**

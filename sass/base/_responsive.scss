@@ -229,6 +229,14 @@
 	.milestone_col:last-child {
 		margin-bottom: 0px;
 	}
+	.teacher:nth-last-child(-n+3)
+	{
+		margin-bottom: 80px;
+	}
+	.teacher:last-child
+	{
+		margin-bottom: 0px !important;
+	}
 }
 
 /************
