@@ -17,7 +17,8 @@ class ASSETS {
 	}
 
 	protected function setup_hooks() {
-		add_action('admin_head', [$this, 'theological_international_university_editor_css_styles']);
+		add_action('wp_head', [$this, 'theological_international_university_css_variables']);
+		add_action('admin_head', [$this, 'theological_international_university_css_variables']);
 		add_action('enqueue_block_editor_assets', [$this, 'theological_international_university_editor_block_assets']);
 		add_action( 'wp_enqueue_scripts', [$this, 'theological_international_university_scripts'] );
 	}
@@ -53,7 +54,7 @@ class ASSETS {
 		wp_enqueue_style( 'theological-international-university-style-bundle', get_template_directory_uri() . '/build/style-index.css', array(), _S_VERSION );
 	}
 
-	public function theological_international_university_editor_css_styles() {
+	public function theological_international_university_css_variables() {
 		// Global Colors
 		$tiu_primary_color = carbon_get_theme_option('tiu_primary_color');
 		$tiu_secondary_color = carbon_get_theme_option('tiu_secondary_color');
