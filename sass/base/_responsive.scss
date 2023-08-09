@@ -229,12 +229,12 @@
 	.milestone_col:last-child {
 		margin-bottom: 0px;
 	}
-	.teacher:nth-last-child(-n+3)
-	{
+
+	.teacher:nth-last-child(-n+3) {
 		margin-bottom: 80px;
 	}
-	.teacher:last-child
-	{
+
+	.teacher:last-child {
 		margin-bottom: 0px !important;
 	}
 }
@@ -274,6 +274,15 @@
 
 	.newsletter_submit_btn {
 		margin-top: 15px;
+	}
+
+	.news_post_title_container {
+		margin-top  : -4px;
+		padding-left: 21px;
+	}
+
+	.news_post_title a {
+		font-size: 27px;
 	}
 }
 
@@ -419,9 +428,43 @@
 	.footer_copyright span {
 		font-size: 13px;
 	}
-	.milestone_col
-	{
+
+	.milestone_col {
 		margin-bottom: 60px;
+	}
+
+	.home_content {
+		padding-top   : 17px;
+		padding-bottom: 11px;
+		padding-left  : 22px;
+		padding-right : 24px;
+		bottom        : 50%;
+	}
+
+	.home_content h1 {
+		font-size: 30px;
+	}
+
+	.home.blog-wrapper {
+		height: 372px;
+	}
+
+	.news {
+		padding-top   : 60px;
+		padding-bottom: 60px;
+	}
+
+	.news_post_title_container {
+		margin-top  : 20px;
+		padding-left: 0px;
+	}
+
+	.news_post_title a {
+		font-size: 20px;
+	}
+
+	.news_post_text {
+		margin-top: 20px;
 	}
 }
 

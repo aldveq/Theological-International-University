@@ -128,6 +128,8 @@ class TIU_THEME {
 		add_image_size('milestone_bg_size', 1920, 1080, true);
 		add_image_size('milestone_icon_size', 70, 70, true);
 		add_image_size('professor_img_size', 350, 270, true);
+		add_image_size('blog_bg_img_size', 1920, 470, true);
+		add_image_size('blog_card_img_size', 730, 384, true);
 	}
 
 	/**

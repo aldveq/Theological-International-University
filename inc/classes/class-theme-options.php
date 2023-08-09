@@ -113,5 +113,14 @@ class THEME_OPTIONS {
 				Field::make( 'text', 'footer_copyright_text', __( 'Footer Copyright', 'theological-international-university' ) )
 				 ->help_text('Use shortcode [year] to display the current year.')
 			));
+		// Blog Settings
+		Container::make( 'theme_options', __('Blog', 'theological-international-university') )
+			->set_page_parent($main_theme_options_container)
+			->add_fields(array(
+				Field::make( 'image', 'blog_bg_image', __('Blog Background', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'text', 'blog_heading_text', __('Blog Heading Text', 'theological-international-university') )
+					->set_width(50),
+			));
 	}
 }
