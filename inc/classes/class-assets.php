@@ -20,7 +20,19 @@ class ASSETS {
 		add_action('wp_head', [$this, 'theological_international_university_css_variables']);
 		add_action('admin_head', [$this, 'theological_international_university_css_variables']);
 		add_action('enqueue_block_editor_assets', [$this, 'theological_international_university_editor_block_assets']);
+		add_action('init', [$this, 'theological_international_university_modify_jquery_version']);
 		add_action( 'wp_enqueue_scripts', [$this, 'theological_international_university_scripts'] );
+	}
+
+	/**
+	* Adding Jquery version 3.2.1 in Frontend
+	*/
+	public function theological_international_university_modify_jquery_version() {
+		if (!is_admin()) {
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', false, '3.2.1', true);
+			wp_enqueue_script('jquery');
+		}
 	}
 
 	/**
@@ -34,14 +46,14 @@ class ASSETS {
 
 		wp_enqueue_script( 'theological-international-university-popper', get_template_directory_uri() . '/js/popper.js', array('jquery'), _S_VERSION, true );
 		wp_enqueue_script( 'theological-international-university-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-TweenMax', get_template_directory_uri() . '/js/TweenMax.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-TimelineMax', get_template_directory_uri() . '/js/TimelineMax.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-ScrollMagic', get_template_directory_uri() . '/js/ScrollMagic.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-animation-gsap', get_template_directory_uri() . '/js/animation.gsap.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-ScrollToPlugin', get_template_directory_uri() . '/js/ScrollToPlugin.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array(), _S_VERSION, true );
-		wp_enqueue_script( 'theological-international-university-easing', get_template_directory_uri() . '/js/easing.js', array(), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-TweenMax', get_template_directory_uri() . '/js/TweenMax.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-TimelineMax', get_template_directory_uri() . '/js/TimelineMax.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-ScrollMagic', get_template_directory_uri() . '/js/ScrollMagic.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-animation-gsap', get_template_directory_uri() . '/js/animation.gsap.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-ScrollToPlugin', get_template_directory_uri() . '/js/ScrollToPlugin.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), _S_VERSION, true );
+		wp_enqueue_script( 'theological-international-university-easing', get_template_directory_uri() . '/js/easing.js', array('jquery'), _S_VERSION, true );
 		wp_enqueue_script( 'theological-international-university-main-script', get_template_directory_uri() . '/build/index.js', array('jquery'), _S_VERSION, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
