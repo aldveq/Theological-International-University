@@ -1,10 +1,11 @@
 <?php
 	// Block Variables
 	$milestone_bg_img = $args['milestone_data']['milestone_bg_img'];
-	$milestone_data_source = $args['milestone_data']['milestone_data_source']
+	$milestone_data_source = $args['milestone_data']['milestone_data_source'];
+	$milestone_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="milestones">
+<div class="milestones" id="<?php echo esc_attr( $milestone_block_attributes_classnames ); ?>">
 	<?php
 		if (!empty($milestone_bg_img)):
 			$milestone_bg_img_url = wp_get_attachment_image_url( $milestone_bg_img, 'milestone_bg_size', false );

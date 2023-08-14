@@ -3,6 +3,7 @@
 	$contact_form_title = $args['contact_form_data']['contact_form_title'];
 	$contact_form_courses_title = $args['contact_form_data']['contact_form_courses_title'];
 	$contact_form_courses_desc = $args['contact_form_data']['contact_form_courses_desc'];
+	$contact_form_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 
 	// Global Variables
 	$tiu_label_address = carbon_get_theme_option('tiu_label_address');
@@ -13,7 +14,7 @@
 	$tiu_primary_phone = carbon_get_theme_option('tiu_primary_phone');
 ?>
 
-<div class="contact">
+<div class="contact" id="<?php echo esc_attr( $contact_form_block_attributes_classnames ); ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">

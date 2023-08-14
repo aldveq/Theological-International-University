@@ -11,9 +11,10 @@
 	$split_view_right_content_image_bg = $args['split_view_data']['split_view_right_content_image_bg'];
 	$split_view_image_bg_url = !empty($split_view_right_content_image_bg) ? wp_get_attachment_image_url( $split_view_right_content_image_bg, 'split_view_img_size', false ) : '';
 	$split_view_right_content_title = $args['split_view_data']['split_view_right_content_title'];
+	$split_view_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="register">
+<div class="register" id="<?php echo esc_attr( $split_view_block_attributes_classnames ); ?>">
 	<div class="container-fluid">
 		<div class="row row-eq-height">
 			<div class="col-lg-6 nopadding">

@@ -102,7 +102,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 						<div class="col-lg-3 footer_col">
 							<div class="footer_column_title">Menu</div>
 							<div class="footer_column_content">
-								<ul>
+								<ul id="footerMainNav">
 									<?php
 										foreach($footer_primary_navigation_items as $fpnav_item):
 										?>

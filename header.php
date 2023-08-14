@@ -58,7 +58,7 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 					<!-- Main Navigation -->
 					<nav class="main_nav_container">
 						<div class="main_nav">
-							<ul class="main_nav_list">
+							<ul class="main_nav_list" id="headerMainNav">
 								<?php
 									foreach($header_navigation_items as $hnav_item):
 									?>
@@ -103,7 +103,7 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 				<?php
 					if(is_array($header_navigation_items) && count($header_navigation_items) > 0):
 					?>
-					<ul class="menu_list menu_mm">
+					<ul class="menu_list menu_mm" id="headerMainMobileNav">
 						<?php
 							foreach($header_navigation_items as $hnav_item):
 							?>

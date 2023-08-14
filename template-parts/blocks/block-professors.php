@@ -3,9 +3,10 @@
 	$professors_block_title = $args['professors_data']['professors_title'];
 	$post_types_queries_data = \TIU_THEME\Inc\POST_TYPES_QUERIES::get_instance();
 	$professors_data = $post_types_queries_data->get_professor_post_type_data();
+	$professors_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="teachers page_section">
+<div class="teachers page_section" id="<?php echo esc_attr( $professors_block_attributes_classnames ); ?>">
 	<div class="container">
 		<?php
 			if (!empty($professors_block_title)):

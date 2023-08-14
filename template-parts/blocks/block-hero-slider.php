@@ -4,10 +4,11 @@
 
 	// Block Variables
 	$hero_slider_data = $args['hero_slider_data']['slides_data'];
-	$hero_links_section_data = $args['hero_slider_data']['links_data']
+	$hero_links_section_data = $args['hero_slider_data']['links_data'];
+	$hero_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="home">
+<div class="home" id="<?php echo esc_attr( $hero_block_attributes_classnames ); ?>">
 	<!-- Hero Slider -->
 	<div class="hero_slider_container">
 		<?php

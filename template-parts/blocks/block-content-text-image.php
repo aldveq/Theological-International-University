@@ -6,9 +6,10 @@
 	$content_text_image_link_label = $args['content_text_image_data']['content_text_image_link_label'];
 	$content_text_image_link_url = $args['content_text_image_data']['content_text_image_link_url'];
 	$content_text_image_link_target = $args['content_text_image_data']['content_text_image_link_target'];
+	$content_text_image_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="become">
+<div class="become" id="<?php echo esc_attr( $content_text_image_block_attributes_classnames ); ?>">
 	<div class="container">
 		<div class="row row-eq-height">
 

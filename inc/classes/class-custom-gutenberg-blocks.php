@@ -50,7 +50,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'slides' )
 			->set_keywords( [ __( 'Slider', 'theological-international-university' ), __( 'Hero', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'hero-slider', array('hero_slider_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'hero-slider', array('hero_slider_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Hero Slider Block - End
 		// Grid Data Block - Start
@@ -74,7 +74,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'grid-view' )
 			->set_keywords( [ __( 'Grid', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'grid-data', array('grid_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'grid-data', array('grid_data' => $fields, 'attributes' => $attributes) );
 			});			
 		// Grid Data Block - End
 		// Split View Block - Start
@@ -100,7 +100,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'columns' )
 			->set_keywords( [ __( 'Split View', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'split-view', array('split_view_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'split-view', array('split_view_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Split View Block - End
 		// Reviews Block - Start
@@ -127,7 +127,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'slides' )
 			->set_keywords( [ __( 'Reviews', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'reviews', array('reviews_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'reviews', array('reviews_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Reviews Block - End
 		// Contact Form Block - Start
@@ -143,7 +143,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'forms' )
 			->set_keywords( [ __( 'Contact Form', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'contact-form', array('contact_form_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'contact-form', array('contact_form_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Contact Form Block - End
 		// Content Text/Image Block - Start
@@ -164,7 +164,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'columns' )
 			->set_keywords( [ __( 'Text', 'theological-international-university' ), __( 'Image', 'theological-international-university' ), __( 'Text/Image', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'content-text-image', array('content_text_image_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'content-text-image', array('content_text_image_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Content Text/Image Block - End
 		// Milestone Block - Start
@@ -190,7 +190,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'chart-bar' )
 			->set_keywords( [ __( 'Milestone', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'milestone', array('milestone_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'milestone', array('milestone_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Milestone Block - End
 		// Professors Block - Start
@@ -203,7 +203,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 			->set_icon( 'businessperson' )
 			->set_keywords( [ __( 'Professors', 'theological-international-university' ) ] )
 			->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-				get_template_part( 'template-parts/blocks/block', 'professors', array('professors_data' => $fields) );
+				get_template_part( 'template-parts/blocks/block', 'professors', array('professors_data' => $fields, 'attributes' => $attributes) );
 			});
 		// Professors Block - End
 	}

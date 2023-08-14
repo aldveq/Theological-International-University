@@ -3,9 +3,10 @@
 	$reviews_image_bg = $args['reviews_data']['reviews_image_bg'];
 	$reviews_title = $args['reviews_data']['reviews_title'];
 	$reviews_data_source = $args['reviews_data']['reviews_data_source'];
+	$reviews_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="testimonials page_section">
+<div class="testimonials page_section" id="<?php echo esc_attr($reviews_block_attributes_classnames); ?>">
 	<?php
 		if (!empty($reviews_image_bg)):
 			$reviews_image_bg_url = wp_get_attachment_image_url( $reviews_image_bg, 'review_bg_img_size', false );

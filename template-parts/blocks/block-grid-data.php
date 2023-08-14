@@ -2,9 +2,10 @@
 	// Block Variables
 	$grid_data_title = $args['grid_data']['grid_data_title'];
 	$grid_data_source = $args['grid_data']['grid_data_source'];
+	$grid_data_block_attributes_classnames = !empty($args['attributes']) ? $args['attributes']['className'] : '';
 ?>
 
-<div class="services page_section">
+<div class="services page_section" id="<?php echo esc_attr( $grid_data_block_attributes_classnames ); ?>">
 	<div class="container">
 		<?php
 			if (!empty($grid_data_title)):
