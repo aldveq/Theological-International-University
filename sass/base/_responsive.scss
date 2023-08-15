@@ -77,10 +77,6 @@
 		width: 100%;
 	}
 
-	.header_side {
-		display: none !important;
-	}
-
 	.main_nav_container {
 		padding-right: 53px;
 	}
@@ -110,10 +106,22 @@
 }
 
 /************
-4. 1100px
+4. 1200px
 ************/
 
-@media only screen and (max-width: 1100px) {}
+@media only screen and (max-width: 1200px) {
+	.header_side {
+		display: none !important;
+	}
+
+	.main_nav_container {
+		display: none;
+	}
+
+	.hamburger_container {
+		display: block;
+	}
+}
 
 /************
 5. 1024px
@@ -130,16 +138,8 @@
 ************/
 
 @media only screen and (max-width: 991px) {
-	.main_nav_container {
-		display: none;
-	}
-
 	.logo_container {
 		padding-left: 30px;
-	}
-
-	.hamburger_container {
-		display: block;
 	}
 
 	.hero_slide_content h1 {
@@ -321,10 +321,6 @@
 
 	.menu {
 		top: 70px;
-	}
-
-	.menu_item {
-		margin-bottom: 0px;
 	}
 
 	.menu_item a {

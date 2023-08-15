@@ -75,10 +75,19 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			<?php
-				if(!empty($global_primary_phone_number)):
+				if (is_user_logged_in()):
 				?>
-				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/phone-call.svg" alt="Main Office Telephone number of the Theological International University">
-				<span><a href="tel:<?php echo esc_attr($global_primary_phone_number); ?>"><?php echo esc_html($global_primary_phone_label); ?></a></span>
+				<a href="<?php echo esc_url(wp_logout_url()); ?>" class="login-link" target="_self">
+					<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+					<span>LOGOUT</span>
+				</a>
+				<?php
+				else:
+				?>
+				<a href="<?php echo esc_url(wp_login_url()); ?>" class="login-link" target="_self">
+					<span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+					<span>LOGIN</span>
+				</a>
 				<?php
 				endif;
 			?>
@@ -110,6 +119,18 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 							<li class="menu_item menu_mm"><a href="<?php echo esc_url($hnav_item->url); ?>"><?php echo esc_html($hnav_item->title); ?></a></li>
 							<?php
 							endforeach;
+						?>
+
+						<?php
+							if (is_user_logged_in()):
+							?>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_logout_url()); ?>">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+							<?php
+							else:
+							?>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_login_url()); ?>">Login <i class="fas fa-sign-in-alt"></i></a></li>
+							<?php
+							endif;
 						?>
 					</ul>
 					<?php
