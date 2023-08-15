@@ -78,15 +78,15 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 				if (is_user_logged_in()):
 				?>
 				<a href="<?php echo esc_url(wp_logout_url()); ?>" class="login-link" target="_self">
-					<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
 					<span>LOGOUT</span>
+					<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
 				</a>
 				<?php
 				else:
 				?>
 				<a href="<?php echo esc_url(wp_login_url()); ?>" class="login-link" target="_self">
-					<span class="icon"><i class="fas fa-sign-in-alt"></i></span>
 					<span>LOGIN</span>
+					<span class="icon"><i class="fas fa-sign-in-alt"></i></span>
 				</a>
 				<?php
 				endif;
