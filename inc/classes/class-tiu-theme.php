@@ -28,6 +28,7 @@ class TIU_THEME {
 		add_action( 'after_setup_theme', [$this, 'theological_international_university_setup'] );
 		add_action( 'after_setup_theme', [$this, 'theological_international_university_content_width'], 0 );
 		add_action( 'widgets_init', [$this, 'theological_international_university_widgets_init'] );
+		add_action('login_head', [$this, 'theological_international_university_custom_login_background']);
 	}
 
 	/**
@@ -160,6 +161,27 @@ class TIU_THEME {
 				'after_title'   => '</h2>',
 			)
 		);
+	}
+
+	public function theological_international_university_custom_login_background() {
+		?>
+			<style type='text/css'>
+				body.login{
+					background: #000244;
+				}
+				body.login h1 a {
+					width: 260px !important;
+					height: 150px !important;
+					background-image: url(<?php echo esc_url(get_template_directory_uri()) . '/images/tiu-logo.svg'; ?>) !important;
+					background-repeat: no-repeat !important;
+					background-size: contain !important;
+					background-position: center top !important;
+				}
+				body.login #backtoblog a, .login #nav a {
+					color: #ffffff !important;
+				}
+			</style>
+		<?php
 	}
 }
 
