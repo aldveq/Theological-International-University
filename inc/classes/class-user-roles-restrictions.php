@@ -89,6 +89,15 @@ class USER_ROLES_RESTRICTIONS {
 		$current_roles = ( array ) $current_user->roles;
 		$current_user_rol = $current_roles[0];
 
+		// Avoid admin users get to the student dashboard
+		if ((is_user_logged_in() 
+			&& $current_user_rol == 'administrator'
+			&& is_page('student-dashboard'))
+		) {
+			wp_redirect(admin_url());
+			exit;
+		}
+		
 		// Avoid Student users get to the Admin Dashboard
 		if ((is_user_logged_in() 
 			&& $current_user_rol == 'tiu_student'
