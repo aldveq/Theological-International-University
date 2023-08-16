@@ -16,6 +16,11 @@ $global_primary_phone_label = !empty(carbon_get_theme_option('tiu_primary_phone_
 $global_primary_phone_number = !empty(carbon_get_theme_option('tiu_primary_phone')) ? carbon_get_theme_option('tiu_primary_phone') : '';
 $global_social_data = carbon_get_theme_option('socials_data');
 $global_header_copyright_text = carbon_get_theme_option('header_copyright_text');
+
+// User Data
+$current_user = wp_get_current_user();
+$current_roles = ( array ) $current_user->roles;
+$current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $current_roles[0] : '';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -65,6 +70,14 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 									<li class="main_nav_item"><a href="<?php echo esc_url($hnav_item->url);?>"><?php echo esc_html($hnav_item->title); ?></a></li>
 									<?php
 									endforeach;
+								?>
+
+								<?php
+									if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
+									?>
+									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>" target="_self">Dashboard</a></li>
+									<?php
+									endif;
 								?>
 							</ul>
 						</div>
@@ -122,6 +135,13 @@ $global_header_copyright_text = carbon_get_theme_option('header_copyright_text')
 						?>
 
 						<?php
+
+							if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
+							?>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>">Dashboard</a></li>
+							<?php
+							endif;
+
 							if (is_user_logged_in()):
 							?>
 							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_logout_url()); ?>">Logout <i class="fas fa-sign-out-alt"></i></a></li>
