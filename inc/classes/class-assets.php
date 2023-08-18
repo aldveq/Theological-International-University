@@ -33,12 +33,33 @@ class ASSETS {
 			wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', false, '3.2.1', true);
 			wp_enqueue_script('jquery');
 		}
+
+		if (!is_admin() && is_page('student-dashboard')) {
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', false, '3.4.0', true);
+			wp_enqueue_script('jquery');
+		}
 	}
 
 	/**
 	* Enqueue scripts and styles.
 	*/
 	public function theological_international_university_scripts() {
+		
+		if ( is_page('student-dashboard') ) {
+			// Styles
+			wp_enqueue_style( 'tiu-style-bundle-sd', get_template_directory_uri() . '/build-student-dashboard/style-index.css', array(), _S_VERSION );
+		
+			// Scripts
+			wp_enqueue_script( 'tiu-sd-bootstrap', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true );
+			wp_enqueue_script( 'tiu-sd-sidebarmenu', get_template_directory_uri() . '/js/sidebarmenu.js', array('jquery'), _S_VERSION, true );
+			wp_enqueue_script( 'tiu-sd-app', get_template_directory_uri() . '/js/app.min.js', array('jquery'), _S_VERSION, true );
+			//wp_enqueue_script( 'tiu-sd-apexcharts', get_template_directory_uri() . '/js/apexcharts.min.js', array('jquery'), _S_VERSION, true );
+			wp_enqueue_script( 'tiu-sd-simplebar', get_template_directory_uri() . '/js/simplebar.js', array('jquery'), _S_VERSION, true );
+			//wp_enqueue_script( 'tiu-sd-dashboard', get_template_directory_uri() . '/js/dashboard.js', array('jquery'), _S_VERSION, true );		
+			return;
+		}
+
 		wp_enqueue_style( 'theological-international-university-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|Roboto:400,500,700' );
 		wp_enqueue_style( 'theological-international-university-style', get_stylesheet_uri(), array(), _S_VERSION );
 		wp_enqueue_style( 'theological-international-university-style-bundle', get_template_directory_uri() . '/build/style-index.css', array(), _S_VERSION );
@@ -63,10 +84,6 @@ class ASSETS {
 				'isSinglePostView' => is_single() 
 			)
 		);
-
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
 	}
 
 	public function theological_international_university_editor_block_assets() {

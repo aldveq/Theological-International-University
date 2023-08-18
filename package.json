@@ -38,6 +38,7 @@
   "scripts": {
   	"build": "wp-scripts build",
 	"start": "wp-scripts start",
+	"start:sd": "wp-scripts start ./src-student-dashboard/index.js --webpack-src-dir=src-student-dashboard --output-path=build-student-dashboard",
 	"start:hot": "wp-scripts start --hot",
 	"start:custom": "wp-scripts start entry-one.js entry-two.js --output-path=custom",
 	"start:copy-php": "wp-scripts start --webpack-copy-php",
