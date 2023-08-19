@@ -6,7 +6,7 @@
  * Licensed under MIT (https      ://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import "./vendors/simplebar";
-@import "./vendors//tabler-icons";
+@import "./vendors/tabler-icons";
 
 :root,
 [data-bs-theme="light"] {
@@ -4437,11 +4437,11 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-primary {
-	--bs-btn-color                : #5d87ff;
-	--bs-btn-border-color         : #5d87ff;
+	--bs-btn-color                : var(--primary-color);
+	--bs-btn-border-color         : var(--primary-color);
 	--bs-btn-hover-color          : #fff;
-	--bs-btn-hover-bg             : #5d87ff;
-	--bs-btn-hover-border-color   : #5d87ff;
+	--bs-btn-hover-bg             : var(--primary-color);
+	--bs-btn-hover-border-color   : var(--primary-color);
 	--bs-btn-focus-shadow-rgb     : 93, 135, 255;
 	--bs-btn-active-color         : #fff;
 	--bs-btn-active-bg            : #5d87ff;
@@ -19730,7 +19730,6 @@ fieldset:disabled .btn {
 	transition        : 0.2s ease-in;
 	height            : 100%;
 	z-index           : 11;
-	border-right      : 1px solid rgb(229, 234, 239);
 }
 
 .left-sidebar .scroll-sidebar {
@@ -19933,7 +19932,7 @@ fieldset:disabled .btn {
 	position  : relative;
 	z-index   : 50;
 	width     : 100%;
-	background: #fff;
+	background: var(--eight-color);
 	padding   : 0 25px;
 }
 
@@ -20108,9 +20107,8 @@ fieldset:disabled .btn {
 	}
 
 	.navbar-collapse {
-		border-top                : 1px solid #ebf1f6;
 		padding                   : 0 15px;
-		background-color          : #fff;
+		background-color          : var(--eight-color);
 		border-bottom-left-radius : 15px;
 		border-bottom-right-radius: 15px;
 	}
@@ -20295,7 +20293,7 @@ fieldset:disabled .btn {
 #main-wrapper[data-layout="vertical"][data-header-position="fixed"] .body-wrapper>.container-sm,
 #main-wrapper[data-layout="vertical"][data-header-position="fixed"] .body-wrapper>.container-xl,
 #main-wrapper[data-layout="vertical"][data-header-position="fixed"] .body-wrapper>.container-xxl {
-	padding-top: calc(70px + 15px);
+	padding-top: 120px;
 }
 
 @media (min-width: 1200px) {
