@@ -92,7 +92,10 @@ class USER_ROLES_RESTRICTIONS {
 		// Avoid admin users get to the student dashboard
 		if ((is_user_logged_in() 
 			&& $current_user_rol == 'administrator'
-			&& is_page('student-dashboard'))
+			&& is_page('student-dashboard') )
+			|| (is_user_logged_in() 
+			&& $current_user_rol == 'administrator'
+			&& is_page('student-diploma') )
 		) {
 			wp_redirect(admin_url());
 			exit;

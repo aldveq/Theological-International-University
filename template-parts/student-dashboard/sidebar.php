@@ -27,7 +27,7 @@
 			<ul id="sidebarnav">
 				<li class="nav-small-cap">
 					<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-					<span class="hide-menu"></span>
+					<span class="hide-menu">Navigation</span>
 				</li>
 				<li class="sidebar-item">
 					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-dashboard')); ?>" aria-expanded="false">

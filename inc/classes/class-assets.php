@@ -46,7 +46,7 @@ class ASSETS {
 	*/
 	public function theological_international_university_scripts() {
 		
-		if ( is_page('student-dashboard') ) {
+		if ( is_page('student-dashboard') || is_page('student-diploma') ) {
 			// Styles
 			wp_enqueue_style( 'tiu-style-bundle-sd', get_template_directory_uri() . '/build-student-dashboard/style-index.css', array(), _S_VERSION );
 		
