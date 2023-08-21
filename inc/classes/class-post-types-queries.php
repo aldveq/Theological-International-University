@@ -51,4 +51,34 @@ class POST_TYPES_QUERIES {
 
 		return $professors_post_data;
 	}
+
+	public function get_diploma_by_student_user($current_user_id)
+	{
+		$diploma_data_image_url = '';
+
+		$diploma_query = new WP_Query( array(
+			'post_type'=>'diplomas',
+			'meta_query' => array(
+				array(
+					'key' => 'diploma_user_association',
+					'carbon_field_property' => 'id',
+					'compare' => '=',
+					'value' => $current_user_id,
+				),
+			),
+		) );
+
+		if ($diploma_query->have_posts()):
+			while ($diploma_query->have_posts()):
+				$diploma_query->the_post();
+				
+				$diploma_data_image_url = wp_get_attachment_image_url( carbon_get_post_meta( get_the_ID(), 'diploma_image' ), 'full', false );
+
+			endwhile;
+		endif;
+
+		wp_reset_postdata();
+
+		return $diploma_data_image_url;
+	}
 }

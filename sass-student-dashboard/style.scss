@@ -5,8 +5,6 @@
  * Copyright 2011-2022 The Bootstrap Authors
  * Licensed under MIT (https      ://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import "./vendors/simplebar";
-@import "./vendors/tabler-icons";
 
 :root,
 [data-bs-theme="light"] {
@@ -4114,20 +4112,20 @@ fieldset:disabled .btn {
 }
 
 .btn-primary {
-	--bs-btn-color                : #fff;
-	--bs-btn-bg                   : #5d87ff;
-	--bs-btn-border-color         : #5d87ff;
-	--bs-btn-hover-color          : #fff;
-	--bs-btn-hover-bg             : #4f73d9;
-	--bs-btn-hover-border-color   : #4a6ccc;
+	--bs-btn-color                : var(--third-color);
+	--bs-btn-bg                   : var(--primary-color);
+	--bs-btn-border-color         : var(--primary-color);
+	--bs-btn-hover-color          : var(--third-color);
+	--bs-btn-hover-bg             : var(--primary-color);
+	--bs-btn-hover-border-color   : var(--primary-color);
 	--bs-btn-focus-shadow-rgb     : 117, 153, 255;
-	--bs-btn-active-color         : #fff;
-	--bs-btn-active-bg            : #4a6ccc;
-	--bs-btn-active-border-color  : #4665bf;
+	--bs-btn-active-color         : var(--third-color);
+	--bs-btn-active-bg            : var(--primary-color);
+	--bs-btn-active-border-color  : var(--primary-color);
 	--bs-btn-active-shadow        : inset 0 3px 5px rgba(0, 0, 0, 0.125);
-	--bs-btn-disabled-color       : #fff;
-	--bs-btn-disabled-bg          : #5d87ff;
-	--bs-btn-disabled-border-color: #5d87ff;
+	--bs-btn-disabled-color       : var(--third-color);
+	--bs-btn-disabled-bg          : var(--primary-color);
+	--bs-btn-disabled-border-color: var(--primary-color);
 }
 
 .btn-secondary {
@@ -4199,20 +4197,20 @@ fieldset:disabled .btn {
 }
 
 .btn-danger {
-	--bs-btn-color                : #fff;
-	--bs-btn-bg                   : #fa896b;
-	--bs-btn-border-color         : #fa896b;
-	--bs-btn-hover-color          : #fff;
-	--bs-btn-hover-bg             : #d5745b;
-	--bs-btn-hover-border-color   : #c86e56;
+	--bs-btn-color                : var(--third-color);
+	--bs-btn-bg                   : var(--secondary-color);
+	--bs-btn-border-color         : var(--secondary-color);
+	--bs-btn-hover-color          : var(--third-color);
+	--bs-btn-hover-bg             : var(--secondary-color);
+	--bs-btn-hover-border-color   : var(--secondary-color);
 	--bs-btn-focus-shadow-rgb     : 251, 155, 129;
-	--bs-btn-active-color         : #fff;
-	--bs-btn-active-bg            : #c86e56;
-	--bs-btn-active-border-color  : #bc6750;
+	--bs-btn-active-color         : var(--third-color);
+	--bs-btn-active-bg            : var(--secondary-color);
+	--bs-btn-active-border-color  : var(--secondary-color);
 	--bs-btn-active-shadow        : inset 0 3px 5px rgba(0, 0, 0, 0.125);
-	--bs-btn-disabled-color       : #fff;
-	--bs-btn-disabled-bg          : #fa896b;
-	--bs-btn-disabled-border-color: #fa896b;
+	--bs-btn-disabled-color       : var(--third-color);
+	--bs-btn-disabled-bg          : var(--secondary-color);
+	--bs-btn-disabled-border-color: var(--secondary-color);
 }
 
 .btn-light {
@@ -20457,3 +20455,9 @@ ul {
 .timeline-widget .timeline-item .timeline-badge.badge-primary {
 	border: 2px solid #5d87ff;
 }
+
+// Start - Imports
+@import "./vendors/simplebar";
+@import "./vendors/tabler-icons";
+@import "./pages/student-diploma";
+// End - Imports
