@@ -21,7 +21,8 @@ class USER_ROLES_RESTRICTIONS {
 		add_filter('login_redirect', [$this, 'theological_international_university_login_redirect'], 10, 3);
 		add_action('after_setup_theme', [$this, 'theological_international_university_remove_admin_bar']);
 		add_action('template_redirect', [$this, 'theological_international_university_user_roles_redirect_restrictions']);
-		add_action('admin_init', [$this, 'theological_international_university_block_wp_admin_non_admins']);
+		add_action( 'admin_bar_menu', [$this, 'theological_international_university_go_back_student_dashboard_link'], 100 );
+		add_action('admin_menu', [$this, 'theological_international_university_hide_default_dashboard_menu_item_for_student_users']);
 	}
 
 	/**
@@ -36,7 +37,8 @@ class USER_ROLES_RESTRICTIONS {
 			__('TIU Student', 'theological-international-university'), 
 			array( 
 			'read' => true, 
-			'level_0' => true 
+			'level_0' => true,
+			'edit_users' => true
 			)
 		);
 	}
@@ -100,34 +102,58 @@ class USER_ROLES_RESTRICTIONS {
 			wp_redirect(admin_url());
 			exit;
 		}
-		
-		// Avoid Student users get to the Admin Dashboard
-		if ((is_user_logged_in() 
-			&& $current_user_rol == 'tiu_student'
-			&& is_admin())
-		) {
-			wp_redirect(home_url('/student-dashboard/'));
-			exit;
-		}
 	}
 
-	 /**
-	* Block wp-admin access for non-admins
+	/**
+	* Custom Go back dashboard link for student users
 	*
 	* @return void
 	*/
-	public function theological_international_university_block_wp_admin_non_admins()
-	{
+	public function theological_international_university_go_back_student_dashboard_link( $admin_bar ) {
+		if (!is_user_logged_in()):
+			return;
+		endif;
+
 		$current_user = wp_get_current_user();
 		$current_roles = ( array ) $current_user->roles;
 		$current_user_rol = $current_roles[0];
 
-		if (is_admin() 
-			&& ! current_user_can('administrator') 
-			&& $current_user_rol == 'tiu_student' 
+		if (
+			is_user_logged_in()
+			&& $current_user_rol == 'tiu_student'
+			&& is_admin()
 		) {
-			wp_safe_redirect(get_permalink(get_page_by_path('student-dashboard')));
-			exit;
+			$admin_bar->add_menu( array(
+				'id'    => 'go-back-dashboard-link',
+				'title' => '<span class="ab-icon dashicons dashicons-arrow-right-alt" style="margin-top: 2px; "></span>' . __('Go back to student dashboard', 'theological-international-university'),
+				'href'  => home_url('/student-dashboard/'),
+				'meta'  => array(
+					'title' => __('Go back to student dashboard', 'theological-international-university'),
+				),
+			));
+		}
+	}
+	
+	/**
+	* Hiding default dashboard menu item for student users
+	*
+	* @return void
+	*/
+	public function theological_international_university_hide_default_dashboard_menu_item_for_student_users() {
+		if (!is_user_logged_in()):
+			return;
+		endif;
+
+		$current_user = wp_get_current_user();
+		$current_roles = ( array ) $current_user->roles;
+		$current_user_rol = $current_roles[0];
+
+		if (
+			is_user_logged_in()
+			&& $current_user_rol == 'tiu_student'
+			&& is_admin()
+		) {
+			remove_menu_page( 'index.php' );
 		}
 	}
 }
