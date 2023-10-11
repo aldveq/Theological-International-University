@@ -54,7 +54,7 @@ class POST_TYPES_QUERIES {
 
 	public function get_diploma_by_student_user($current_user_id)
 	{
-		$diploma_data_image_url = '';
+		$diploma_data_array = [];
 
 		$diploma_query = new WP_Query( array(
 			'post_type'=>'diplomas',
@@ -65,20 +65,32 @@ class POST_TYPES_QUERIES {
 					'compare' => '=',
 					'value' => $current_user_id,
 				),
+				array(
+					'key' => 'diplomas_info',
+				),
 			),
 		) );
 
 		if ($diploma_query->have_posts()):
 			while ($diploma_query->have_posts()):
 				$diploma_query->the_post();
-				
-				$diploma_data_image_url = wp_get_attachment_image_url( carbon_get_post_meta( get_the_ID(), 'diploma_image' ), 'full', false );
+
+				array_push($diploma_data_array, array(
+					'diploma_source' => carbon_get_post_meta( 
+						get_the_ID(), 
+						'diplomas_info' 
+					),
+				));
 
 			endwhile;
 		endif;
 
 		wp_reset_postdata();
 
-		return $diploma_data_image_url;
+		if (is_array($diploma_data_array) && count($diploma_data_array) > 0):
+			return $diploma_data_array[0]['diploma_source'];
+		else:
+			return null;
+		endif;
 	}
 }

@@ -152,14 +152,31 @@ class CUSTOM_POST_TYPES {
 		Container::make('post_meta', __('Diploma Information', 'theological-international-university'))
 			->where('post_type', '=', 'diplomas')
 			->add_fields(array(
-				Field::make('image', 'diploma_image', __('Image', 'theological-international-university')),
 				Field::make( 'association', 'diploma_user_association', __('Student', 'theological-international-university') )
 					->set_max( 1 )
 					->set_types( array(
 						array(
 							'type' => 'user',
 						),
-					) )
-		));
+					) ),
+				Field::make('complex', 'diplomas_info', __('Diplomas Info', 'theological-international-university'))
+					->set_max(3)
+					->setup_labels( array(
+						'plural_name' => 'Diplomas',
+						'singular_name' => 'Diploma',
+					))
+					->set_layout( 'tabbed-horizontal' )
+					->add_fields(array(
+						Field::make('image', 'diploma_image', __('Diploma Image', 'theological-international-university'))
+							->set_width(50),
+						Field::make( 'select', 'diploma_type', __('Diploma Type', 'theological-international-university') )
+							->set_width(50)
+							->set_options( array(
+								'license' => 'License',
+								'master' => 'Master',
+								'doctor' => 'Doctor'
+							) ),
+					))
+			));
 	}
 }
