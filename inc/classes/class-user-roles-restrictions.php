@@ -44,7 +44,7 @@ class USER_ROLES_RESTRICTIONS {
 	}
 
 	/**
-	* Adding custom user roles
+	* Redirection rules by user role after login action
 	*
 	* @param string $url     Url
 	* @param string $request Request
@@ -91,15 +91,27 @@ class USER_ROLES_RESTRICTIONS {
 		$current_roles = ( array ) $current_user->roles;
 		$current_user_rol = $current_roles[0];
 
-		// Avoid admin users get to the student dashboard
+		// Avoid admin users get to the student dashboard, student diploma & student registration pages
 		if ((is_user_logged_in() 
 			&& $current_user_rol == 'administrator'
 			&& is_page('student-dashboard') )
 			|| (is_user_logged_in() 
 			&& $current_user_rol == 'administrator'
 			&& is_page('student-diploma') )
+			|| (is_user_logged_in() 
+			&& $current_user_rol == 'administrator'
+			&& is_page('student-registration-form') )
 		) {
 			wp_redirect(admin_url());
+			exit;
+		}
+
+		// Avoid student users get to the student registration page
+		if (is_user_logged_in() 
+			&& $current_user_rol == 'tiu_student'
+			&& is_page('student-registration-form')
+		) {
+			wp_redirect(home_url('/student-dashboard/'));
 			exit;
 		}
 	}
