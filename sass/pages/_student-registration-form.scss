@@ -1,0 +1,49 @@
+.student-registration-form-wrapper {
+
+	&__heading {
+		position        : relative;
+		height          : 447px;
+		background-color: var(--secondary-color);
+
+		@media only screen and (max-width: 576px) {
+			height: 250px;
+		}
+
+		.home_content h1 {
+			@media only screen and (max-width: 576px) {
+				font-size: 26px;
+			}
+		}
+	}
+
+	&__form {
+		margin          : 60px auto;
+		background-color: #f7f7f7;
+		padding         : 50px 80px;
+		max-width       : 800px;
+
+		@media only screen and (max-width: 576px) {
+			margin : 36px auto;
+			padding: 50px 16px;
+		}
+
+		.logo {
+			display  : block;
+			width    : 100%;
+			max-width: 170px;
+			height   : auto;
+			margin   : 0 auto;
+		}
+
+		.become_button {
+			color  : #fff;
+			display: table;
+			margin : 16px auto;
+		}
+
+		.user-registration {
+			background   : none;
+			margin-bottom: 0;
+		}
+	}
+}
