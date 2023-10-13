@@ -105,6 +105,10 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 								<ul id="footerMainNav">
 									<?php
 										foreach($footer_primary_navigation_items as $fpnav_item):
+										if(sanitize_title( $fpnav_item->title ) === 'register'
+										&& is_user_logged_in()):
+											continue;
+										endif;
 										?>
 										<li class="footer_list_item"><a href="<?php echo esc_url($fpnav_item->url); ?>"><?php echo esc_html($fpnav_item->title); ?></a></li>
 										<?php
@@ -127,6 +131,10 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 								<ul>
 									<?php
 										foreach($footer_secondary_navigation_items as $fsnav_item):
+										if(sanitize_title( $fsnav_item->title ) === 'register'
+										&& is_user_logged_in()):
+											continue;
+										endif;
 										?>
 										<li class="footer_list_item"><a href="<?php echo esc_url($fsnav_item->url); ?>"><?php echo esc_html($fsnav_item->title); ?></a></li>
 										<?php

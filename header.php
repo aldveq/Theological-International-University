@@ -66,6 +66,10 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 							<ul class="main_nav_list" id="headerMainNav">
 								<?php
 									foreach($header_navigation_items as $hnav_item):
+									if(sanitize_title( $hnav_item->title ) === 'register'
+									&& is_user_logged_in()):
+										continue;
+									endif;
 									?>
 									<li class="main_nav_item"><a href="<?php echo esc_url($hnav_item->url);?>"><?php echo esc_html($hnav_item->title); ?></a></li>
 									<?php
