@@ -10,7 +10,16 @@
 
 // Variables
 $current_user = wp_get_current_user();
-$current_user_avatar = get_avatar_url( $current_user->ID );
+$current_user_avatar = get_avatar( 
+	$current_user->ID, 
+	35, 
+	'', 
+	$current_user->display_name, 
+	array(
+		'load' => 'lazy', 
+		'class' => 'rounded-circle'
+	), 
+);
 ?>
 
 <!--  Header Start -->
@@ -30,7 +39,7 @@ $current_user_avatar = get_avatar_url( $current_user->ID );
 					<li class="nav-item dropdown">
 						<a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
 							aria-expanded="false">
-							<img src="<?php echo esc_url($current_user_avatar); ?>" alt="<?php echo esc_attr( $current_user->display_name ); ?>" width="35" height="35" class="rounded-circle">
+							<?php echo wp_kses_post($current_user_avatar); ?>
 						</a>
 						<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
 							<div class="message-body">

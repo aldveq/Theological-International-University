@@ -45,6 +45,14 @@
 					<span class="hide-menu">Diploma</span>
 					</a>
 				</li>
+				<li class="sidebar-item">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-profile') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-profile')); ?>" aria-expanded="false">
+					<span>
+						<i class="ti ti-user"></i>
+					</span>
+					<span class="hide-menu">Profile</span>
+					</a>
+				</li>
 				<li class="nav-small-cap">
 					<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
 					<span class="hide-menu">Quick Links</span>
