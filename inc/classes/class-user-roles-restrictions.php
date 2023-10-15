@@ -65,7 +65,7 @@ class USER_ROLES_RESTRICTIONS {
 	}
 
 	/**
-	* Remove Admin Bar
+	* Remove Admin Bar For Student Users
 	*
 	* @return void
 	*/
@@ -83,15 +83,22 @@ class USER_ROLES_RESTRICTIONS {
 	*/
 	public function theological_international_university_user_roles_redirect_restrictions()
 	{
-		if (!is_user_logged_in()):
-			return;
-		endif;
-
 		$current_user = wp_get_current_user();
 		$current_roles = ( array ) $current_user->roles;
-		$current_user_rol = $current_roles[0];
+		$current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $current_roles[0] : '';
 
-		// Avoid admin users get to the student dashboard, student diploma & student registration pages
+		// Avoid access to non-logged users to student pages
+		if (!is_user_logged_in() 
+			&& (is_page('student-dashboard')
+			|| is_page('student-diploma')
+			|| is_page('student-profile')) 
+		) {
+			wp_redirect(wp_login_url());
+			exit;
+		}
+
+		// Avoid admin users get to the student dashboard, 
+		// student diploma, student profile & student registration pages
 		if ((is_user_logged_in() 
 			&& $current_user_rol == 'administrator'
 			&& is_page('student-dashboard') )
@@ -101,6 +108,9 @@ class USER_ROLES_RESTRICTIONS {
 			|| (is_user_logged_in() 
 			&& $current_user_rol == 'administrator'
 			&& is_page('student-registration-form') )
+			|| (is_user_logged_in() 
+			&& $current_user_rol == 'administrator'
+			&& is_page('student-profile') )
 		) {
 			wp_redirect(admin_url());
 			exit;
