@@ -81,7 +81,8 @@ class ASSETS {
 			array( 
 				'isHome' => home_url(),
 				'isBlog' => is_home(),
-				'isSinglePostView' => is_single() 
+				'isSinglePostView' => is_single(),
+				'isStudentRegistrationFormPage' => is_page('student-registration-form'),
 			)
 		);
 	}

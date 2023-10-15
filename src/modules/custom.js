@@ -249,7 +249,9 @@ jQuery(document).ready(function ($) {
     navEl.addEventListener("click", function (e) {
       e.preventDefault();
 
-      if (Boolean(TIU_DATA.isBlog) || Boolean(TIU_DATA.isSinglePostView)) {
+      if (Boolean( TIU_DATA.isBlog)
+	  || Boolean(TIU_DATA.isSinglePostView) 
+	  || Boolean(TIU_DATA.isStudentRegistrationFormPage)) {
         window.location.href = `${TIU_DATA.isHome}/${navElHrefAttr}`;
       } else {
         if ($(`div#${navDomEl}`).length) {
