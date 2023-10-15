@@ -50,7 +50,7 @@
 					<span>
 						<i class="ti ti-user"></i>
 					</span>
-					<span class="hide-menu">Profile</span>
+					<span class="hide-menu">My Profile</span>
 					</a>
 				</li>
 				<li class="nav-small-cap">

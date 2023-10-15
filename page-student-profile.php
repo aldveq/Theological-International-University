@@ -27,7 +27,7 @@ get_header('student-dashboard');
 		// Header
 		get_template_part('template-parts/student-dashboard/header');
 	?>
-      <div class="container-fluid">
+      <div class="container-fluid student-profile-wrapper">
 	  	<div class="row">
 			<div class="col-12">
         		<?php echo do_shortcode( '[user_registration_edit_profile]' ); ?>
