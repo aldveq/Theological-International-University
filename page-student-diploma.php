@@ -17,6 +17,12 @@ get_header('student-dashboard');
 $current_user = wp_get_current_user();
 $post_types_queries_data = \TIU_THEME\Inc\POST_TYPES_QUERIES::get_instance();
 $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student_user($current_user->ID);
+
+//Diplomas content variables
+$diploma_license_content = carbon_get_theme_option('diploma_license_content');
+$diploma_master_content = carbon_get_theme_option('diploma_master_content');
+$diploma_doctor_content = carbon_get_theme_option('diploma_doctor_content');
+$diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_content');
 ?>
 <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -69,10 +75,32 @@ $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student
 									if($tab_content_counter === 0):
 									?>
 									<div class="tab-pane fade p-4 show active" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" role="tabpanel" aria-labelledby="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" tabindex="0">
-										<div class="card m-0" style="width: 16rem;">
-											<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
-											<div class="card-body d-flex justify-content-center align-items-center py-4">
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+										<div class="row">
+											<div class="col-12 col-sm-6 col-lg-4 col-xl-3">	
+												<div class="card m-0" style="width: 16rem;">
+													<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
+													<div class="card-body d-flex justify-content-center align-items-center py-4">
+														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-sm-6 col-lg-8 col-xl-9 px-lg-2 mt-5 mt-md-0">
+												<?php
+													switch (sanitize_title( $ds_data['diploma_type'] )):
+														case 'license':
+															echo $diploma_license_content;
+															break;
+														case 'master':
+															echo $diploma_master_content;
+															break;
+														case 'doctor':
+															echo $diploma_doctor_content;
+															break;
+														default:
+															echo $diploma_chaplaincy_content;
+															break;
+													endswitch;
+												?>
 											</div>
 										</div>
 
@@ -107,10 +135,32 @@ $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student
 									else:
 									?>
 									<div class="tab-pane fade p-4" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" role="tabpanel" aria-labelledby="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" tabindex="0">
-										<div class="card m-0" style="width: 16rem;">
-											<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
-											<div class="card-body d-flex justify-content-center align-items-center py-4">
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+										<div class="row">
+											<div class="col-12 col-sm-6 col-lg-4 col-xl-3">	
+												<div class="card m-0" style="width: 16rem;">
+													<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
+													<div class="card-body d-flex justify-content-center align-items-center py-4">
+														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 col-sm-6 col-lg-8 col-xl-9 px-lg-2 mt-5 mt-md-0">
+												<?php
+													switch (sanitize_title( $ds_data['diploma_type'] )):
+														case 'license':
+															echo wp_kses_post($diploma_license_content);
+															break;
+														case 'master':
+															echo wp_kses_post($diploma_master_content);
+															break;
+														case 'doctor':
+															echo wp_kses_post($diploma_doctor_content);
+															break;
+														default:
+															echo wp_kses_post($diploma_chaplaincy_content);
+															break;
+													endswitch;
+												?>
 											</div>
 										</div>
 

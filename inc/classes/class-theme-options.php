@@ -131,5 +131,14 @@ class THEME_OPTIONS {
 				Field::make( 'text', 'srf_heading_text', __('Heading Text', 'theological-international-university') )
 					->set_width(50),
 			));
+		// Content for diplomas
+		Container::make( 'theme_options', __('Diplomas content', 'theological-international-university') )
+			->set_page_parent($main_theme_options_container)
+			->add_fields(array(
+				Field::make( 'rich_text', 'diploma_license_content', __('License Content', 'theological-international-university') ),
+				Field::make( 'rich_text', 'diploma_master_content', __('Master Content', 'theological-international-university') ),
+				Field::make( 'rich_text', 'diploma_doctor_content', __('Doctor Content', 'theological-international-university') ),
+				Field::make( 'rich_text', 'diploma_chaplaincy_content', __('Chaplaincy Content', 'theological-international-university') )
+			));
 	}
 }
