@@ -123,7 +123,7 @@ class THEME_OPTIONS {
 					->set_width(50),
 			));
 		// Student Registration Form Settings
-		Container::make( 'theme_options', __('Student Registration Form', 'theological-international-university') )
+		Container::make( 'theme_options', __('Student Registration Form Settings', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
 				Field::make( 'image', 'srf_bg_image', __('Heading Background Image', 'theological-international-university') )
