@@ -10,50 +10,32 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'theological-international-university' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'theological-international-university' ); ?></p>
-
+	<main id="primary" class="site-main not-page-found-wrapper">
+		 <section class="d-flex align-items-center justify-content-center">
+            <div class="text-center d-flex flex-column align-items-center justify-content-center">
+                <h1 class="fw-bold">404</h1>
+                <p class="fs-3 mb-1"> Opps! Page not found.</p>
+                <p class="lead mb-1">
+                    The page you’re looking for doesn’t exist.
+                </p>
+				<div class="become_button text-center trans_200 mt-2">
 					<?php
-					get_search_form();
+						$home_path = '';
 
-					the_widget( 'WP_Widget_Recent_Posts' );
+						if(!is_user_logged_in() 
+						|| (is_user_logged_in() 
+						&& current_user_can('administrator'))):
+							$home_path = home_url();
+						endif;
+
+						if(is_user_logged_in() && current_user_can('tiu_student')):
+							$home_path = home_url('/student-dashboard/');
+						endif;
 					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'theological-international-university' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$theological_international_university_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'theological-international-university' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$theological_international_university_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
+					<a href="<?php echo esc_url($home_path); ?>" target="_self">Go Home</a>
+				</div>
+            </div>
+        </section>
 	</main><!-- #main -->
 
 <?php

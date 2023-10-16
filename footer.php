@@ -26,7 +26,7 @@ $tiu_primary_phone = carbon_get_theme_option('tiu_primary_phone');
 $global_socials_data = carbon_get_theme_option('socials_data');
 ?>
 
-	<footer class="footer <?php echo esc_attr( $no_newsletter_section ); ?>">
+	<footer class="footer <?php echo esc_attr( $no_newsletter_section ); ?> <?php echo esc_attr(is_404() ? 'd-none' : 'd-flex'); ?>">
 		<div class="container">
 			<?php
 				if (!$is_footer_newsletter_section_disabled):

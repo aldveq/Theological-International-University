@@ -36,7 +36,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 <div id="page" class="site super_container">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'theological-international-university' ); ?></a>
 
-	<header class="header d-flex flex-row">
+	<header class="header <?php echo esc_attr(is_404() ? 'd-none' : 'd-flex'); ?> flex-row">
 		<div class="header_content d-flex flex-row align-items-center">
 			<!-- Logo -->
 			<div class="logo_container">
