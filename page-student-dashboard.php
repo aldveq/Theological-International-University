@@ -13,6 +13,8 @@
  */
 
 get_header('student-dashboard');
+
+$student_welcome_message = carbon_get_theme_option('student_welcome_message');
 ?>
 <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -27,11 +29,15 @@ get_header('student-dashboard');
 		// Header
 		get_template_part('template-parts/student-dashboard/header');
 	?>
-      <div class="container-fluid">
+      <div class="container-fluid student-dashboard-wrapper">
         <div class="card">
           <div class="card-body">
 			<h1 class="display-6 mb-4">Dashboard</h1>
-            <p class="fs-5 mb-0">Hi <?php echo esc_html($current_user->display_name); ?>. Welcome to the student dashboard of the Theological International University.</p>
+			<?php 
+				if(!empty($student_welcome_message)):
+					echo wp_kses_post(wpautop($student_welcome_message, true)); 
+				endif;
+			?>
           </div>
         </div>
       </div>

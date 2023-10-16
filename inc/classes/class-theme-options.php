@@ -131,14 +131,21 @@ class THEME_OPTIONS {
 				Field::make( 'text', 'srf_heading_text', __('Heading Text', 'theological-international-university') )
 					->set_width(50),
 			));
-		// Content for diplomas
-		Container::make( 'theme_options', __('Diplomas content', 'theological-international-university') )
+		// Student Dashboard Settings
+		Container::make( 'theme_options', __('Student Dashboard Settings', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
-				Field::make( 'rich_text', 'diploma_license_content', __('License Content', 'theological-international-university') ),
-				Field::make( 'rich_text', 'diploma_master_content', __('Master Content', 'theological-international-university') ),
-				Field::make( 'rich_text', 'diploma_doctor_content', __('Doctor Content', 'theological-international-university') ),
+				Field::make( 'separator', 'welcome_message_separator', __( 'Student Welcome Message', 'theological-international-university' ) ),
+				Field::make( 'rich_text', 'student_welcome_message', __('Student Welcome Message', 'theological-international-university') ),
+				Field::make( 'separator', 'diploma_content_separator', __( 'Diplomas Content', 'theological-international-university' ) ),
+				Field::make( 'rich_text', 'diploma_license_content', __('License Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'rich_text', 'diploma_master_content', __('Master Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'rich_text', 'diploma_doctor_content', __('Doctor Content', 'theological-international-university') )
+					->set_width(50),
 				Field::make( 'rich_text', 'diploma_chaplaincy_content', __('Chaplaincy Content', 'theological-international-university') )
+					->set_width(50),
 			));
 	}
 }
