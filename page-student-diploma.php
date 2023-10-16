@@ -88,16 +88,16 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 												<?php
 													switch (sanitize_title( $ds_data['diploma_type'] )):
 														case 'license':
-															echo $diploma_license_content;
+															echo wp_kses_post(wpautop($diploma_license_content, true));
 															break;
 														case 'master':
-															echo $diploma_master_content;
+															echo wp_kses_post(wpautop($diploma_master_content, true));
 															break;
 														case 'doctor':
-															echo $diploma_doctor_content;
+															echo wp_kses_post(wpautop($diploma_doctor_content, true));
 															break;
 														default:
-															echo $diploma_chaplaincy_content;
+															echo wp_kses_post(wpautop($diploma_chaplaincy_content, true));
 															break;
 													endswitch;
 												?>
@@ -148,16 +148,16 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 												<?php
 													switch (sanitize_title( $ds_data['diploma_type'] )):
 														case 'license':
-															echo wp_kses_post($diploma_license_content);
+															echo wp_kses_post(wpautop($diploma_license_content, true));
 															break;
 														case 'master':
-															echo wp_kses_post($diploma_master_content);
+															echo wp_kses_post(wpautop($diploma_master_content, true));
 															break;
 														case 'doctor':
-															echo wp_kses_post($diploma_doctor_content);
+															echo wp_kses_post(wpautop($diploma_doctor_content, true));
 															break;
 														default:
-															echo wp_kses_post($diploma_chaplaincy_content);
+															echo wp_kses_post(wpautop($diploma_chaplaincy_content, true));
 															break;
 													endswitch;
 												?>
