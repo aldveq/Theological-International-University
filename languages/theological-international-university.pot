@@ -1,62 +1,25 @@
-# Copyright (C) 2020 Automattic
+# Copyright (C) 2023 Underscores.me
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: Theological International University 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/qs_tool_wp_pot_gen_1697578491_5358_175411\n"
+"POT-Creation-Date: 2023-10-17 21:34:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-04-17T21:03:15+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: _s\n"
-
-#. Theme Name of the theme
-msgid "_s"
-msgstr ""
-
-#. Theme URI of the theme
-msgid "https://underscores.me/"
-msgstr ""
-
-#. Description of the theme
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
-msgstr ""
-
-#. Author of the theme
-msgid "Automattic"
-msgstr ""
-
-#. Author URI of the theme
-msgid "https://automattic.com/"
-msgstr ""
-
-#: 404.php:18
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: 404.php:22
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr ""
-
-#: 404.php:31
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: 404.php:49
-msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. translators: 1: title.
+
 #: comments.php:35
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
+
 #: comments.php:41
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -68,106 +31,663 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:18
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: CMS name, i.e. WordPress.
-#: footer.php:21
-msgid "Proudly powered by %s"
-msgstr ""
-
-#. translators: 1: Theme name, 2: Theme author.
-#: footer.php:27
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:53
-msgid "Primary"
-msgstr ""
-
-#: functions.php:130
-msgid "Sidebar"
-msgstr ""
-
-#: functions.php:132
-msgid "Add widgets here."
-msgstr ""
-
-#: header.php:26
+#: header.php:37
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
-msgid "Primary Menu"
+#: inc/classes/class-custom-gutenberg-blocks.php:18
+#: inc/classes/class-custom-gutenberg-blocks.php:48
+msgid "Hero Slider Block"
 msgstr ""
 
-#. translators: %s: post date.
-#: inc/template-tags.php:30
-msgctxt "post date"
-msgid "Posted on %s"
+#: inc/classes/class-custom-gutenberg-blocks.php:20
+msgid "Slider Data"
 msgstr ""
 
-#. translators: %s: post author.
-#: inc/template-tags.php:46
-msgctxt "post author"
-msgid "by %s"
+#: inc/classes/class-custom-gutenberg-blocks.php:27
+#: inc/classes/class-custom-gutenberg-blocks.php:152
+#: inc/classes/class-custom-gutenberg-blocks.php:165
+#: inc/classes/class-custom-post-types.php:130
+msgid "Image"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:63
-msgid ", "
+#: inc/classes/class-custom-gutenberg-blocks.php:28
+#: inc/classes/class-custom-gutenberg-blocks.php:39
+#: inc/classes/class-custom-gutenberg-blocks.php:59
+#: inc/classes/class-custom-gutenberg-blocks.php:68
+#: inc/classes/class-custom-gutenberg-blocks.php:84
+#: inc/classes/class-custom-gutenberg-blocks.php:96
+#: inc/classes/class-custom-gutenberg-blocks.php:111
+#: inc/classes/class-custom-gutenberg-blocks.php:136
+#: inc/classes/class-custom-gutenberg-blocks.php:153
+#: inc/classes/class-custom-gutenberg-blocks.php:199
+msgid "Title"
 msgstr ""
 
-#. translators: 1: list of categories.
-#: inc/template-tags.php:66
-msgid "Posted in %1$s"
+#: inc/classes/class-custom-gutenberg-blocks.php:29
+msgid "Wrap text in __* to distinguish it with the global primary color of the theme styles. Example: The wrapped text has a __*different color*__."
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:70
-msgctxt "list item separator"
-msgid ", "
+#: inc/classes/class-custom-gutenberg-blocks.php:31
+msgid "Links Section"
 msgstr ""
 
-#. translators: 1: list of tags.
-#: inc/template-tags.php:73
-msgid "Tagged %1$s"
+#: inc/classes/class-custom-gutenberg-blocks.php:38
+#: inc/classes/class-custom-gutenberg-blocks.php:67
+#: inc/classes/class-custom-gutenberg-blocks.php:183
+#: inc/classes/class-custom-post-types.php:142
+#: inc/classes/class-theme-options.php:94
+msgid "Icon"
 msgstr ""
 
-#. translators: %s: post title
-#: inc/template-tags.php:83
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#: inc/classes/class-custom-gutenberg-blocks.php:40
+#: inc/classes/class-custom-gutenberg-blocks.php:87
+#: inc/classes/class-custom-gutenberg-blocks.php:155
+msgid "Link Label"
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:100
-#: template-parts/content-page.php:39
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+#: inc/classes/class-custom-gutenberg-blocks.php:42
+#: inc/classes/class-custom-gutenberg-blocks.php:89
+#: inc/classes/class-custom-gutenberg-blocks.php:157
+msgid "Link URL"
 msgstr ""
 
-#: inc/woocommerce.php:186
-msgid "View your shopping cart"
+#: inc/classes/class-custom-gutenberg-blocks.php:44
+#: inc/classes/class-custom-gutenberg-blocks.php:91
+#: inc/classes/class-custom-gutenberg-blocks.php:159
+msgid "Open in new tab?"
 msgstr ""
 
-#. translators: number of items in the mini cart.
-#: inc/woocommerce.php:190
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
+#: inc/classes/class-custom-gutenberg-blocks.php:49
+#: inc/classes/class-custom-gutenberg-blocks.php:73
+#: inc/classes/class-custom-gutenberg-blocks.php:99
+#: inc/classes/class-custom-gutenberg-blocks.php:126
+#: inc/classes/class-custom-gutenberg-blocks.php:142
+#: inc/classes/class-custom-gutenberg-blocks.php:163
+#: inc/classes/class-custom-gutenberg-blocks.php:189
+#: inc/classes/class-custom-gutenberg-blocks.php:202
+msgid "Theological International University Blocks"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:51
+msgid "Slider"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:51
+msgid "Hero"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:57
+#: inc/classes/class-custom-gutenberg-blocks.php:72
+msgid "Grid Data Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:60
+msgid "Grid Data"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:69
+#: inc/classes/class-custom-gutenberg-blocks.php:86
+#: inc/classes/class-custom-gutenberg-blocks.php:154
+msgid "Description"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:75
+msgid "Grid"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:81
+#: inc/classes/class-custom-gutenberg-blocks.php:98
+msgid "Split View Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:83
+msgid "Left Content"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:93
+msgid "Right Content"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:94
+#: inc/classes/class-custom-gutenberg-blocks.php:109
+#: inc/classes/class-custom-gutenberg-blocks.php:173
+msgid "Background Image"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:101
+msgid "Split View"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:107
+#: inc/classes/class-custom-gutenberg-blocks.php:125
+msgid "Reviews Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:112
+msgid "Reviews Data"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:119
+#: inc/classes/class-custom-gutenberg-blocks.php:165
+#: inc/classes/class-custom-gutenberg-blocks.php:185
+msgid "Text"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:120
+msgid "User Image"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:121
+msgid "User Name"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:122
+msgid "User Role"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:128
+msgid "Reviews"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:134
+#: inc/classes/class-custom-gutenberg-blocks.php:141
+msgid "Contact Form Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:137
+msgid "Courses Info"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:138
+msgid "Courses Title"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:139
+msgid "Courses Description"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:144
+msgid "Contact Form"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:150
+#: inc/classes/class-custom-gutenberg-blocks.php:162
+msgid "Content Text/Image Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:165
+msgid "Text/Image"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:171
+#: inc/classes/class-custom-gutenberg-blocks.php:188
+msgid "Milestone Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:175
+msgid "Milestone Data"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:184
+msgid "Counter"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:191
+msgid "Milestone"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:197
+#: inc/classes/class-custom-gutenberg-blocks.php:201
+msgid "Professors Block"
+msgstr ""
+
+#: inc/classes/class-custom-gutenberg-blocks.php:204
+msgid "Professors"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:30
+msgctxt "Post type general name"
+msgid "Professors"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:31
+msgctxt "Post type singular name"
+msgid "Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:32
+msgctxt "Admin Menu text"
+msgid "Professors"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:33
+msgctxt "Add New on Toolbar"
+msgid "Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:34
+#: inc/classes/class-custom-post-types.php:83
+msgid "Add New"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:35
+msgid "Add New Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:36
+msgid "New Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:37
+msgid "Edit Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:38
+msgid "View Professor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:39
+msgid "All Professors"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:40
+msgid "Search Professors"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:41
+msgid "Parent Professors:"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:42
+msgid "No Professors found."
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:43
+msgid "No Professors found in Trash."
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:44
+msgctxt "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Professor Cover Image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:45
+#: inc/classes/class-custom-post-types.php:94
+msgctxt "Overrides the “Set featured image” phrase for this post type. Added in 4.3"
+msgid "Set cover image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:46
+#: inc/classes/class-custom-post-types.php:95
+msgctxt "Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
+msgid "Remove cover image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:47
+#: inc/classes/class-custom-post-types.php:96
+msgctxt "Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
+msgid "Use as cover image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:48
+msgctxt "The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4"
+msgid "Professor archives"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:49
+#: inc/classes/class-custom-post-types.php:98
+msgctxt "Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4"
+msgid "Insert into project"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:50
+#: inc/classes/class-custom-post-types.php:99
+msgctxt "Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this project"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:51
+msgctxt "Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter Professors list"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:52
+msgctxt "Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Professors list navigation"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:53
+msgctxt "Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Professors list"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:79
+msgctxt "Post type general name"
+msgid "Diplomas"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:80
+msgctxt "Post type singular name"
+msgid "Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:81
+msgctxt "Admin Menu text"
+msgid "Diplomas"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:82
+msgctxt "Add New on Toolbar"
+msgid "Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:84
+msgid "Add New Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:85
+msgid "New Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:86
+msgid "Edit Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:87
+msgid "View Diploma"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:88
+msgid "All Diplomas"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:89
+msgid "Search Diplomas"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:90
+msgid "Parent Diplomas:"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:91
+msgid "No Diplomas found."
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:92
+msgid "No Diplomas found in Trash."
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:93
+msgctxt "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Diploma Cover Image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:97
+msgctxt "The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4"
+msgid "Diploma archives"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:100
+msgctxt "Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter Diplomas list"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:101
+msgctxt "Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Diplomas list navigation"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:102
+msgctxt "Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Diplomas list"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:127
+msgid "Professor Information"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:132
+msgid "Position"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:134
+#: inc/classes/class-custom-post-types.php:137
+#: inc/classes/class-theme-options.php:85
+#: inc/classes/class-theme-options.php:86
+#: inc/classes/class-theme-options.php:89
+msgid "Socials"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:136
+#: inc/classes/class-theme-options.php:88
+msgid "Social"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:145
+#: inc/classes/class-theme-options.php:97
+msgid "URL"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:152
+msgid "Diploma Information"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:155
+msgid "Student"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:162
+msgid "Diplomas Info"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:170
+msgid "Diploma Image"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:172
+msgid "Diploma Type"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:27
+msgid "Theme Options"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:28
+msgid "Styles"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:29
+msgid "Global Colors"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:30
+msgid "Primary"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:34
+msgid "Secondary"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:38
+msgid "Third"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:42
+msgid "Fourth"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:46
+msgid "Fifth"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:50
+msgid "Sixth"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:54
+msgid "Seven"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:58
+msgid "Eight"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:62
+msgid "Nine"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:67
+msgid "Contact Information"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:68
+msgid "Emails"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:69
+msgid "Primary Email Label"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:71
+msgid "Primary Email"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:73
+msgid "Phones"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:74
+msgid "Primary Phone Label"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:76
+msgid "Primary Phone"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:78
+#: inc/classes/class-theme-options.php:79
+msgid "Address"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:81
+msgid "Address URL"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:83
+msgid "Optional"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:102
+msgid "Header"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:105
+msgid "Header Copyright"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:108
+msgid "Footer"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:111
+msgid "Disable newsletter?"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:112
+msgid "Footer Disclaimer Text"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:113
+msgid "Footer Copyright"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:117
+msgid "Blog"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:120
+msgid "Blog Background"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:122
+msgid "Blog Heading Text"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:126
+msgid "Student Registration Form Settings"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:129
+msgid "Heading Background Image"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:131
+msgid "Heading Text"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:135
+msgid "Student Dashboard Settings"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:138
+#: inc/classes/class-theme-options.php:139
+msgid "Student Welcome Message"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:140
+msgid "Diplomas Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:141
+msgid "License Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:143
+msgid "Master Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:145
+msgid "Doctor Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:147
+msgid "Chaplaincy Content"
+msgstr ""
+
+#: inc/classes/class-tiu-theme.php:72
+msgid "Header Navigation"
+msgstr ""
+
+#: inc/classes/class-tiu-theme.php:73
+msgid "Footer Primary Navigation"
+msgstr ""
+
+#: inc/classes/class-tiu-theme.php:74
+msgid "Footer Secondary Navigation"
+msgstr ""
+
+#: inc/classes/class-tiu-theme.php:156
+msgid "Sidebar"
+msgstr ""
+
+#: inc/classes/class-tiu-theme.php:158
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/classes/class-user-roles-restrictions.php:37
+msgid "TIU Student"
+msgstr ""
+
+#: inc/classes/class-user-roles-restrictions.php:150
+#: inc/classes/class-user-roles-restrictions.php:153
+msgid "Go back to student dashboard"
+msgstr ""
 
 #. translators: %s: search query.
-#: search.php:22
+
+#: search.php:21
 msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:23
-msgid "Previous:"
-msgstr ""
-
-#: single.php:24
-msgid "Next:"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -175,6 +695,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
+
 #: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -187,12 +708,31 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:25
-#: template-parts/content.php:53
+#: template-parts/content-page.php:19
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:40
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-page.php:33
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+#. Theme Name of the plugin/theme
+msgid "Theological International University"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Description"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Underscores.me"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://underscores.me/"
 msgstr ""
