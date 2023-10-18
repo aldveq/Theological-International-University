@@ -172,10 +172,10 @@ class CUSTOM_POST_TYPES {
 						Field::make( 'select', 'diploma_type', __('Diploma Type', 'theological-international-university') )
 							->set_width(50)
 							->set_options( array(
-								'license' => 'License',
-								'master' => 'Master',
-								'doctor' => 'Doctor',
-								'chaplaincy' => 'Chaplaincy',
+								'license' => __('License', 'theological-international-university'),
+								'master' => __('Master', 'theological-international-university'),
+								'doctor' => __('Doctor', 'theological-international-university'),
+								'chaplaincy' => __('Chaplaincy', 'theological-international-university'),
 							) ),
 					))
 			));

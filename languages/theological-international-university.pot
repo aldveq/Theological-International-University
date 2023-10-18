@@ -489,6 +489,22 @@ msgstr ""
 msgid "Diploma Type"
 msgstr ""
 
+#: inc/classes/class-custom-post-types.php:175
+msgid "License"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:176
+msgid "Master"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:177
+msgid "Doctor"
+msgstr ""
+
+#: inc/classes/class-custom-post-types.php:178
+msgid "Chaplaincy"
+msgstr ""
+
 #: inc/classes/class-theme-options.php:27
 msgid "Theme Options"
 msgstr ""
@@ -600,6 +616,10 @@ msgstr ""
 
 #: inc/classes/class-theme-options.php:113
 msgid "Footer Copyright"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:114
+msgid "Use shortcode [year] to display the current year."
 msgstr ""
 
 #: inc/classes/class-theme-options.php:117

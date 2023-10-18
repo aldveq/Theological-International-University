@@ -111,7 +111,7 @@ class THEME_OPTIONS {
 				Field::make( 'checkbox', 'footer_disable_newsletter_section', __('Disable newsletter?', 'theological-international-university') ),
 				Field::make( 'textarea', 'footer_disclaimer_text', __('Footer Disclaimer Text', 'theological-international-university') ),
 				Field::make( 'text', 'footer_copyright_text', __( 'Footer Copyright', 'theological-international-university' ) )
-				 ->help_text('Use shortcode [year] to display the current year.')
+				 ->help_text(__('Use shortcode [year] to display the current year.', 'theological-international-university'))
 			));
 		// Blog Settings
 		Container::make( 'theme_options', __('Blog', 'theological-international-university') )
