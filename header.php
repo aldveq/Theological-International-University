@@ -95,14 +95,14 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 				if (is_user_logged_in()):
 				?>
 				<a href="<?php echo esc_url(wp_logout_url()); ?>" class="login-link" target="_self">
-					<span>LOGOUT</span>
+					<span><?php esc_html_e( 'LOGOUT', 'theological-international-university' ); ?></span>
 					<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
 				</a>
 				<?php
 				else:
 				?>
 				<a href="<?php echo esc_url(wp_login_url()); ?>" class="login-link" target="_self">
-					<span>LOGIN</span>
+					<span><?php echo esc_html_e( 'LOGIN', 'theological-international-university' ); ?></span>
 					<span class="icon"><i class="fas fa-sign-in-alt"></i></span>
 				</a>
 				<?php

@@ -36,7 +36,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 					<div class="row">
 						<div class="col">
 							<div class="section_title text-center">
-								<h1>Subscribe to newsletter</h1>
+								<h1><?php esc_html_e( 'Subscribe to newsletter', 'theological-international-university' ); ?></h1>
 							</div>
 						</div>
 					</div>
@@ -46,8 +46,8 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 							<div class="newsletter_form_container mx-auto">
 								<form action="post">
 									<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-										<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
-										<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
+										<input id="newsletter_email" class="newsletter_email" type="email" placeholder="<?php esc_attr_e('Email Address', 'theological-international-university'); ?>" required="required" data-error="Valid email is required.">
+										<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit"><?php esc_html_e('Subscribe', 'theological-international-university'); ?></button>
 									</div>
 								</form>
 							</div>
@@ -100,13 +100,14 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 						if(is_array($footer_primary_navigation_items) && count($footer_primary_navigation_items)):
 						?>
 						<div class="col-lg-3 footer_col">
-							<div class="footer_column_title">Menu</div>
+							<div class="footer_column_title"><?php esc_html_e('Menu', 'theological-international-university'); ?></div>
 							<div class="footer_column_content">
 								<ul id="footerMainNav">
 									<?php
 										foreach($footer_primary_navigation_items as $fpnav_item):
-										if(sanitize_title( $fpnav_item->title ) === 'register'
-										&& is_user_logged_in()):
+										if((sanitize_title( $fpnav_item->title ) === 'register'
+										&& is_user_logged_in()) || (sanitize_title( $fpnav_item->title ) === 'registro'
+										&& is_user_logged_in())):
 											continue;
 										endif;
 										?>
@@ -126,13 +127,14 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 						if(is_array($footer_secondary_navigation_items) && count($footer_secondary_navigation_items)):
 						?>
 						<div class="col-lg-3 footer_col">
-							<div class="footer_column_title">Usefull Links</div>
+							<div class="footer_column_title"><?php esc_html_e('Useful Links', 'theological-international-university'); ?></div>
 							<div class="footer_column_content">
 								<ul>
 									<?php
 										foreach($footer_secondary_navigation_items as $fsnav_item):
-										if(sanitize_title( $fsnav_item->title ) === 'register'
-										&& is_user_logged_in()):
+										if((sanitize_title( $fsnav_item->title ) === 'register'
+										&& is_user_logged_in()) || (sanitize_title( $fsnav_item->title ) === 'registro'
+										&& is_user_logged_in())):
 											continue;
 										endif;
 										?>
@@ -150,7 +152,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 					<!-- Footer Column - Contact -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Contact</div>
+						<div class="footer_column_title"><?php esc_html_e('Contact', 'theological-international-university'); ?></div>
 						<div class="footer_column_content">
 							<ul>
 								<li class="footer_contact_item">
