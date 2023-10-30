@@ -66,8 +66,9 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 							<ul class="main_nav_list" id="headerMainNav">
 								<?php
 									foreach($header_navigation_items as $hnav_item):
-									if(sanitize_title( $hnav_item->title ) === 'register'
-									&& is_user_logged_in()):
+									if((sanitize_title( $hnav_item->title ) === 'register'
+									&& is_user_logged_in()) || (sanitize_title( $hnav_item->title ) === 'registro'
+									&& is_user_logged_in())):
 										continue;
 									endif;
 									?>
@@ -132,6 +133,11 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 					<ul class="menu_list menu_mm" id="headerMainMobileNav">
 						<?php
 							foreach($header_navigation_items as $hnav_item):
+							if((sanitize_title( $hnav_item->title ) === 'register'
+							&& is_user_logged_in()) || (sanitize_title( $hnav_item->title ) === 'registro'
+							&& is_user_logged_in())):
+								continue;
+							endif;
 							?>
 							<li class="menu_item menu_mm"><a href="<?php echo esc_url($hnav_item->url); ?>"><?php echo esc_html($hnav_item->title); ?></a></li>
 							<?php
