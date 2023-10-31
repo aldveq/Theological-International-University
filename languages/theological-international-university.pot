@@ -35,6 +35,19 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: header.php:83
+#: header.php:151
+msgid "Dashboard"
+msgstr ""
+
+#: header.php:157
+msgid "Logout"
+msgstr ""
+
+#: header.php:161
+msgid "Login"
+msgstr ""
+
 #: header.php:98
 msgid "LOGOUT"
 msgstr ""

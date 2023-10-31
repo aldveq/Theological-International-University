@@ -80,7 +80,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 								<?php
 									if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
 									?>
-									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>" target="_self">Dashboard</a></li>
+									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>" target="_self"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
 									<?php
 									endif;
 								?>
@@ -148,17 +148,17 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 
 							if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
 							?>
-							<li class="menu_item menu_mm"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>">Dashboard</a></li>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
 							<?php
 							endif;
 
 							if (is_user_logged_in()):
 							?>
-							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_logout_url()); ?>">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php esc_html_e('Logout', 'theological-international-university'); ?> <i class="fas fa-sign-out-alt"></i></a></li>
 							<?php
 							else:
 							?>
-							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_login_url()); ?>">Login <i class="fas fa-sign-in-alt"></i></a></li>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url(wp_login_url()); ?>"><?php esc_html_e('Login', 'theological-international-university'); ?> <i class="fas fa-sign-in-alt"></i></a></li>
 							<?php
 							endif;
 						?>
