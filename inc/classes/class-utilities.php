@@ -19,6 +19,7 @@ class Utilities
 
 	protected function setup_hooks() {
 		add_action( 'init', [$this, 'setup_shortcode_current_year'] );
+		add_action( 'init', [$this, 'setup_shortcode_polylang_switcher'] );
 	}
 
 	public function get_menu_id_by_location($menu_location)
@@ -41,8 +42,31 @@ class Utilities
 		add_shortcode( 'year', [$this, 'shortcode_get_current_year'] );
 	}
 
+	public function setup_shortcode_polylang_switcher() {
+		add_shortcode( 'polylang_switcher_control', [$this, 'front_polylang_switcher'] );
+	}
+
 	public function shortcode_get_current_year() {
 		return current_time( 'Y' );
+	}
+
+	public function front_polylang_switcher() {
+		$output = '';
+		if ( function_exists( 'pll_the_languages' ) ) {
+			$args   = [
+				'show_flags' => 1,
+				'show_names' => 1,
+				'display_names_as' => 'slug',
+				'echo'       => 0,
+			];
+			$lang = pll_the_languages( $args ); 
+
+			$output = "
+				<div class='polylang-switcher-wrapper'>
+					$lang
+				</div>";
+		}
+		return $output;
 	}
 
 	public function highlight_text_with_primary_color( $text ) {

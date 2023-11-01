@@ -236,6 +236,7 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 				</div>
 			</div>
 		</div>
+		<?php echo do_shortcode( '[polylang_switcher_control]' ); ?>
 	</footer>
 </div><!-- #page -->
 
