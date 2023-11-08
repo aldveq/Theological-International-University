@@ -2,6 +2,7 @@
 /**
  * The template for displaying the student registration form
  *
+ * Template Name: Student Registration
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,7 +13,9 @@ get_header();
 
  // Variables
  $srf_bg_image = carbon_get_theme_option('srf_bg_image');
- $srf_heading_text = carbon_get_theme_option('srf_heading_text');
+ $srf_heading_text = pll_current_language('slug') === 'en' ? 
+ carbon_get_theme_option('srf_heading_text') : 
+ carbon_get_theme_option('srf_heading_text_es');
 ?>
 	<main id="primary" class="site-main student-registration-form-wrapper">
 		<div class="home student-registration-form-wrapper__heading">

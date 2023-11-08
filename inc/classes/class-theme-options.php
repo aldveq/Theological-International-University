@@ -102,39 +102,62 @@ class THEME_OPTIONS {
 		Container::make( 'theme_options', __('Header', 'theological-international-university'))
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
+				Field::make( 'separator', 'header_copyright_separator_en', __('Texts in English', 'theological-international-university') )
+					->set_width( 50 ),
+				Field::make( 'separator', 'header_copyright_separator_es', __('Texts in Spanish', 'theological-international-university') )
+					->set_width( 50 ),
 				Field::make( 'text', 'header_copyright_text', __('Header Copyright', 'theological-international-university') )
+					->set_width( 50 ),
+				Field::make( 'text', 'header_copyright_text_es', __('Header Copyright', 'theological-international-university') )
+					->set_width( 50 )
 			));
 		// Footer Settings
 		Container::make( 'theme_options', __('Footer', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
 				Field::make( 'checkbox', 'footer_disable_newsletter_section', __('Disable newsletter?', 'theological-international-university') ),
+				Field::make( 'separator', 'footer_text_english', __('Texts in English', 'theological-international-university') ),
 				Field::make( 'textarea', 'footer_disclaimer_text', __('Footer Disclaimer Text', 'theological-international-university') ),
 				Field::make( 'text', 'footer_copyright_text', __( 'Footer Copyright', 'theological-international-university' ) )
-				 ->help_text(__('Use shortcode [year] to display the current year.', 'theological-international-university'))
+				 ->help_text(__('Use shortcode [year] to display the current year.', 'theological-international-university')),
+				Field::make( 'separator', 'footer_text_spanish', __('Texts in Spanish', 'theological-international-university') ),
+				Field::make( 'textarea', 'footer_disclaimer_text_es', __('Footer Disclaimer Text', 'theological-international-university') ),
+				Field::make( 'text', 'footer_copyright_text_es', __( 'Footer Copyright', 'theological-international-university' ) )
+				 ->help_text(__('Use shortcode [year] to display the current year.', 'theological-international-university')),
 			));
 		// Blog Settings
 		Container::make( 'theme_options', __('Blog', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
-				Field::make( 'image', 'blog_bg_image', __('Blog Background', 'theological-international-university') )
+				Field::make( 'image', 'blog_bg_image', __('Blog Background', 'theological-international-university') ),
+				Field::make( 'separator', 'blog_separator_en', __('Texts in English', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'separator', 'blog_separator_es', __('Texts in Spanish', 'theological-international-university') )
 					->set_width(50),
 				Field::make( 'text', 'blog_heading_text', __('Blog Heading Text', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'text', 'blog_heading_text_es', __('Blog Heading Text', 'theological-international-university') )
 					->set_width(50),
 			));
 		// Student Registration Form Settings
 		Container::make( 'theme_options', __('Student Registration Form Settings', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
-				Field::make( 'image', 'srf_bg_image', __('Heading Background Image', 'theological-international-university') )
+				Field::make( 'image', 'srf_bg_image', __('Heading Background Image', 'theological-international-university') ),
+				Field::make( 'separator', 'srf_separtor_en', __('Texts in English', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'separator', 'srf_separtor_es', __('Texts in Spanish', 'theological-international-university') )
 					->set_width(50),
 				Field::make( 'text', 'srf_heading_text', __('Heading Text', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'text', 'srf_heading_text_es', __('Heading Text', 'theological-international-university') )
 					->set_width(50),
 			));
 		// Student Dashboard Settings
 		Container::make( 'theme_options', __('Student Dashboard Settings', 'theological-international-university') )
 			->set_page_parent($main_theme_options_container)
 			->add_fields(array(
+				Field::make( 'separator', 'sds_separator_en', __('Texts in English', 'theological-international-university') ),
 				Field::make( 'separator', 'welcome_message_separator', __( 'Student Welcome Message', 'theological-international-university' ) ),
 				Field::make( 'rich_text', 'student_welcome_message', __('Student Welcome Message', 'theological-international-university') ),
 				Field::make( 'separator', 'diploma_content_separator', __( 'Diplomas Content', 'theological-international-university' ) ),
@@ -145,6 +168,18 @@ class THEME_OPTIONS {
 				Field::make( 'rich_text', 'diploma_doctor_content', __('Doctor Content', 'theological-international-university') )
 					->set_width(50),
 				Field::make( 'rich_text', 'diploma_chaplaincy_content', __('Chaplaincy Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'separator', 'sds_separator_es', __('Texts in Spanish', 'theological-international-university') ),
+				Field::make( 'separator', 'welcome_message_separator_es', __( 'Student Welcome Message', 'theological-international-university' ) ),
+				Field::make( 'rich_text', 'student_welcome_message_es', __('Student Welcome Message', 'theological-international-university') ),
+				Field::make( 'separator', 'diploma_content_separator_es', __( 'Diplomas Content', 'theological-international-university' ) ),
+				Field::make( 'rich_text', 'diploma_license_content_es', __('License Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'rich_text', 'diploma_master_content_es', __('Master Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'rich_text', 'diploma_doctor_content_es', __('Doctor Content', 'theological-international-university') )
+					->set_width(50),
+				Field::make( 'rich_text', 'diploma_chaplaincy_content_es', __('Chaplaincy Content', 'theological-international-university') )
 					->set_width(50),
 			));
 	}

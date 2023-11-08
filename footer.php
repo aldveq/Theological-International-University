@@ -15,8 +15,12 @@ $footer_primary_navigation_items = $utilities->get_menu_items_by_location( 'foot
 $footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'footer-secondary-navigation' );
 $is_footer_newsletter_section_disabled = carbon_get_theme_option('footer_disable_newsletter_section');
 $no_newsletter_section = $is_footer_newsletter_section_disabled ? 'no-newsletter' : '';
-$footer_disclaimer_text = carbon_get_theme_option('footer_disclaimer_text');
-$footer_copyright_text = carbon_get_theme_option('footer_copyright_text');
+$footer_disclaimer_text = pll_current_language('slug') === 'en' ? 
+carbon_get_theme_option('footer_disclaimer_text') : 
+carbon_get_theme_option('footer_disclaimer_text_es');
+$footer_copyright_text = pll_current_language('slug') === 'en' ? 
+carbon_get_theme_option('footer_copyright_text') : 
+carbon_get_theme_option('footer_copyright_text_es');
 $tiu_label_address = carbon_get_theme_option('tiu_label_address');
 $tiu_address_link = carbon_get_theme_option('tiu_address_link');
 $tiu_primary_email_label = carbon_get_theme_option('tiu_primary_email_label');

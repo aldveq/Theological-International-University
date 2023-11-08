@@ -15,7 +15,9 @@ $header_navigation_items = $utilities->get_menu_items_by_location( 'header-navig
 $global_primary_phone_label = !empty(carbon_get_theme_option('tiu_primary_phone_label')) ? carbon_get_theme_option('tiu_primary_phone_label') : '';
 $global_primary_phone_number = !empty(carbon_get_theme_option('tiu_primary_phone')) ? carbon_get_theme_option('tiu_primary_phone') : '';
 $global_social_data = carbon_get_theme_option('socials_data');
-$global_header_copyright_text = carbon_get_theme_option('header_copyright_text');
+$global_header_copyright_text = pll_current_language('slug') === 'en' ? 
+carbon_get_theme_option('header_copyright_text') : 
+carbon_get_theme_option('header_copyright_text_es');
 
 // User Data
 $current_user = wp_get_current_user();

@@ -9,7 +9,9 @@
 
  // Variables
  $blog_bg_image = carbon_get_theme_option('blog_bg_image');
- $blog_heading_text = carbon_get_theme_option('blog_heading_text');
+ $blog_heading_text = pll_current_language('slug') === 'en' ? 
+ carbon_get_theme_option('blog_heading_text') : 
+ carbon_get_theme_option('blog_heading_text_es');
 ?>
 
 <div class="super_container">
