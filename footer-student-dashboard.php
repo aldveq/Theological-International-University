@@ -8,6 +8,7 @@
  */
 ?>
 
+  <?php echo do_shortcode( '[polylang_switcher_control]' ); ?>
   <?php wp_footer(); ?>
 
 </body>

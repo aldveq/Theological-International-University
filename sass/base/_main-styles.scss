@@ -1369,46 +1369,6 @@ input:last-of-type {
 	&.no-newsletter {
 		padding-top: 0;
 	}
-
-	.polylang-switcher-wrapper {
-		display       : flex;
-		flex-direction: column;
-		position      : fixed;
-		z-index       : 10;
-		right         : 0;
-		top           : 50%;
-		transform     : translateY(-50%);
-
-		.lang-item {
-			list-style      : none;
-			padding         : 8px;
-			background-color: var(--nine-color);
-			opacity         : 0.4;
-			transition      : all ease-in-out 0.3s;
-
-			a span {
-				text-transform: uppercase;
-				color         : var(--sixth-color);
-			}
-
-			&:hover {
-				opacity: 0.8;
-
-				a span {
-					color: var(--sixth-color);
-				}
-			}
-
-			&.current-lang {
-				background-color: var(--sixth-color);
-				opacity         : 1;
-
-				a span {
-					color: var(--third-color);
-				}
-			}
-		}
-	}
 }
 
 .footer .section_title h1 {

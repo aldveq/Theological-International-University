@@ -20461,8 +20461,14 @@ ul {
 }
 
 // Start - Imports
+// Vendors
 @import "./vendors/simplebar";
 @import "./vendors/tabler-icons";
+
+// Components
+@import "../sass/components/polylang-switcher";
+
+// Pages
 @import "./pages/student-diploma";
 @import "./pages/student-profile";
 @import "./pages/student-dashboard";
