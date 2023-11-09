@@ -30,7 +30,7 @@
 					<span class="hide-menu">Navigation</span>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-dashboard')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-dashboard')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-layout-dashboard"></i>
 					</span>

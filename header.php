@@ -82,7 +82,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 								<?php
 									if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
 									?>
-									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>" target="_self"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
+									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/panel-estudiantes/'));?>" target="_self"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
 									<?php
 									endif;
 								?>

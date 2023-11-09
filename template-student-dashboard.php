@@ -2,6 +2,8 @@
 /**
  * The template for the student dashboard
  *
+ * Template Name: Student Dashboard
+ *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -14,7 +16,9 @@
 
 get_header('student-dashboard');
 
-$student_welcome_message = carbon_get_theme_option('student_welcome_message');
+$student_welcome_message =pll_current_language('slug') === 'en' ?
+carbon_get_theme_option('student_welcome_message') :
+carbon_get_theme_option('student_welcome_message_es');
 ?>
 <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -32,7 +36,7 @@ $student_welcome_message = carbon_get_theme_option('student_welcome_message');
       <div class="container-fluid student-dashboard-wrapper">
         <div class="card">
           <div class="card-body">
-			<h1 class="display-6 mb-4">Dashboard</h1>
+			<h1 class="display-6 mb-4"><?php esc_html_e( 'Dashboard', 'theological-international-university' ); ?></h1>
 			<?php 
 				if(!empty($student_welcome_message)):
 					echo wp_kses_post(wpautop($student_welcome_message, true)); 
