@@ -58,7 +58,7 @@ class USER_ROLES_RESTRICTIONS {
 			if ($user->has_cap('administrator')) {
 				$url = admin_url();
 			} elseif ($user->has_cap('tiu_student')) {
-				$url = home_url('/student-dashboard/');
+				$url = home_url('/panel-estudiantes/');
 			}
 		}
 		return $url;
