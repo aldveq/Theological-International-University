@@ -27,14 +27,14 @@
 			<ul id="sidebarnav">
 				<li class="nav-small-cap">
 					<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-					<span class="hide-menu">Navigation</span>
+					<span class="hide-menu"><?php esc_html_e('Navigation', 'theological-international-university'); ?></span>
 				</li>
 				<li class="sidebar-item">
 					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-dashboard')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-layout-dashboard"></i>
 					</span>
-					<span class="hide-menu">Dashboard</span>
+					<span class="hide-menu"><?php esc_html_e( 'Home', 'theological-international-university' ); ?></span>
 					</a>
 				</li>
 				<li class="sidebar-item">
@@ -42,7 +42,7 @@
 					<span>
 						<i class="ti ti-certificate"></i>
 					</span>
-					<span class="hide-menu">Diploma</span>
+					<span class="hide-menu"><?php esc_html_e( 'Diploma', 'theological-international-university' )?></span>
 					</a>
 				</li>
 				<li class="sidebar-item">
@@ -50,19 +50,19 @@
 					<span>
 						<i class="ti ti-user"></i>
 					</span>
-					<span class="hide-menu">My Profile</span>
+					<span class="hide-menu"><?php esc_html_e( 'My Profile', 'theological-international-university' )?></span>
 					</a>
 				</li>
 				<li class="nav-small-cap">
 					<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-					<span class="hide-menu">Quick Links</span>
+					<span class="hide-menu"><?php esc_html_e( 'Quick Links', 'theological-international-university' )?></span>
 				</li>
 				<li class="sidebar-item">
 					<a class="sidebar-link" href="<?php echo esc_url(site_url()); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-device-desktop"></i>
 					</span>
-					<span class="hide-menu">View Site</span>
+					<span class="hide-menu"><?php esc_html_e( 'View Site', 'theological-international-university' )?></span>
 					</a>
 				</li>
 			</ul>

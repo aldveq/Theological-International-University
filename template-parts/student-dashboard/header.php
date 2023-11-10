@@ -34,7 +34,7 @@ $current_user_avatar = get_avatar(
 		</ul>
 		<div class="navbar-collapse justify-content-end px-0" id="navbarNav">
 			<div class="d-flex justify-content-start align-items-center">
-				<p class="fw-light mb-0">Welcome <p class="fw-semibold mb-0 ms-1"><?php echo esc_html( $current_user->display_name ); ?></p></p>
+				<p class="fw-light mb-0"><?php printf(esc_html__('Welcome %s', 'theological-international-university'), '<p class="fw-semibold mb-0 ms-1">' . $current_user->display_name . '</p>')?></p>
 				<ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
 					<li class="nav-item dropdown">
 						<a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
@@ -45,9 +45,9 @@ $current_user_avatar = get_avatar(
 							<div class="message-body">
 								<a href="<?php echo esc_url(admin_url( 'profile.php' )); ?>" class="d-flex align-items-center gap-2 dropdown-item">
 									<i class="ti ti-user fs-6"></i>
-									<p class="mb-0 fs-3">My Profile</p>
+									<p class="mb-0 fs-3"><?php esc_html_e('My Profile', 'theological-international-university'); ?></p>
 								</a>
-								<a href="<?php echo esc_url(wp_logout_url()); ?>" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+								<a href="<?php echo esc_url(wp_logout_url()); ?>" class="btn btn-outline-primary mx-3 mt-2 d-block"><?php esc_html_e('Logout', 'theological-international-university'); ?></a>
 								</div>
 						</div>
 					</li>

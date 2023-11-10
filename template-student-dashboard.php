@@ -36,7 +36,7 @@ carbon_get_theme_option('student_welcome_message_es');
       <div class="container-fluid student-dashboard-wrapper">
         <div class="card">
           <div class="card-body">
-			<h1 class="display-6 mb-4"><?php esc_html_e( 'Dashboard', 'theological-international-university' ); ?></h1>
+			<h1 class="display-6 mb-4"><?php esc_html_e( 'Student Dashboard', 'theological-international-university' ); ?></h1>
 			<?php 
 				if(!empty($student_welcome_message)):
 					echo wp_kses_post(wpautop($student_welcome_message, true)); 
