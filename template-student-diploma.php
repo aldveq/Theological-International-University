@@ -2,6 +2,8 @@
 /**
  * The template for the student diploma page
  *
+ * Template Name: Student Diploma
+ *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -19,10 +21,18 @@ $post_types_queries_data = \TIU_THEME\Inc\POST_TYPES_QUERIES::get_instance();
 $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student_user($current_user->ID);
 
 //Diplomas content variables
-$diploma_license_content = carbon_get_theme_option('diploma_license_content');
-$diploma_master_content = carbon_get_theme_option('diploma_master_content');
-$diploma_doctor_content = carbon_get_theme_option('diploma_doctor_content');
-$diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_content');
+$diploma_license_content = pll_current_language('slug') === 'en' ? 
+carbon_get_theme_option('diploma_license_content') 
+: carbon_get_theme_option('diploma_license_content_es');
+$diploma_master_content = pll_current_language('slug') === 'en' ?
+carbon_get_theme_option('diploma_master_content')
+: carbon_get_theme_option('diploma_master_content_es');
+$diploma_doctor_content = pll_current_language('slug') === 'en' ?
+carbon_get_theme_option('diploma_doctor_content')
+: carbon_get_theme_option('diploma_doctor_content_es');
+$diploma_chaplaincy_content = pll_current_language('slug') === 'en' ?
+carbon_get_theme_option('diploma_chaplaincy_content')
+: carbon_get_theme_option('diploma_chaplaincy_content_es');
 ?>
 <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -41,7 +51,7 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 
 	  	<div class="row">
 			<div class="col-12">
-				<h1 class="display-6 mb-5">My Diploma(s)</h1>
+				<h1 class="display-6 mb-5"><?php esc_html_e( 'My Diploma(s)', 'theological-international-university' ); ?></h1>
 
 				<?php
 					if (is_array($diploma_by_student_user_data) 
@@ -80,7 +90,7 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 												<div class="card m-0" style="width: 16rem;">
 													<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
 													<div class="card-body d-flex justify-content-center align-items-center py-4">
-														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma"><?php esc_html_e('See Diploma', 'theological-international-university'); ?></button>
 													</div>
 												</div>
 											</div>
@@ -125,7 +135,7 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 
 													<!-- Modal footer -->
 													<div class="modal-footer">
-														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal"><?php esc_html_e('Close', 'theological-international-university'); ?></button>
 													</div>
 												</div>
 											</div>
@@ -140,7 +150,7 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 												<div class="card m-0" style="width: 16rem;">
 													<img src="<?php echo esc_url(wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false )); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr($current_user->display_name); ?>">
 													<div class="card-body d-flex justify-content-center align-items-center py-4">
-														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma">See Diploma</button>
+														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr(ucfirst( $ds_data['diploma_type'] )); ?>Diploma"><?php esc_html_e('See Diploma', 'theological-international-university'); ?></button>
 													</div>
 												</div>
 											</div>
@@ -185,7 +195,7 @@ $diploma_chaplaincy_content = carbon_get_theme_option('diploma_chaplaincy_conten
 
 													<!-- Modal footer -->
 													<div class="modal-footer">
-														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal"><?php esc_html_e('Close', 'theological-international-university'); ?></button>
 													</div>
 												</div>
 											</div>

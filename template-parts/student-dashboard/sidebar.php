@@ -30,7 +30,7 @@
 					<span class="hide-menu"><?php esc_html_e('Navigation', 'theological-international-university'); ?></span>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-dashboard')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('panel-estudiantes')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-layout-dashboard"></i>
 					</span>
@@ -38,7 +38,7 @@
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-diploma') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-diploma')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-diploma') || is_page('estudiante-certificaciones') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('estudiante-certificaciones')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-certificate"></i>
 					</span>

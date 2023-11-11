@@ -16,7 +16,7 @@
 
 get_header('student-dashboard');
 
-$student_welcome_message =pll_current_language('slug') === 'en' ?
+$student_welcome_message = pll_current_language('slug') === 'en' ?
 carbon_get_theme_option('student_welcome_message') :
 carbon_get_theme_option('student_welcome_message_es');
 ?>

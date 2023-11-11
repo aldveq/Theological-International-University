@@ -783,6 +783,20 @@ msgstr ""
 msgid "View Site"
 msgstr ""
 
+#: template-student-diploma.php:54
+msgid "My Diploma(s)"
+msgstr ""
+
+#: template-student-diploma.php:93
+#: template-student-diploma.php:153
+msgid "See Diploma"
+msgstr ""
+
+#: template-student-diploma.php:138
+#: template-student-diploma.php:198
+msgid "Close"
+msgstr ""
+
 #. translators: %s: search query.
 
 #: search.php:21

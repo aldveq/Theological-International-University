@@ -35,7 +35,9 @@ class ASSETS {
 		}
 
 		if ((!is_admin() && is_page('student-dashboard'))
-		|| !is_admin() && is_page('panel-estudiantes')) {
+		|| (!is_admin() && is_page('panel-estudiantes'))
+		|| (!is_admin() && is_page('student-diploma'))
+		|| (!is_admin() && is_page('estudiante-certificaciones'))) {
 			wp_deregister_script('jquery');
 			wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', false, '3.4.0', true);
 			wp_enqueue_script('jquery');
@@ -49,7 +51,8 @@ class ASSETS {
 		
 		if ( is_page('student-dashboard') 
 		|| is_page('panel-estudiantes')
-		|| is_page('student-diploma') 
+		|| is_page('student-diploma')
+		|| is_page('estudiante-certificaciones') 
 		|| is_page('student-profile') ) {
 			// Styles
 			wp_enqueue_style( 'tiu-style-bundle-sd', get_template_directory_uri() . '/build-student-dashboard/style-index.css', array(), _S_VERSION );
