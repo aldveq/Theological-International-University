@@ -792,9 +792,26 @@ msgstr ""
 msgid "See Diploma"
 msgstr ""
 
+#: template-student-diploma.php:124
+#: template-student-diploma.php:184
+msgid "My %s"
+msgstr ""
+
 #: template-student-diploma.php:138
 #: template-student-diploma.php:198
 msgid "Close"
+msgstr ""
+
+#: template-student-diploma.php:215
+msgid "Oh, no!"
+msgstr ""
+
+#: template-student-diploma.php:216
+msgid "You have not taken a course yet!"
+msgstr ""
+
+#: template-student-diploma.php:218
+msgid "Please, consider taking one of our great courses. <br> Once your chosen course is completed, you will see your diploma here."
 msgstr ""
 
 #. translators: %s: search query.

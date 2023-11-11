@@ -76,4 +76,33 @@ class Utilities
 			$text
 		);
 	}
+
+	public function get_diploma_spanish_tranlated_string( $diploma_string ) {
+		switch ($diploma_string):
+			case 'license':
+				if (pll_current_language('slug') === 'en'):
+					return ucfirst($diploma_string);
+				else:
+					return 'Licenciatura';
+				endif;
+			case 'master':
+				if (pll_current_language('slug') === 'en'):
+					return ucfirst($diploma_string);
+				else:
+					return 'Maestría';
+				endif;
+			case 'doctor':
+				if (pll_current_language('slug') === 'en'):
+					return ucfirst($diploma_string);
+				else:
+					return 'Doctorado';
+				endif;
+			default:
+				if (pll_current_language('slug') === 'en'):
+					return ucfirst($diploma_string);
+				else:
+					return 'Capellanía';
+				endif;
+		endswitch;
+	}
 }

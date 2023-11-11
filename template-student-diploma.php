@@ -18,6 +18,7 @@ get_header('student-dashboard');
 
 $current_user = wp_get_current_user();
 $post_types_queries_data = \TIU_THEME\Inc\POST_TYPES_QUERIES::get_instance();
+$utilities = \TIU_THEME\Inc\Utilities::get_instance();
 $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student_user($current_user->ID);
 
 //Diplomas content variables
@@ -64,13 +65,13 @@ carbon_get_theme_option('diploma_chaplaincy_content')
 									if($nav_item_counter === 0):
 									?>
 									<li class="nav-item" role="presentation">
-										<button class="nav-link active" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" type="button" role="tab" aria-controls="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" aria-selected="true"><?php echo esc_html(ucfirst( $ds_data['diploma_type'] )); ?></button>
+										<button class="nav-link active" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" type="button" role="tab" aria-controls="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" aria-selected="true"><?php echo esc_html($utilities->get_diploma_spanish_tranlated_string($ds_data['diploma_type'])); ?></button>
 									</li>
 									<?php
 									else:
 									?>
 									<li class="nav-item" role="presentation">
-										<button class="nav-link" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" type="button" role="tab" aria-controls="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" aria-selected="false"><?php echo esc_html(ucfirst( $ds_data['diploma_type'] )); ?></button>
+										<button class="nav-link" id="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab" data-bs-toggle="tab" data-bs-target="#<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" type="button" role="tab" aria-controls="<?php echo esc_attr(sanitize_title( $ds_data['diploma_type'] )); ?>-tab-pane" aria-selected="false"><?php echo esc_html($utilities->get_diploma_spanish_tranlated_string($ds_data['diploma_type'])); ?></button>
 									</li>
 									<?php
 									endif;
@@ -120,7 +121,7 @@ carbon_get_theme_option('diploma_chaplaincy_content')
 												<div class="modal-content">
 													<!-- Modal Header -->
 													<div class="modal-header">
-														<h4 class="modal-title">My <?php echo esc_html(ucfirst( $ds_data['diploma_type'] )); ?></h4>
+														<h4 class="modal-title"><?php printf(esc_html__( 'My %s', 'theological-international-university' ), $utilities->get_diploma_spanish_tranlated_string($ds_data['diploma_type'])); ?></h4>
 														<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 													</div>
 
@@ -180,7 +181,7 @@ carbon_get_theme_option('diploma_chaplaincy_content')
 												<div class="modal-content">
 													<!-- Modal Header -->
 													<div class="modal-header">
-														<h4 class="modal-title">My <?php echo esc_html(ucfirst( $ds_data['diploma_type'] )); ?></h4>
+														<h4 class="modal-title"><?php printf(esc_html__( 'My %s', 'theological-international-university' ), $utilities->get_diploma_spanish_tranlated_string($ds_data['diploma_type'])); ?></h4>
 														<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 													</div>
 
@@ -211,10 +212,10 @@ carbon_get_theme_option('diploma_chaplaincy_content')
 					else:
 					?>
 						<div class="alert alert-warning" role="alert">
-							<h4 class="alert-heading">Oh, no!</h4>
-							<p>You haven't taken a course yet!</p>
+							<h4 class="alert-heading"><?php esc_html_e('Oh, no!', 'theological-international-university'); ?></h4>
+							<p><?php esc_html_e('You have not taken a course yet!', 'theological-international-university'); ?></p>
 							<hr>
-  							<p class="mb-0">Please, consider taking one of our great courses. <br> Once your chosen course is completed, you will see your diploma here.</p>
+  							<p class="mb-0"><?php echo __('Please, consider taking one of our great courses. <br> Once your chosen course is completed, you will see your diploma here.', 'theological-international-university'); ?></p>
 						</div>
 					<?php
 					endif;
