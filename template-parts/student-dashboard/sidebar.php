@@ -7,6 +7,9 @@
 *
 * @package Theological_International_University
 */
+
+// Variables
+$is_page_in_english = pll_current_language('slug')  === 'en' ? true : false;
 ?>
 
 <!-- Sidebar Start -->
@@ -14,7 +17,7 @@
 	<!-- Sidebar scroll-->
 	<div>
 		<div class="brand-logo d-flex align-items-center justify-content-between">
-			<a href="<?php echo esc_url(home_url('student-dashboard')); ?>" class="text-nowrap logo-img">
+			<a href="<?php echo esc_url($is_page_in_english ? home_url('student-dashboard') : home_url('panel-estudiantes')); ?>" class="text-nowrap logo-img">
 			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/tiu-logo.svg" width="180" alt="" />
 			</a>
 			<div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -30,7 +33,7 @@
 					<span class="hide-menu"><?php esc_html_e('Navigation', 'theological-international-university'); ?></span>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('panel-estudiantes')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-dashboard') || is_page('panel-estudiantes') ? 'active' : ''); ?>" href="<?php echo esc_url($is_page_in_english ? site_url('student-dashboard') : site_url('panel-estudiantes')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-layout-dashboard"></i>
 					</span>
@@ -38,7 +41,7 @@
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-diploma') || is_page('estudiante-certificaciones') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('estudiante-certificaciones')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-diploma') || is_page('estudiante-certificaciones') ? 'active' : ''); ?>" href="<?php echo esc_url($is_page_in_english ? site_url('student-diploma') : site_url('estudiante-certificaciones')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-certificate"></i>
 					</span>
@@ -46,11 +49,11 @@
 					</a>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link <?php echo esc_attr(is_page('student-profile') ? 'active' : ''); ?>" href="<?php echo esc_url(site_url('student-profile')); ?>" aria-expanded="false">
+					<a class="sidebar-link <?php echo esc_attr(is_page('student-profile') || is_page('estudiante-perfil') ? 'active' : ''); ?>" href="<?php echo esc_url($is_page_in_english ? site_url('student-profile') : site_url('estudiante-perfil')); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-user"></i>
 					</span>
-					<span class="hide-menu"><?php esc_html_e( 'My Profile', 'theological-international-university' )?></span>
+					<span class="hide-menu"><?php esc_html_e( 'My Profile', 'theological-international-university' ); ?></span>
 					</a>
 				</li>
 				<li class="nav-small-cap">
@@ -58,7 +61,7 @@
 					<span class="hide-menu"><?php esc_html_e( 'Quick Links', 'theological-international-university' )?></span>
 				</li>
 				<li class="sidebar-item">
-					<a class="sidebar-link" href="<?php echo esc_url(site_url()); ?>" aria-expanded="false">
+					<a class="sidebar-link" href="<?php echo esc_url($is_page_in_english ? site_url() . '/en/home' : site_url()); ?>" aria-expanded="false">
 					<span>
 						<i class="ti ti-device-desktop"></i>
 					</span>

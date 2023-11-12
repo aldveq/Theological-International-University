@@ -20,6 +20,7 @@ $current_user_avatar = get_avatar(
 		'class' => 'rounded-circle'
 	), 
 );
+$is_page_in_english = pll_current_language('slug')  === 'en' ? true : false;
 ?>
 
 <!--  Header Start -->
@@ -43,7 +44,7 @@ $current_user_avatar = get_avatar(
 						</a>
 						<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
 							<div class="message-body">
-								<a href="<?php echo esc_url(admin_url( 'profile.php' )); ?>" class="d-flex align-items-center gap-2 dropdown-item">
+								<a href="<?php echo esc_url($is_page_in_english ? site_url( 'student-profile' ) : site_url( 'estudiante-perfil' )); ?>" class="d-flex align-items-center gap-2 dropdown-item">
 									<i class="ti ti-user fs-6"></i>
 									<p class="mb-0 fs-3"><?php esc_html_e('My Profile', 'theological-international-university'); ?></p>
 								</a>

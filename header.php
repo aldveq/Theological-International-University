@@ -18,6 +18,7 @@ $global_social_data = carbon_get_theme_option('socials_data');
 $global_header_copyright_text = pll_current_language('slug') === 'en' ? 
 carbon_get_theme_option('header_copyright_text') : 
 carbon_get_theme_option('header_copyright_text_es');
+$is_page_in_english = pll_current_language('slug')  === 'en' ? true : false;
 
 // User Data
 $current_user = wp_get_current_user();
@@ -82,7 +83,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 								<?php
 									if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
 									?>
-									<li class="main_nav_item"><a href="<?php echo esc_url(home_url('/panel-estudiantes/'));?>" target="_self"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
+									<li class="main_nav_item"><a href="<?php echo esc_url($is_page_in_english ? home_url('/student-dashboard/') : home_url('/panel-estudiantes/'));?>" target="_self"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
 									<?php
 									endif;
 								?>
@@ -150,7 +151,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 
 							if(is_user_logged_in() && $current_user_rol == 'tiu_student'):
 							?>
-							<li class="menu_item menu_mm"><a href="<?php echo esc_url(home_url('/student-dashboard/'));?>"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
+							<li class="menu_item menu_mm"><a href="<?php echo esc_url($is_page_in_english ? home_url('/student-dashboard/') : home_url('/panel-estudiantes/'));?>"><?php esc_html_e('Dashboard', 'theological-international-university'); ?></a></li>
 							<?php
 							endif;
 
