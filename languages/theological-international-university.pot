@@ -515,6 +515,22 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
+#: inc/classes/class-theme-options.php:105
+#: inc/classes/class-theme-options.php:119
+#: inc/classes/class-theme-options.php:133
+#: inc/classes/class-theme-options.php:147
+#: inc/classes/class-theme-options.php:160
+msgid "Texts in English"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:107
+#: inc/classes/class-theme-options.php:123
+#: inc/classes/class-theme-options.php:135
+#: inc/classes/class-theme-options.php:149
+#: inc/classes/class-theme-options.php:172
+msgid "Texts in Spanish"
+msgstr ""
+
 #: inc/classes/class-custom-post-types.php:152
 msgid "Diploma Information"
 msgstr ""
