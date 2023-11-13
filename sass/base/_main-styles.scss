@@ -781,8 +781,8 @@ section {
 	-ms-transform    : translateY(-50%);
 	-o-transform     : translateY(-50%);
 	transform        : translateY(calc(-50% + 30px));
-	width            : 58px;
-	height           : 58px;
+	width            : 42px;
+	height           : 42px;
 	background       : var(--third-color);
 	z-index          : 9;
 	cursor           : pointer;
@@ -794,6 +794,10 @@ section {
 
 .hero_slider_nav:hover span {
 	color: var(--third-color);
+
+	i {
+		color: var(--third-color);
+	}
 }
 
 .hero_slider_nav span {
@@ -803,6 +807,15 @@ section {
 	font-weight   : 700;
 	color         : #121212;
 	line-height   : 1;
+
+	i {
+		width      : 22px;
+		height     : 22px;
+		color      : var(--sixth-color);
+		font-size  : 16px;
+		text-align : center;
+		line-height: 1.4;
+	}
 }
 
 .hero_slider_left {

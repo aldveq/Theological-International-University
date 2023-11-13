@@ -37,8 +37,8 @@
 			endif;
 		?>
 
-		<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
-		<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
+		<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200"><i class="fas fa-chevron-left"></i></span></div>
+		<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200"><i class="fas fa-chevron-right"></i></span></div>
 	</div>
 </div>
 
