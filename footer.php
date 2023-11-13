@@ -110,7 +110,12 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 									<?php
 										foreach($footer_primary_navigation_items as $fpnav_item):
 										if((sanitize_title( $fpnav_item->title ) === 'register'
-										&& is_user_logged_in()) || (sanitize_title( $fpnav_item->title ) === 'registro'
+										&& is_user_logged_in())
+										|| (sanitize_title( $fpnav_item->title ) === 'registration'
+										&& is_user_logged_in()) 
+										|| (sanitize_title( $fpnav_item->title ) === 'registro'
+										&& is_user_logged_in())
+										|| (sanitize_title( $fpnav_item->title ) === 'registrar'
 										&& is_user_logged_in())):
 											continue;
 										endif;
@@ -137,7 +142,12 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 									<?php
 										foreach($footer_secondary_navigation_items as $fsnav_item):
 										if((sanitize_title( $fsnav_item->title ) === 'register'
-										&& is_user_logged_in()) || (sanitize_title( $fsnav_item->title ) === 'registro'
+										&& is_user_logged_in())
+										|| (sanitize_title( $fsnav_item->title ) === 'registration'
+										&& is_user_logged_in()) 
+										|| (sanitize_title( $fsnav_item->title ) === 'registro'
+										&& is_user_logged_in())
+										|| (sanitize_title( $fsnav_item->title ) === 'registrar'
 										&& is_user_logged_in())):
 											continue;
 										endif;

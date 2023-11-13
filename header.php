@@ -70,7 +70,12 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 								<?php
 									foreach($header_navigation_items as $hnav_item):
 									if((sanitize_title( $hnav_item->title ) === 'register'
-									&& is_user_logged_in()) || (sanitize_title( $hnav_item->title ) === 'registro'
+									&& is_user_logged_in())
+									|| (sanitize_title( $hnav_item->title ) === 'registration'
+									&& is_user_logged_in())  
+									|| (sanitize_title( $hnav_item->title ) === 'registro'
+									&& is_user_logged_in())
+									|| (sanitize_title( $hnav_item->title ) === 'registrar'
 									&& is_user_logged_in())):
 										continue;
 									endif;
@@ -137,7 +142,12 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 						<?php
 							foreach($header_navigation_items as $hnav_item):
 							if((sanitize_title( $hnav_item->title ) === 'register'
-							&& is_user_logged_in()) || (sanitize_title( $hnav_item->title ) === 'registro'
+							&& is_user_logged_in())
+							|| (sanitize_title( $hnav_item->title ) === 'registration'
+							&& is_user_logged_in()) 
+							|| (sanitize_title( $hnav_item->title ) === 'registro'
+							&& is_user_logged_in())
+							|| (sanitize_title( $hnav_item->title ) === 'registrar'
 							&& is_user_logged_in())):
 								continue;
 							endif;
