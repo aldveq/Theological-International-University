@@ -129,7 +129,7 @@ $current_user_rol = is_array($current_roles) && count($current_roles) > 0 ? $cur
 
 		<!-- Menu Items -->
 		<div class="menu_inner menu_mm">
-			<div class="menu menu_mm">
+			<div class="menu menu_mm menu-mobile-wrapper">
 				<?php
 					if(is_array($header_navigation_items) && count($header_navigation_items) > 0):
 					?>
