@@ -1,3 +1,5 @@
+import jump from "jump.js";
+
 /* JS Document */
 
 /******************************
@@ -247,20 +249,21 @@ jQuery(document).ready(function ($) {
     const navDomEl = navElHrefAttr.slice(1);
 
     navEl.addEventListener("click", function (e) {
-      e.preventDefault();
+    	e.preventDefault();
 
-      if (Boolean( TIU_DATA.isBlog)
-	  || Boolean(TIU_DATA.isSinglePostView) 
-	  || Boolean(TIU_DATA.isStudentRegistrationFormPage)) {
-        window.location.href = `${TIU_DATA.isHome}/${navElHrefAttr}`;
-      } else {
-        if ($(`div#${navDomEl}`).length) {
-          $("html, body").animate(
-            { scrollTop: $(`div#${navDomEl}`).offset().top - 50 },
-            "5000"
-          );
-        }
-      }
+		if (Boolean(TIU_DATA.isBlog)
+		|| Boolean(TIU_DATA.isSinglePostView) 
+		|| Boolean(TIU_DATA.isStudentRegistrationFormPage)) {
+			window.location.href = `${TIU_DATA.isHome}/${navElHrefAttr}`;
+		} else {
+			jump(`div#${navDomEl}`, {
+				duration: 1000,
+				offset: -50,
+				callback: undefined,
+				easing: undefined,
+				a11y: false
+			});
+		}
     });
   }
 

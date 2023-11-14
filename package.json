@@ -36,18 +36,21 @@
     "map": false
   },
   "scripts": {
-  	"build": "wp-scripts build",
-	"start": "wp-scripts start",
-	"start:sd": "wp-scripts start ./src-student-dashboard/index.js --webpack-src-dir=src-student-dashboard --output-path=build-student-dashboard",
-	"start:hot": "wp-scripts start --hot",
-	"start:custom": "wp-scripts start entry-one.js entry-two.js --output-path=custom",
-	"start:copy-php": "wp-scripts start --webpack-copy-php",
-	"start:custom-directory": "wp-scripts start --webpack-src-dir=custom-directory",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "start:sd": "wp-scripts start ./src-student-dashboard/index.js --webpack-src-dir=src-student-dashboard --output-path=build-student-dashboard",
+    "start:hot": "wp-scripts start --hot",
+    "start:custom": "wp-scripts start entry-one.js entry-two.js --output-path=custom",
+    "start:copy-php": "wp-scripts start --webpack-copy-php",
+    "start:custom-directory": "wp-scripts start --webpack-src-dir=custom-directory",
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../theme-tiu.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass sass-student-dashboard src src-student-dashboard style.css.map yarn.lock"
+  },
+  "dependencies": {
+    "jump.js": "^1.0.2"
   }
 }
