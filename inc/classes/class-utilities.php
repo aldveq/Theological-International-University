@@ -105,4 +105,9 @@ class Utilities
 				endif;
 		endswitch;
 	}
+
+	public function get_short_month_string( $month ) {
+		$month_string_result = substr($month, 0, 3);
+		return $month_string_result;
+	}
 }

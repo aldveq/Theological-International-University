@@ -8,6 +8,7 @@
  */
  
  // Variables
+ $utilities               = \TIU_THEME\Inc\Utilities::get_instance();
  $blog_bg_image = carbon_get_theme_option('blog_bg_image');
 ?>
 
@@ -57,7 +58,7 @@
 								<div class="news_post_date_container">
 									<div class="news_post_date d-flex flex-column align-items-center justify-content-center">
 										<div><?php echo the_time( 'j' ); ?></div>
-										<div><?php echo the_time( 'F' ); ?></div>
+										<div><?php echo $utilities->get_short_month_string( get_the_time( 'F' ) ); ?></div>
 									</div>
 								</div>
 								<div class="news_post_title_container">
