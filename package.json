@@ -50,8 +50,10 @@
     "lint:scss:fix": "wp-scripts lint-style 'sass/**/*.scss' --fix",
     "lint:scss:sdash": "wp-scripts lint-style 'sass-student-dashboard/**/*.scss'",
     "lint:scss:sdash:fix": "wp-scripts lint-style 'sass-student-dashboard/**/*.scss' --fix",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-	"lint:js:fix": "wp-scripts lint-js --fix",
+    "lint:js": "wp-scripts lint-js 'src/**/*.js'",
+	"lint:js:fix": "wp-scripts lint-js 'src/**/*.js' --fix",
+	"lint:js:sdash": "wp-scripts lint-js 'src-student-dashboard/**/*.js'",
+	"lint:js:sdash:fix": "wp-scripts lint-js 'src-student-dashboard/**/*.js' --fix",
     "bundle": "dir-archiver --src . --dest ../theme-tiu.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass sass-student-dashboard src src-student-dashboard style.css.map yarn.lock"
   },
   "dependencies": {
