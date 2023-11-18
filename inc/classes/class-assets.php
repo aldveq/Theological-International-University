@@ -58,6 +58,7 @@ class ASSETS {
 		|| is_page('student-profile')
 		|| is_page('estudiante-perfil') ) {
 			// Styles
+			wp_enqueue_style( 'tiu-sd-google-fonts', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap' );
 			wp_enqueue_style( 'tiu-style-bundle-sd', get_template_directory_uri() . '/build-student-dashboard/style-index.css', array(), _S_VERSION );
 		
 			// Scripts

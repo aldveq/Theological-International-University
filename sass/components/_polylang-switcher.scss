@@ -1,22 +1,22 @@
 .polylang-switcher-wrapper {
-	display       : flex;
+	display: flex;
 	flex-direction: column;
-	position      : fixed;
-	z-index       : 10;
-	right         : 0;
-	top           : 50%;
-	transform     : translateY(-50%);
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
 
 	.lang-item {
-		list-style      : none;
-		padding         : 8px;
+		list-style: none;
+		padding: 8px;
 		background-color: var(--nine-color);
-		opacity         : 0.4;
-		transition      : all ease-in-out 0.3s;
+		opacity: 0.4;
+		transition: all ease-in-out 0.3s;
 
 		a span {
 			text-transform: uppercase;
-			color         : var(--sixth-color);
+			color: var(--sixth-color);
 		}
 
 		&:hover {
@@ -29,7 +29,7 @@
 
 		&.current-lang {
 			background-color: var(--sixth-color);
-			opacity         : 1;
+			opacity: 1;
 
 			a span {
 				color: var(--third-color);

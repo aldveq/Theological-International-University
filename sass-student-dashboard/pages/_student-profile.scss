@@ -1,6 +1,7 @@
 .student-profile-wrapper {
+
 	.user-registration .ur-frontend-form {
-		border       : 0px solid #ebf1f6;
+		border: 0 solid #ebf1f6;
 		border-radius: 7px;
 
 		&.login {
@@ -12,17 +13,18 @@
 		}
 
 		.user-registration-profile-fields {
+
 			p {
 				display: block;
-				width  : 100%;
+				width: 100%;
 
 				input[type="submit"] {
-					width        : fit-content;
-					display      : table;
-					margin       : 16px auto 0;
-					background   : var(--primary-color);
-					color        : #fff;
-					border       : none;
+					width: fit-content;
+					display: table;
+					margin: 16px auto 0;
+					background: var(--primary-color);
+					color: #fff;
+					border: none;
 					border-radius: 7px;
 				}
 			}

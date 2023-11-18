@@ -6,6 +6,7 @@
 .wp-block {
 	max-width: initial;
 }
+
 /*Reseting Editor Styles - End */
 
 /* Hero Slider Styles - Start */
@@ -16,6 +17,7 @@
 .hero_slider.owl-carousel .hero_slide:not(:first-child) {
 	display: none;
 }
+
 /* Hero Slider Styles - End */
 
 /* Reviews Slider Styles - Start */
@@ -26,4 +28,5 @@
 .testimonials .owl-carousel .testimonial-item:not(:first-child) {
 	display: none;
 }
+
 /* Reviews Slider Styles - End */
