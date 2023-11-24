@@ -230,7 +230,7 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 							<h4 class="alert-heading"><?php esc_html_e( 'Oh, no!', 'theological-international-university' ); ?></h4>
 							<p><?php esc_html_e( 'You have not taken a course yet!', 'theological-international-university' ); ?></p>
 							<hr>
-							<p class="mb-0"><?php esc_html_e( 'Please, consider taking one of our great courses. <br> Once your chosen course is completed, you will see your diploma here.', 'theological-international-university' ); ?></p>
+							<p class="mb-0"><?php echo wp_kses( __( 'Please, consider taking one of our great courses. <br> Once your chosen course is completed, you will see your diploma here.', 'theological-international-university' ), array( 'br' => array() ) ); ?></p>
 						</div>
 						<?php
 					endif;
