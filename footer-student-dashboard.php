@@ -6,10 +6,10 @@
  *
  * @package Theological_International_University
  */
-?>
 
-  <?php echo do_shortcode( '[polylang_switcher_control]' ); ?>
-  <?php wp_footer(); ?>
+?>
+<?php echo do_shortcode( '[polylang_switcher_control]' ); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

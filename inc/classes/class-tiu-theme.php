@@ -1,18 +1,30 @@
 <?php
-
 /**
-* @package Theological_International_University
-*/
+ * Class TIU Theme
+ *
+ * PHP version 8
+ *
+ * @category Themes
+ * @package  Theological_International_University
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/themes/basics/template-hierarchy/
+ */
 
-namespace TIU_THEME\Inc;
+namespace TIU_THEME\Inc; // phpcs:ignore
 
-use TIU_THEME\Inc\Traits\Singleton;
-
+use TIU_THEME\Inc\Traits\Singleton; // phpcs:ignore
+/**
+ * Class TIU Theme
+ */
 class TIU_THEME {
-	use Singleton;
+	use Singleton; // phpcs:ignore
 
+	/**
+	 * Class TIU Theme Construct Function
+	 */
 	protected function __construct() {
-		// Loading Classes
+		// Loading Classes.
 		ASSETS::get_instance();
 		USER_ROLES_RESTRICTIONS::get_instance();
 		CARBON_FIELDS_SETUP::get_instance();
@@ -21,25 +33,30 @@ class TIU_THEME {
 		CUSTOM_GUTENBERG_BLOCKS::get_instance();
 		UTILITIES::get_instance();
 
-		// Actions & Filters
+		// Actions & Filters.
 		$this->setup_hooks();
 	}
 
+	/**
+	 * Setup Hooks
+	 *
+	 * @return void
+	 */
 	protected function setup_hooks() {
-		add_action( 'after_setup_theme', [$this, 'theological_international_university_setup'] );
-		add_action( 'after_setup_theme', [$this, 'theological_international_university_content_width'], 0 );
-		add_action( 'widgets_init', [$this, 'theological_international_university_widgets_init'] );
-		add_action( 'login_head', [$this, 'theological_international_university_custom_login_background']);
-		add_filter( 'allowed_block_types_all', [$this, 'tiu_allowed_block_types'], 25, 2 );
+		add_action( 'after_setup_theme', array( $this, 'theological_international_university_setup' ) );
+		add_action( 'after_setup_theme', array( $this, 'theological_international_university_content_width' ), 0 );
+		add_action( 'widgets_init', array( $this, 'theological_international_university_widgets_init' ) );
+		add_action( 'login_head', array( $this, 'theological_international_university_custom_login_background' ) );
+		add_filter( 'allowed_block_types_all', array( $this, 'tiu_allowed_block_types' ), 25, 2 );
 	}
 
 	/**
-	* Sets up theme defaults and registers support for various WordPress features.
-	*
-	* Note that this function is hooked into the after_setup_theme hook, which
-	* runs before the init hook. The init hook is too late for some features, such
-	* as indicating support for post thumbnails.
-	*/
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
 	public function theological_international_university_setup() {
 		/*
 			* Make theme available for translation.
@@ -70,8 +87,8 @@ class TIU_THEME {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'header-navigation' => esc_html__( 'Header Navigation', 'theological-international-university' ),
-				'footer-primary-navigation' => esc_html__( 'Footer Primary Navigation', 'theological-international-university' ),
+				'header-navigation'           => esc_html__( 'Header Navigation', 'theological-international-university' ),
+				'footer-primary-navigation'   => esc_html__( 'Footer Primary Navigation', 'theological-international-university' ),
 				'footer-secondary-navigation' => esc_html__( 'Footer Secondary Navigation', 'theological-international-university' ),
 			)
 		);
@@ -123,34 +140,34 @@ class TIU_THEME {
 			)
 		);
 
-		add_image_size('hero_slider_img_size', 1920, 1080, true);
-		add_image_size('split_view_img_size', 1140, 760, true);
-		add_image_size('review_bg_img_size', 1920, 1080, true);
-		add_image_size('review_user_img_size', 100, 100, true);
-		add_image_size('content_text_img_size', 540, 320, true);
-		add_image_size('milestone_bg_size', 1920, 1080, true);
-		add_image_size('milestone_icon_size', 70, 70, true);
-		add_image_size('professor_img_size', 350, 270, true);
-		add_image_size('blog_bg_img_size', 1920, 470, true);
-		add_image_size('blog_card_img_size', 730, 384, true);
+		add_image_size( 'hero_slider_img_size', 1920, 1080, true );
+		add_image_size( 'split_view_img_size', 1140, 760, true );
+		add_image_size( 'review_bg_img_size', 1920, 1080, true );
+		add_image_size( 'review_user_img_size', 100, 100, true );
+		add_image_size( 'content_text_img_size', 540, 320, true );
+		add_image_size( 'milestone_bg_size', 1920, 1080, true );
+		add_image_size( 'milestone_icon_size', 70, 70, true );
+		add_image_size( 'professor_img_size', 350, 270, true );
+		add_image_size( 'blog_bg_img_size', 1920, 470, true );
+		add_image_size( 'blog_card_img_size', 730, 384, true );
 	}
 
 	/**
-	* Set the content width in pixels, based on the theme's design and stylesheet.
-	*
-	* Priority 0 to make it available to lower priority callbacks.
-	*
-	* @global int $content_width
-	*/
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 * Priority 0 to make it available to lower priority callbacks.
+	 *
+	 * @global int $content_width
+	 */
 	public function theological_international_university_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'theological_international_university_content_width', 640 );
 	}
 
 	/**
-	* Register widget area.
-	*
-	* @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
-	*/
+	 * Register widget area.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 */
 	public function theological_international_university_widgets_init() {
 		register_sidebar(
 			array(
@@ -165,6 +182,11 @@ class TIU_THEME {
 		);
 	}
 
+	/**
+	 * TIU Custom Login Background
+	 *
+	 * @return void
+	 */
 	public function theological_international_university_custom_login_background() {
 		?>
 			<style type='text/css'>
@@ -174,7 +196,7 @@ class TIU_THEME {
 				body.login h1 a {
 					width: 260px !important;
 					height: 150px !important;
-					background-image: url(<?php echo esc_url(get_template_directory_uri()) . '/images/tiu-logo.svg'; ?>) !important;
+					background-image: url(<?php echo esc_url( get_template_directory_uri() ) . '/images/tiu-logo.svg'; ?>) !important;
 					background-repeat: no-repeat !important;
 					background-size: contain !important;
 					background-position: center top !important;
@@ -186,7 +208,14 @@ class TIU_THEME {
 		<?php
 	}
 
-	public function tiu_allowed_block_types($allowed_blocks, $editor_context) {
+	/**
+	 * Undocumented function
+	 *
+	 * @param string                  $allowed_blocks Allowed Blocks.
+	 * @param WP_Block_Editor_Context $editor_context Editor Context.
+	 * @return array CBF Allowed Blocks
+	 */
+	public function tiu_allowed_block_types( $allowed_blocks, $editor_context ) {
 		return array(
 			'carbon-fields/hero-slider-block',
 			'carbon-fields/grid-data-block',
@@ -199,4 +228,3 @@ class TIU_THEME {
 		);
 	}
 }
-

@@ -1,30 +1,53 @@
 <?php
+/**
+ * Class Custom Post Types
+ *
+ * PHP version 8
+ *
+ * @category Themes
+ * @package  Theological_International_University
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/themes/basics/template-hierarchy/
+ */
+
+namespace TIU_THEME\Inc; // phpcs:ignore
+
+use TIU_THEME\Inc\Traits\Singleton; // phpcs:ignore
+use Carbon_Fields\Container; // phpcs:ignore
+use Carbon_Fields\Field; // phpcs:ignore
 
 /**
-* @package Theological_International_University
-*/
-
-namespace TIU_THEME\Inc;
-
-use TIU_THEME\Inc\Traits\Singleton;
-use Carbon_Fields\Container;
-use Carbon_Fields\Field;
-
+ * Class Custom Post Types
+ */
 class CUSTOM_POST_TYPES {
-	use Singleton;
+	use Singleton; // phpcs:ignore
 
+	/**
+	 * Class Custom Post Types Construct Function
+	 */
 	protected function __construct() {
-		// Actions & Filters
+		// Actions & Filters.
 		$this->setup_hooks();
 	}
 
+	/**
+	 * Class Custom Posty Types Construct Function
+	 *
+	 * @return void
+	 */
 	protected function setup_hooks() {
-		add_action('init', [$this, 'tiu_professor_post_type_registration']);
-		add_action('init', [$this, 'tiu_diploma_post_type_registration']);
-		add_action( 'carbon_fields_register_fields', [$this, 'tiu_professor_post_type_fields']);
-		add_action( 'carbon_fields_register_fields', [$this, 'tiu_diploma_post_type_fields']);
+		add_action( 'init', array( $this, 'tiu_professor_post_type_registration' ) );
+		add_action( 'init', array( $this, 'tiu_diploma_post_type_registration' ) );
+		add_action( 'carbon_fields_register_fields', array( $this, 'tiu_professor_post_type_fields' ) );
+		add_action( 'carbon_fields_register_fields', array( $this, 'tiu_diploma_post_type_fields' ) );
 	}
 
+	/**
+	 * TIU Professor Custom Post Type Registration
+	 *
+	 * @return void
+	 */
 	public function tiu_professor_post_type_registration() {
 		$labels = array(
 			'name'                  => _x( 'Professors', 'Post type general name', 'theological-international-university' ),
@@ -71,9 +94,14 @@ class CUSTOM_POST_TYPES {
 			'map_meta_cap'       => true,
 		);
 		
-		register_post_type( 'professors', $args );
+		register_post_type( 'professors', $args ); // phpcs:ignore
 	}
 
+	/**
+	 * TIU Diploma Custom Post Type Registration
+	 *
+	 * @return void
+	 */
 	public function tiu_diploma_post_type_registration() {
 		$labels = array(
 			'name'                  => _x( 'Diplomas', 'Post type general name', 'theological-international-university' ),
@@ -120,64 +148,90 @@ class CUSTOM_POST_TYPES {
 			'map_meta_cap'       => true,
 		);
 		
-		register_post_type( 'diplomas', $args );
+		register_post_type( 'diplomas', $args ); // phpcs:ignore
 	}
 
+	/**
+	 * TIU Professor Custom Post Type Fields Declaration
+	 *
+	 * @return void
+	 */
 	public function tiu_professor_post_type_fields() {
-		Container::make('post_meta', __('Professor Information', 'theological-international-university'))
-			->where('post_type', '=', 'professors')
-			->add_fields(array(
-				Field::make('image', 'professor_image', __('Image', 'theological-international-university'))
-					->set_width(33),
-				Field::make('text', 'professor_position', __('Position', 'theological-international-university'))
-					->set_width(33),
-				Field::make('complex', 'professor_socials_data', __('Socials', 'theological-international-university'))
-					->setup_labels( array(
-						'singular_name' => __( 'Social', 'theological-international-university' ),
-						'plural_name'   => __( 'Socials', 'theological-international-university' )
-					) )
+		Container::make( 'post_meta', __( 'Professor Information', 'theological-international-university' ) )
+			->where( 'post_type', '=', 'professors' )
+			->add_fields(
+				array(
+					Field::make( 'image', 'professor_image', __( 'Image', 'theological-international-university' ) )
+						->set_width( 33 ),
+					Field::make( 'text', 'professor_position', __( 'Position', 'theological-international-university' ) )
+						->set_width( 33 ),
+					Field::make( 'complex', 'professor_socials_data', __( 'Socials', 'theological-international-university' ) )
+					->setup_labels(
+						array(
+							'singular_name' => __( 'Social', 'theological-international-university' ),
+							'plural_name'   => __( 'Socials', 'theological-international-university' ),
+						) 
+					)
 					->set_layout( 'tabbed-vertical' )
 					->set_max( 5 )
-					->add_fields( array(
-						Field::make( 'icon', 'professor_social_icon', __('Icon', 'theological-international-university') )
-							->set_width( 50 )
-							->add_fontawesome_options(),
-						Field::make( 'text', 'professor_social_url', __( 'URL', 'theological-international-university' ) )
-							->set_width( 50 )
-					) )
-		));
+					->add_fields(
+						array(
+							Field::make( 'icon', 'professor_social_icon', __( 'Icon', 'theological-international-university' ) )
+								->set_width( 50 )
+								->add_fontawesome_options(),
+							Field::make( 'text', 'professor_social_url', __( 'URL', 'theological-international-university' ) )
+								->set_width( 50 ),
+						) 
+					),
+				)
+			);
 	}
 
+	/**
+	 * TIU Diploma Custom Post Type Fields Declaration
+	 *
+	 * @return void
+	 */
 	public function tiu_diploma_post_type_fields() {
-		Container::make('post_meta', __('Diploma Information', 'theological-international-university'))
-			->where('post_type', '=', 'diplomas')
-			->add_fields(array(
-				Field::make( 'association', 'diploma_user_association', __('Student', 'theological-international-university') )
+		Container::make( 'post_meta', __( 'Diploma Information', 'theological-international-university' ) )
+			->where( 'post_type', '=', 'diplomas' )
+			->add_fields(
+				array(
+					Field::make( 'association', 'diploma_user_association', __( 'Student', 'theological-international-university' ) )
 					->set_max( 1 )
-					->set_types( array(
+					->set_types(
 						array(
-							'type' => 'user',
-						),
-					) ),
-				Field::make('complex', 'diplomas_info', __('Diplomas Info', 'theological-international-university'))
-					->set_max(4)
-					->setup_labels( array(
-						'plural_name' => 'Diplomas',
-						'singular_name' => 'Diploma',
-					))
+							array(
+								'type' => 'user',
+							),
+						) 
+					),
+					Field::make( 'complex', 'diplomas_info', __( 'Diplomas Info', 'theological-international-university' ) )
+					->set_max( 4 )
+					->setup_labels(
+						array(
+							'plural_name'   => 'Diplomas',
+							'singular_name' => 'Diploma',
+						)
+					)
 					->set_layout( 'tabbed-horizontal' )
-					->add_fields(array(
-						Field::make('image', 'diploma_image', __('Diploma Image', 'theological-international-university'))
-							->set_width(50),
-						Field::make( 'select', 'diploma_type', __('Diploma Type', 'theological-international-university') )
-							->set_width(50)
-							->set_options( array(
-								'license' => __('License', 'theological-international-university'),
-								'master' => __('Master', 'theological-international-university'),
-								'doctor' => __('Doctor', 'theological-international-university'),
-								'chaplaincy' => __('Chaplaincy', 'theological-international-university'),
-							) ),
-					))
-			));
+					->add_fields(
+						array(
+							Field::make( 'image', 'diploma_image', __( 'Diploma Image', 'theological-international-university' ) )
+								->set_width( 50 ),
+							Field::make( 'select', 'diploma_type', __( 'Diploma Type', 'theological-international-university' ) )
+							->set_width( 50 )
+							->set_options(
+								array(
+									'license'    => __( 'License', 'theological-international-university' ),
+									'master'     => __( 'Master', 'theological-international-university' ),
+									'doctor'     => __( 'Doctor', 'theological-international-university' ),
+									'chaplaincy' => __( 'Chaplaincy', 'theological-international-university' ),
+								) 
+							),
+						)
+					),
+				)
+			);
 	}
 }

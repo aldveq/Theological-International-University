@@ -5,7 +5,7 @@
  * @package Theological_International_University
  */
 
-namespace TIU_THEME\Inc\Helpers;
+namespace TIU_THEME\Inc\Helpers; // phpcs:ignore
 
 /**
  * Auto loader function.

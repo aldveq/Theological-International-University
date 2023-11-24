@@ -25,9 +25,9 @@
  * @package Theological_International_University
  */
 
-namespace TIU_THEME\Inc\Traits;
+namespace TIU_THEME\Inc\Traits; // phpcs:ignore
 
-trait Singleton {
+trait Singleton { // phpcs:ignore
 
 	/**
 	 * Protected class constructor to prevent direct object creation
@@ -59,7 +59,7 @@ trait Singleton {
 		 *
 		 * @var array
 		 */
-		static $instance = [];
+		static $instance = array();
 
 		/**
 		 * If this trait is implemented in a class which has multiple
@@ -69,7 +69,7 @@ trait Singleton {
 		 * a key=>value pair for each `classname => instance` in self::$_instance
 		 * for each sub-class.
 		 */
-		$called_class = get_called_class();
+		$called_class = get_called_class(); // phpcs:ignore
 
 		if ( ! isset( $instance[ $called_class ] ) ) {
 

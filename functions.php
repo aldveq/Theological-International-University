@@ -17,7 +17,12 @@ if ( ! defined( '_S_VERSION' ) ) {
  */
 require get_template_directory() . '/inc/helpers/autoloader.php';
 
+/**
+ * TIU Theme Instance
+ *
+ * @return void
+ */
 function tiu_get_theme_instance() {
-	\TIU_THEME\Inc\TIU_THEME::get_instance();
+	\TIU_THEME\Inc\TIU_THEME::get_instance(); // phpcs:ignore
 }
 tiu_get_theme_instance();

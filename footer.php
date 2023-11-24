@@ -4,36 +4,38 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Theological_International_University
+ * @category Themes
+ * @package  Theological_International_University
+ * @author   Aldo Paz Velasquez <aldveq80@gmail.com>
+ * @license  GPL-2.0-or-later http://www.gnu.org/licenses/gpl-2.0.txt
+ * @link     https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
-// Variables
-$utilities               = \TIU_THEME\Inc\Utilities::get_instance();
-$footer_primary_navigation_items = $utilities->get_menu_items_by_location( 'footer-primary-navigation' );
-$footer_secondary_navigation_items = $utilities->get_menu_items_by_location( 'footer-secondary-navigation' );
-$is_footer_newsletter_section_disabled = carbon_get_theme_option('footer_disable_newsletter_section');
-$no_newsletter_section = $is_footer_newsletter_section_disabled ? 'no-newsletter' : '';
-$footer_disclaimer_text = pll_current_language('slug') === 'en' ? 
-carbon_get_theme_option('footer_disclaimer_text') : 
-carbon_get_theme_option('footer_disclaimer_text_es');
-$footer_copyright_text = pll_current_language('slug') === 'en' ? 
-carbon_get_theme_option('footer_copyright_text') : 
-carbon_get_theme_option('footer_copyright_text_es');
-$tiu_label_address = carbon_get_theme_option('tiu_label_address');
-$tiu_address_link = carbon_get_theme_option('tiu_address_link');
-$tiu_primary_email_label = carbon_get_theme_option('tiu_primary_email_label');
-$tiu_primary_email = carbon_get_theme_option('tiu_primary_email');
-$tiu_primary_phone_label = carbon_get_theme_option('tiu_primary_phone_label');
-$tiu_primary_phone = carbon_get_theme_option('tiu_primary_phone');
-$global_socials_data = carbon_get_theme_option('socials_data');
+// Variables.
+$utilities                             = \TIU_THEME\Inc\Utilities::get_instance(); // phpcs:ignore
+$footer_primary_navigation_items       = $utilities->get_menu_items_by_location( 'footer-primary-navigation' );
+$footer_secondary_navigation_items     = $utilities->get_menu_items_by_location( 'footer-secondary-navigation' );
+$is_footer_newsletter_section_disabled = carbon_get_theme_option( 'footer_disable_newsletter_section' );
+$no_newsletter_section                 = $is_footer_newsletter_section_disabled ? 'no-newsletter' : '';
+$footer_disclaimer_text                = pll_current_language( 'slug' ) === 'en' ? 
+carbon_get_theme_option( 'footer_disclaimer_text' ) : 
+carbon_get_theme_option( 'footer_disclaimer_text_es' );
+$footer_copyright_text                 = pll_current_language( 'slug' ) === 'en' ? 
+carbon_get_theme_option( 'footer_copyright_text' ) : 
+carbon_get_theme_option( 'footer_copyright_text_es' );
+$tiu_label_address                     = carbon_get_theme_option( 'tiu_label_address' );
+$tiu_address_link                      = carbon_get_theme_option( 'tiu_address_link' );
+$tiu_primary_email_label               = carbon_get_theme_option( 'tiu_primary_email_label' );
+$tiu_primary_email                     = carbon_get_theme_option( 'tiu_primary_email' );
+$tiu_primary_phone_label               = carbon_get_theme_option( 'tiu_primary_phone_label' );
+$tiu_primary_phone                     = carbon_get_theme_option( 'tiu_primary_phone' );
+$global_socials_data                   = carbon_get_theme_option( 'socials_data' );
 ?>
 
-	<footer class="footer <?php echo esc_attr( $no_newsletter_section ); ?> <?php echo esc_attr(is_404() ? 'd-none' : 'd-flex'); ?>">
+	<footer class="footer <?php echo esc_attr( $no_newsletter_section ); ?> <?php echo esc_attr( is_404() ? 'd-none' : 'd-flex' ); ?>">
 		<div class="container">
 			<?php
-				if (!$is_footer_newsletter_section_disabled):
+			if ( ! $is_footer_newsletter_section_disabled ) :
 				?>
 				<!-- Newsletter -->
 				<div class="newsletter">
@@ -50,8 +52,8 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 							<div class="newsletter_form_container mx-auto">
 								<form action="post">
 									<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-										<input id="newsletter_email" class="newsletter_email" type="email" placeholder="<?php esc_attr_e('Email Address', 'theological-international-university'); ?>" required="required" data-error="Valid email is required.">
-										<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit"><?php esc_html_e('Subscribe', 'theological-international-university'); ?></button>
+										<input id="newsletter_email" class="newsletter_email" type="email" placeholder="<?php esc_attr_e( 'Email Address', 'theological-international-university' ); ?>" required="required" data-error="Valid email is required.">
+										<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit"><?php esc_html_e( 'Subscribe', 'theological-international-university' ); ?></button>
 									</div>
 								</form>
 							</div>
@@ -75,13 +77,13 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 							<?php 
 								$tiu_logo_id = get_theme_mod( 'custom_logo' );
 								
-								if ( ! empty( $tiu_logo_id ) ) :
-									$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );     
-									$tiu_logo_alt = get_post_meta( $tiu_logo_id, '_wp_attachment_image_alt', true );
-									?>
+							if ( ! empty( $tiu_logo_id ) ) :
+								$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );     
+								$tiu_logo_alt = get_post_meta( $tiu_logo_id, '_wp_attachment_image_alt', true );
+								?>
 									<div class="logo">
 										<a href="<?php echo esc_url( home_url() ); ?>">
-											<img src="<?php echo esc_url($tiu_logo_url); ?>" alt="<?php echo esc_attr($tiu_logo_alt); ?>">
+											<img src="<?php echo esc_url( $tiu_logo_url ); ?>" alt="<?php echo esc_attr( $tiu_logo_alt ); ?>">
 										</a>
 									</div>
 									<?php
@@ -90,9 +92,10 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 						</div>
 
 						<?php
-							if (!empty($footer_disclaimer_text)):
-							?>						
-							<p class="footer_about_text"><?php echo esc_html($footer_disclaimer_text); ?></p>
+						if ( ! empty( $footer_disclaimer_text ) ) :
+							?>
+
+							<p class="footer_about_text"><?php echo esc_html( $footer_disclaimer_text ); ?></p>
 							<?php
 							endif;
 						?>
@@ -101,29 +104,29 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 
 					<!-- Footer Column - Menu -->
 					<?php
-						if(is_array($footer_primary_navigation_items) && count($footer_primary_navigation_items)):
+					if ( is_array( $footer_primary_navigation_items ) && count( $footer_primary_navigation_items ) ) :
 						?>
 						<div class="col-lg-3 footer_col">
-							<div class="footer_column_title"><?php esc_html_e('Menu', 'theological-international-university'); ?></div>
+							<div class="footer_column_title"><?php esc_html_e( 'Menu', 'theological-international-university' ); ?></div>
 							<div class="footer_column_content">
 								<ul id="footerMainNav">
-									<?php
-										foreach($footer_primary_navigation_items as $fpnav_item):
-										if((sanitize_title( $fpnav_item->title ) === 'register'
-										&& is_user_logged_in())
-										|| (sanitize_title( $fpnav_item->title ) === 'registration'
-										&& is_user_logged_in()) 
-										|| (sanitize_title( $fpnav_item->title ) === 'registro'
-										&& is_user_logged_in())
-										|| (sanitize_title( $fpnav_item->title ) === 'registrar'
-										&& is_user_logged_in())):
-											continue;
+								<?php
+								foreach ( $footer_primary_navigation_items as $fpnav_item ) :
+									if ( ( sanitize_title( $fpnav_item->title ) === 'register'
+									&& is_user_logged_in() )
+									|| ( sanitize_title( $fpnav_item->title ) === 'registration'
+									&& is_user_logged_in() ) 
+									|| ( sanitize_title( $fpnav_item->title ) === 'registro'
+									&& is_user_logged_in() )
+									|| ( sanitize_title( $fpnav_item->title ) === 'registrar'
+									&& is_user_logged_in() ) ) :
+										continue;
 										endif;
-										?>
-										<li class="footer_list_item"><a href="<?php echo esc_url($fpnav_item->url); ?>"><?php echo esc_html($fpnav_item->title); ?></a></li>
-										<?php
-										endforeach;
 									?>
+										<li class="footer_list_item"><a href="<?php echo esc_url( $fpnav_item->url ); ?>"><?php echo esc_html( $fpnav_item->title ); ?></a></li>
+									<?php
+										endforeach;
+								?>
 								</ul>
 							</div>
 						</div>
@@ -133,29 +136,29 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 
 					<!-- Footer Column - Usefull Links -->
 					<?php
-						if(is_array($footer_secondary_navigation_items) && count($footer_secondary_navigation_items)):
+					if ( is_array( $footer_secondary_navigation_items ) && count( $footer_secondary_navigation_items ) ) :
 						?>
 						<div class="col-lg-3 footer_col">
-							<div class="footer_column_title"><?php esc_html_e('Useful Links', 'theological-international-university'); ?></div>
+							<div class="footer_column_title"><?php esc_html_e( 'Useful Links', 'theological-international-university' ); ?></div>
 							<div class="footer_column_content">
 								<ul>
-									<?php
-										foreach($footer_secondary_navigation_items as $fsnav_item):
-										if((sanitize_title( $fsnav_item->title ) === 'register'
-										&& is_user_logged_in())
-										|| (sanitize_title( $fsnav_item->title ) === 'registration'
-										&& is_user_logged_in()) 
-										|| (sanitize_title( $fsnav_item->title ) === 'registro'
-										&& is_user_logged_in())
-										|| (sanitize_title( $fsnav_item->title ) === 'registrar'
-										&& is_user_logged_in())):
-											continue;
+								<?php
+								foreach ( $footer_secondary_navigation_items as $fsnav_item ) :
+									if ( ( sanitize_title( $fsnav_item->title ) === 'register'
+									&& is_user_logged_in() )
+									|| ( sanitize_title( $fsnav_item->title ) === 'registration'
+									&& is_user_logged_in() ) 
+									|| ( sanitize_title( $fsnav_item->title ) === 'registro'
+									&& is_user_logged_in() )
+									|| ( sanitize_title( $fsnav_item->title ) === 'registrar'
+									&& is_user_logged_in() ) ) :
+										continue;
 										endif;
-										?>
-										<li class="footer_list_item"><a href="<?php echo esc_url($fsnav_item->url); ?>"><?php echo esc_html($fsnav_item->title); ?></a></li>
-										<?php
-										endforeach;
 									?>
+										<li class="footer_list_item"><a href="<?php echo esc_url( $fsnav_item->url ); ?>"><?php echo esc_html( $fsnav_item->title ); ?></a></li>
+									<?php
+										endforeach;
+								?>
 								</ul>
 							</div>
 						</div>
@@ -166,49 +169,49 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 					<!-- Footer Column - Contact -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title"><?php esc_html_e('Contact', 'theological-international-university'); ?></div>
+						<div class="footer_column_title"><?php esc_html_e( 'Contact', 'theological-international-university' ); ?></div>
 						<div class="footer_column_content">
 							<ul>
 								<li class="footer_contact_item">
 									<?php
-										if (!empty($tiu_label_address)):
+									if ( ! empty( $tiu_label_address ) ) :
 										?>
 										<div class="footer_contact_icon">
-											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/placeholder.svg) no-repeat center;"></span>
+											<span class="icon" style="mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/placeholder.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/placeholder.svg) no-repeat center;"></span>
 										</div>
 										<?php 
-											if (!empty($tiu_address_link)):
+										if ( ! empty( $tiu_address_link ) ) :
 											?>
-												<a href="<?php echo esc_url($tiu_address_link); ?>" target="_blank"><?php echo esc_html($tiu_label_address); ?></a>
+												<a href="<?php echo esc_url( $tiu_address_link ); ?>" target="_blank"><?php echo esc_html( $tiu_label_address ); ?></a>
 											<?php
-											else:
-												echo esc_html($tiu_label_address);
+											else :
+												echo esc_html( $tiu_label_address );
 											endif;
-										?>
+											?>
 										<?php
 										endif;
 									?>
 								</li>
 								<li class="footer_contact_item">
 									<?php
-										if (!empty($tiu_primary_phone_label)):
+									if ( ! empty( $tiu_primary_phone_label ) ) :
 										?>
 										<div class="footer_contact_icon">
-											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/smartphone.svg) no-repeat center;"></span>
+											<span class="icon" style="mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/smartphone.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/smartphone.svg) no-repeat center;"></span>
 										</div>
-										<a href="tel:<?php echo esc_attr($tiu_primary_phone); ?>"><?php echo esc_html($tiu_primary_phone_label); ?></a>
+										<a href="tel:<?php echo esc_attr( $tiu_primary_phone ); ?>"><?php echo esc_html( $tiu_primary_phone_label ); ?></a>
 										<?php
 										endif;
 									?>
 								</li>
 								<li class="footer_contact_item">
 									<?php
-										if (!empty($tiu_primary_email_label)):
+									if ( ! empty( $tiu_primary_email_label ) ) :
 										?>
 										<div class="footer_contact_icon">
-											<span class="icon" style="mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url(get_template_directory_uri()); ?>/images/envelope.svg) no-repeat center;"></span>
+											<span class="icon" style="mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/envelope.svg) no-repeat center; -webkit-mask:url(<?php echo esc_url( get_template_directory_uri() ); ?>/images/envelope.svg) no-repeat center;"></span>
 										</div>
-										<a href="mailto:<?php echo esc_attr($tiu_primary_email); ?>"><?php echo esc_html($tiu_primary_email_label); ?></a>
+										<a href="mailto:<?php echo esc_attr( $tiu_primary_email ); ?>"><?php echo esc_html( $tiu_primary_email_label ); ?></a>
 										<?php
 										endif;
 									?>
@@ -223,26 +226,26 @@ $global_socials_data = carbon_get_theme_option('socials_data');
 			<!-- Footer Copyright -->
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<?php
-					if (!empty($footer_copyright_text)):
+				if ( ! empty( $footer_copyright_text ) ) :
 					?>
 					<div class="footer_copyright">
-						<span><?php echo do_shortcode(esc_html($footer_copyright_text)); ?></span>
+						<span><?php echo do_shortcode( esc_html( $footer_copyright_text ) ); ?></span>
 					</div>
 					<?php
 					endif;
 				?>
 				<div class="footer_social ml-sm-auto">
 					<?php
-						if(is_array($global_socials_data) && count($global_socials_data) > 0):
+					if ( is_array( $global_socials_data ) && count( $global_socials_data ) > 0 ) :
 						?>
 						<ul class="menu_social">
-							<?php
-								foreach($global_socials_data as $gs_data):
-								?>
-								<li class="menu_social_item"><a href="<?php echo esc_url($gs_data['social_url']); ?>" target="_blank"><i class="<?php echo esc_attr($gs_data['social_icon']['class']); ?>"></i></a></li>
-								<?php
-								endforeach;
+						<?php
+						foreach ( $global_socials_data as $gs_data ) :
 							?>
+								<li class="menu_social_item"><a href="<?php echo esc_url( $gs_data['social_url'] ); ?>" target="_blank"><i class="<?php echo esc_attr( $gs_data['social_icon']['class'] ); ?>"></i></a></li>
+							<?php
+								endforeach;
+						?>
 						</ul>
 						<?php
 						endif;
