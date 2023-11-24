@@ -37,6 +37,7 @@
   },
   "scripts": {
     "build": "wp-scripts build",
+    "build:sd": "wp-scripts build ./src-student-dashboard/index.js --output-path=build-student-dashboard",
     "start": "wp-scripts start",
     "start:sd": "wp-scripts start ./src-student-dashboard/index.js --webpack-src-dir=src-student-dashboard --output-path=build-student-dashboard",
     "start:hot": "wp-scripts start --hot",
