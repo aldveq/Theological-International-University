@@ -56,7 +56,7 @@
 	"lint:js:sdash:fix": "wp-scripts lint-js 'src-student-dashboard/**/*.js' --fix",
 	"lint:php": "vendor/bin/phpcs",
     "lint:php:fix": "vendor/bin/phpcbf",
-    "bundle": "dir-archiver --src . --dest ../theme-tiu.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass sass-student-dashboard src src-student-dashboard style.css.map yarn.lock"
+    "bundle": "dir-archiver --src . --dest ../theme-tiu.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist phpcs.xml sass sass-student-dashboard src src-student-dashboard style.css.map yarn.lock"
   },
   "dependencies": {
     "jump.js": "^1.0.2"
