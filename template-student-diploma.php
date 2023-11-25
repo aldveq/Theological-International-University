@@ -88,7 +88,7 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 										<div class="row">
 											<div class="col-12 col-sm-6 col-lg-4 col-xl-3">	
 												<div class="card m-0" style="width: 16rem;">
-													<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false ) ); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr( $current_user->display_name ); ?>">
+													<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'diploma_card_img_size', false ) ); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr( $current_user->display_name ); ?>">
 													<div class="card-body d-flex justify-content-center align-items-center py-4">
 														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?>Diploma"><?php esc_html_e( 'See Diploma', 'theological-international-university' ); ?></button>
 													</div>
@@ -136,7 +136,7 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 													<div class="modal-body">
 														<div class="row">
 															<div class="col-12 d-flex justify-content-center align-items-center">
-																<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false ) ); ?>" class="img-fluid" alt="<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?> of <?php echo esc_attr( $current_user->display_name ); ?>">
+																<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'diploma_modal_img_size', false ) ); ?>" class="img-fluid" alt="<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?> of <?php echo esc_attr( $current_user->display_name ); ?>">
 															</div>
 														</div>
 													</div>
@@ -156,7 +156,7 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 										<div class="row">
 											<div class="col-12 col-sm-6 col-lg-4 col-xl-3">	
 												<div class="card m-0" style="width: 16rem;">
-													<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false ) ); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr( $current_user->display_name ); ?>">
+													<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'diploma_card_img_size', false ) ); ?>" class="card-img-top" alt="Diploma of <?php echo esc_attr( $current_user->display_name ); ?>">
 													<div class="card-body d-flex justify-content-center align-items-center py-4">
 														<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenStudent<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?>Diploma"><?php esc_html_e( 'See Diploma', 'theological-international-university' ); ?></button>
 													</div>
@@ -204,7 +204,7 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 													<div class="modal-body">
 														<div class="row">
 															<div class="col-12 d-flex justify-content-center align-items-center">
-																<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'full', false ) ); ?>" class="img-fluid" alt="<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?> of <?php echo esc_attr( $current_user->display_name ); ?>">
+																<img src="<?php echo esc_url( wp_get_attachment_image_url( $ds_data['diploma_image'], 'diploma_modal_img_size', false ) ); ?>" class="img-fluid" alt="<?php echo esc_attr( ucfirst( $ds_data['diploma_type'] ) ); ?> of <?php echo esc_attr( $current_user->display_name ); ?>">
 															</div>
 														</div>
 													</div>

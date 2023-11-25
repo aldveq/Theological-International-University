@@ -151,6 +151,8 @@ class TIU_THEME {
 		add_image_size( 'professor_img_size', 350, 270, true );
 		add_image_size( 'blog_bg_img_size', 1920, 470, true );
 		add_image_size( 'blog_card_img_size', 730, 384, true );
+		add_image_size( 'diploma_card_img_size', 260, 180, true );
+		add_image_size( 'diploma_modal_img_size', 600, 424, true );
 	}
 
 	/**
