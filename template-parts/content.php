@@ -72,7 +72,7 @@ $blog_bg_image = carbon_get_theme_option( 'blog_bg_image' );
 							</div>
 							<div class="news_post_text">
 								<?php 
-									echo wp_kses_post( wpautop( the_content(), true ) );
+									echo wp_kses_post( wpautop( get_the_content( get_the_ID() ), true ) );
 								?>
 							</div>
 						</div>

@@ -82,7 +82,7 @@ carbon_get_theme_option( 'blog_heading_text_es' );
 													</div>
 													<div class="news_post_title_container">
 														<div class="news_post_title">
-															<a href="<?php echo esc_url( the_permalink() ); ?>" target="_self"><?php echo esc_html( the_title() ); ?></a>
+															<a href="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>" target="_self"><?php echo esc_html( the_title() ); ?></a>
 														</div>
 														<div class="news_post_meta">
 															<span class="news_post_author">By <?php echo esc_html( get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ) ); ?></span>
@@ -93,7 +93,7 @@ carbon_get_theme_option( 'blog_heading_text_es' );
 													<p><?php echo esc_html( the_excerpt() ); ?></p>
 												</div>
 												<div class="news_post_button text-center trans_200">
-													<a href="<?php echo esc_url( the_permalink() ); ?>" target="_self">Read More</a>
+													<a href="<?php echo esc_url( get_the_permalink( get_the_ID() ) ); ?>" target="_self">Read More</a>
 												</div>
 											</div>
 										<?php
