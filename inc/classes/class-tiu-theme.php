@@ -238,6 +238,10 @@ class TIU_THEME {
 			'carbon-fields/content-textimage-block',
 			'carbon-fields/milestone-block',
 			'carbon-fields/professors-block',
+			'core/image',
+			'core/video',
+			'core/paragraph',
+			'core/quote',
 		);
 	}
 }
