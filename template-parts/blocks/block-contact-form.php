@@ -55,7 +55,11 @@ $tiu_primary_phone       = carbon_get_theme_option( 'tiu_primary_phone' );
 
 					if ( ! empty( $contact_form_courses_desc ) ) :
 						?>
-						<p class="about_text"><?php echo esc_html( $contact_form_courses_desc ); ?></p>
+						<div class="about_text">
+							<?php 
+								echo wp_kses_post( wpautop( $contact_form_courses_desc, true ) ); 
+							?>
+						</div>
 						<?php
 						endif;
 					?>

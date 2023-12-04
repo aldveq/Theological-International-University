@@ -42,7 +42,11 @@ $split_view_block_attributes_classnames = ! empty( $args['attributes'] ) ? $args
 
 						if ( ! empty( $split_view_left_content_description ) ) :
 							?>
-							<p class="register_text"><?php echo esc_html( $split_view_left_content_description ); ?></p>
+							<div class="register_text">
+								<?php 
+									echo wp_kses_post( wpautop( $split_view_left_content_description, true ) ); 
+								?>
+							</div>
 							<?php
 							endif;
 

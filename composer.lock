@@ -68,16 +68,16 @@
         },
         {
             "name": "htmlburger/carbon-fields",
-            "version": "v3.6.2",
+            "version": "v3.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "ecf71b45389a06c25f0fb2bc12b29eae1dff70e7"
+                "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/ecf71b45389a06c25f0fb2bc12b29eae1dff70e7",
-                "reference": "ecf71b45389a06c25f0fb2bc12b29eae1dff70e7",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/d913a5148cb9dc61ed239719c747f4ebb513003f",
+                "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +204,7 @@
                 "issues": "https://github.com/htmlburger/carbon-fields/issues",
                 "source": "https://github.com/htmlburger/carbon-fields"
             },
-            "time": "2023-11-13T14:58:28+00:00"
+            "time": "2023-11-28T15:52:46+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",

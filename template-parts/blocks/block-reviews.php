@@ -60,7 +60,11 @@ $reviews_block_attributes_classnames = ! empty( $args['attributes'] ) ? $args['a
 								<div class="owl-item testimonial-item">
 									<div class="testimonials_item text-center">
 										<div class="quote">“</div>
-										<p class="testimonials_text"><?php echo esc_html( $review_item['review_text'] ); ?></p>
+										<div class="testimonials_text">
+											<?php 
+												echo wp_kses_post( wpautop( $review_item['review_text'], true ) ); 
+											?>
+										</div>
 										<div class="testimonial_user">
 											<div class="testimonial_image mx-auto">
 										<?php echo wp_get_attachment_image( $review_item['review_user_img'], 'review_user_img_size', false, array( 'loading' => 'lazy' ) ); ?>

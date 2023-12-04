@@ -103,7 +103,12 @@ class CUSTOM_GUTENBERG_BLOCKS {
 						array(
 							Field::make( 'image', 'icon', __( 'Icon', 'theological-international-university' ) ),
 							Field::make( 'text', 'title', __( 'Title', 'theological-international-university' ) ),
-							Field::make( 'textarea', 'description', __( 'Description', 'theological-international-university' ) ),
+							Field::make( 'rich_text', 'description', __( 'Description', 'theological-international-university' ) )
+								->set_settings(
+									array(
+										'media_buttons' => false,
+									)
+								),
 						)
 					),
 				)
@@ -134,7 +139,12 @@ class CUSTOM_GUTENBERG_BLOCKS {
 					Field::make( 'separator', 'left_content', __( 'Left Content', 'theological-international-university' ) ),
 					Field::make( 'text', 'split_view_left_content_title', __( 'Title', 'theological-international-university' ) )
 						->help_text( 'Wrap text in __* to distinguish it with the global primary color of the theme styles. Example: The wrapped text has a __*different color*__.' ),
-					Field::make( 'textarea', 'split_view_left_content_description', __( 'Description', 'theological-international-university' ) ),
+					Field::make( 'rich_text', 'split_view_left_content_description', __( 'Description', 'theological-international-university' ) )
+						->set_settings(
+							array(
+								'media_buttons' => false,
+							)
+						),
 					Field::make( 'text', 'split_view_left_content_link_label', __( 'Link Label', 'theological-international-university' ) )
 						->set_width( 33 ),
 					Field::make( 'text', 'split_view_left_content_link_url', __( 'Link URL', 'theological-international-university' ) )
@@ -183,7 +193,12 @@ class CUSTOM_GUTENBERG_BLOCKS {
 					)
 					->add_fields(
 						array(
-							Field::make( 'textarea', 'review_text', __( 'Text', 'theological-international-university' ) ),
+							Field::make( 'rich_text', 'review_text', __( 'Text', 'theological-international-university' ) )
+								->set_settings(
+									array(
+										'media_buttons' => false,
+									)
+								),
 							Field::make( 'image', 'review_user_img', __( 'User Image', 'theological-international-university' ) ),
 							Field::make( 'text', 'review_user_name', __( 'User Name', 'theological-international-university' ) ),
 							Field::make( 'text', 'review_user_role', __( 'User Role', 'theological-international-university' ) ),
@@ -217,7 +232,12 @@ class CUSTOM_GUTENBERG_BLOCKS {
 					Field::make( 'text', 'contact_form_title', __( 'Title', 'theological-international-university' ) ),
 					Field::make( 'separator', 'contact_form_separator', __( 'Courses Info', 'theological-international-university' ) ),
 					Field::make( 'text', 'contact_form_courses_title', __( 'Courses Title', 'theological-international-university' ) ),
-					Field::make( 'textarea', 'contact_form_courses_desc', __( 'Courses Description', 'theological-international-university' ) ),
+					Field::make( 'rich_text', 'contact_form_courses_desc', __( 'Courses Description', 'theological-international-university' ) )
+						->set_settings(
+							array(
+								'media_buttons' => false,
+							)
+						),
 				)
 			)
 			->set_description( __( 'Contact Form Block', 'theological-international-university' ) )
@@ -245,7 +265,12 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				array(
 					Field::make( 'image', 'content_text_image_src', __( 'Image', 'theological-international-university' ) ),
 					Field::make( 'text', 'content_text_image_title', __( 'Title', 'theological-international-university' ) ),
-					Field::make( 'textarea', 'content_text_image_desc', __( 'Description', 'theological-international-university' ) ),
+					Field::make( 'rich_text', 'content_text_image_desc', __( 'Description', 'theological-international-university' ) )
+						->set_settings(
+							array(
+								'media_buttons' => false,
+							)
+						),
 					Field::make( 'text', 'content_text_image_link_label', __( 'Link Label', 'theological-international-university' ) )
 						->set_width( 33 ),
 					Field::make( 'text', 'content_text_image_link_url', __( 'Link URL', 'theological-international-university' ) )

@@ -37,7 +37,11 @@ $content_text_image_block_attributes_classnames = ! empty( $args['attributes'] )
 
 				if ( ! empty( $content_text_image_desc ) ) :
 					?>
-					<p class="become_text"><?php echo esc_html( $content_text_image_desc ); ?></p>
+					<div class="become_text">
+						<?php 
+							echo wp_kses_post( wpautop( $content_text_image_desc, true ) ); 
+						?>
+					</div>
 					<?php
 					endif;
 

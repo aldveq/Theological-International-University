@@ -1068,12 +1068,15 @@ section {
 }
 
 .register_text {
-	color: var(--third-color);
-	font-weight: 500;
-	margin-top: 32px;
-	padding-left: 25px;
-	padding-right: 25px;
-	margin-bottom: 0;
+
+	p {
+		color: var(--third-color);
+		font-weight: 500;
+		margin-top: 32px;
+		padding-left: 25px;
+		padding-right: 25px;
+		margin-bottom: 0;
+	}
 }
 
 .register_button {
@@ -1184,7 +1187,7 @@ input:last-of-type {
 	margin-bottom: 13px;
 }
 
-.service_item p {
+.service_item_text p {
 	font-size: 14px;
 	font-weight: 500;
 	color: var(--seven-color);
@@ -1256,8 +1259,11 @@ input:last-of-type {
 }
 
 .testimonials_text {
-	color: var(--third-color);
-	margin-bottom: 0;
+
+	p {
+		color: var(--third-color);
+		margin-bottom: 0;
+	}
 }
 
 .testimonial_user {
@@ -1710,10 +1716,13 @@ input:last-of-type {
 }
 
 .become_text {
-	font-weight: 500;
-	color: var(--seven-color);
-	margin-top: 48px;
-	margin-bottom: 0;
+
+	p {
+		font-weight: 500;
+		color: var(--seven-color);
+		margin-top: 48px;
+		margin-bottom: 0;
+	}
 }
 
 .become_button {

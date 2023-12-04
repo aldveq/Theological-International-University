@@ -55,7 +55,11 @@ $grid_data_block_attributes_classnames = ! empty( $args['attributes'] ) ? $args[
 					?>
 						</div>
 						<h3><?php echo esc_html( $grid_data_item['title'] ); ?></h3>
-						<p><?php echo esc_html( $grid_data_item['description'] ); ?></p>
+						<div class="service_item_text">
+							<?php 
+								echo wp_kses_post( wpautop( $grid_data_item['description'], true ) ); 
+							?>
+						</div>
 					</div>
 					<?php
 					endforeach;
