@@ -48,7 +48,6 @@ class TIU_THEME {
 		add_action( 'widgets_init', array( $this, 'theological_international_university_widgets_init' ) );
 		add_action( 'login_head', array( $this, 'theological_international_university_custom_login_background' ) );
 		add_filter( 'login_headerurl', array( $this, 'tiu_login_header_url' ) );
-		add_filter( 'allowed_block_types_all', array( $this, 'tiu_allowed_block_types' ), 25, 2 );
 	}
 
 	/**
@@ -219,29 +218,5 @@ class TIU_THEME {
 	 */
 	public function tiu_login_header_url( $url ) {
 		return home_url();
-	}
-
-	/**
-	 * Undocumented function
-	 *
-	 * @param string                  $allowed_blocks Allowed Blocks.
-	 * @param WP_Block_Editor_Context $editor_context Editor Context.
-	 * @return array CBF Allowed Blocks
-	 */
-	public function tiu_allowed_block_types( $allowed_blocks, $editor_context ) {
-		return array(
-			'carbon-fields/hero-slider-block',
-			'carbon-fields/grid-data-block',
-			'carbon-fields/split-view-block',
-			'carbon-fields/reviews-block',
-			'carbon-fields/contact-form-block',
-			'carbon-fields/content-textimage-block',
-			'carbon-fields/milestone-block',
-			'carbon-fields/professors-block',
-			'core/image',
-			'core/video',
-			'core/paragraph',
-			'core/quote',
-		);
 	}
 }
