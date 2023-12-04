@@ -563,6 +563,10 @@ msgstr ""
 msgid "Doctor"
 msgstr ""
 
+#: inc/classes/class-custom-post-types.php:229
+msgid "Honoris Causa Doctorate"
+msgstr ""
+
 #: inc/classes/class-custom-post-types.php:178
 msgid "Chaplaincy"
 msgstr ""
@@ -731,6 +735,11 @@ msgstr ""
 
 #: inc/classes/class-theme-options.php:145
 msgid "Doctor Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:214
+#: inc/classes/class-theme-options.php:227
+msgid "Honoris Causa Doctorate Content"
 msgstr ""
 
 #: inc/classes/class-theme-options.php:147

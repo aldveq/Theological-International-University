@@ -207,7 +207,7 @@ class CUSTOM_POST_TYPES {
 						) 
 					),
 					Field::make( 'complex', 'diplomas_info', __( 'Diplomas Info', 'theological-international-university' ) )
-					->set_max( 4 )
+					->set_max( 5 )
 					->setup_labels(
 						array(
 							'plural_name'   => 'Diplomas',
@@ -226,6 +226,7 @@ class CUSTOM_POST_TYPES {
 									'license'    => __( 'License', 'theological-international-university' ),
 									'master'     => __( 'Master', 'theological-international-university' ),
 									'doctor'     => __( 'Doctor', 'theological-international-university' ),
+									'honoris_causa_doctorate' => __( 'Honoris Causa Doctorate', 'theological-international-university' ),
 									'chaplaincy' => __( 'Chaplaincy', 'theological-international-university' ),
 								) 
 							),

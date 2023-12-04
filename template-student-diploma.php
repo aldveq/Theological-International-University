@@ -22,16 +22,19 @@ $utilities                    = \TIU_THEME\Inc\Utilities::get_instance(); // php
 $diploma_by_student_user_data = $post_types_queries_data->get_diploma_by_student_user( $current_user->ID );
 
 // Diplomas content variables.
-$diploma_license_content    = pll_current_language( 'slug' ) === 'en' ? 
+$diploma_license_content                 = pll_current_language( 'slug' ) === 'en' ? 
 carbon_get_theme_option( 'diploma_license_content' ) 
 : carbon_get_theme_option( 'diploma_license_content_es' );
-$diploma_master_content     = pll_current_language( 'slug' ) === 'en' ?
+$diploma_master_content                  = pll_current_language( 'slug' ) === 'en' ?
 carbon_get_theme_option( 'diploma_master_content' )
 : carbon_get_theme_option( 'diploma_master_content_es' );
-$diploma_doctor_content     = pll_current_language( 'slug' ) === 'en' ?
+$diploma_doctor_content                  = pll_current_language( 'slug' ) === 'en' ?
 carbon_get_theme_option( 'diploma_doctor_content' )
 : carbon_get_theme_option( 'diploma_doctor_content_es' );
-$diploma_chaplaincy_content = pll_current_language( 'slug' ) === 'en' ?
+$diploma_honoris_causa_doctorate_content = pll_current_language( 'slug' ) === 'en' ?
+carbon_get_theme_option( 'diploma_honoris_causa_doctorate_content' )
+: carbon_get_theme_option( 'diploma_honoris_causa_doctorate_content_es' );
+$diploma_chaplaincy_content              = pll_current_language( 'slug' ) === 'en' ?
 carbon_get_theme_option( 'diploma_chaplaincy_content' )
 : carbon_get_theme_option( 'diploma_chaplaincy_content_es' );
 ?>
@@ -106,6 +109,9 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 												case 'doctor':
 													echo wp_kses_post( wpautop( $diploma_doctor_content, true ) );
 													break;
+												case 'honoris_causa_doctorate':
+													echo wp_kses_post( wpautop( $diploma_honoris_causa_doctorate_content, true ) );
+													break;
 												default:
 													echo wp_kses_post( wpautop( $diploma_chaplaincy_content, true ) );
 													break;
@@ -173,6 +179,9 @@ carbon_get_theme_option( 'diploma_chaplaincy_content' )
 														break;
 													case 'doctor':
 														echo wp_kses_post( wpautop( $diploma_doctor_content, true ) );
+														break;
+													case 'honoris_causa_doctorate':
+														echo wp_kses_post( wpautop( $diploma_honoris_causa_doctorate_content, true ) );
 														break;
 													default:
 														echo wp_kses_post( wpautop( $diploma_chaplaincy_content, true ) );

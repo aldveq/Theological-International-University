@@ -162,6 +162,13 @@ class Utilities {
 					return 'Doctorado';
 				endif;
 				// no break.
+			case 'honoris_causa_doctorate':
+				if ( pll_current_language( 'slug' ) === 'en' ) :
+					return 'Honoris Causa Doctorate';
+				else :
+					return 'Doctorado in Honoris Causa';
+				endif;
+				// no break.
 			default:
 				if ( pll_current_language( 'slug' ) === 'en' ) :
 					return ucfirst( $diploma_string );
