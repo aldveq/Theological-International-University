@@ -190,6 +190,8 @@ class TIU_THEME {
 	 * @return void
 	 */
 	public function theological_international_university_custom_login_background() {
+		$tiu_logo_id = get_theme_mod( 'custom_logo' );
+		$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );
 		?>
 			<style type='text/css'>
 				body.login{
@@ -198,7 +200,7 @@ class TIU_THEME {
 				body.login h1 a {
 					width: 260px !important;
 					height: 150px !important;
-					background-image: url(<?php echo esc_url( get_template_directory_uri() ) . '/images/tiu-logo.svg'; ?>) !important;
+					background-image: url(<?php echo esc_url( $tiu_logo_url ); ?>) !important;
 					background-repeat: no-repeat !important;
 					background-size: contain !important;
 					background-position: center top !important;

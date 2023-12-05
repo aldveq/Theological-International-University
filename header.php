@@ -54,7 +54,7 @@ $current_user_rol = is_array( $current_roles ) && count( $current_roles ) > 0 ? 
 					?>
 						<div class="logo">
 							<a href="<?php echo esc_url( home_url() ); ?>">
-								<img src="<?php echo esc_url( $tiu_logo_url ); ?>" alt="<?php echo esc_attr( $tiu_logo_alt ); ?>">
+								<img src="<?php echo esc_url( $tiu_logo_url ); ?>" alt="<?php echo esc_attr( $tiu_logo_alt ); ?>" width="85" height="85">
 							</a>
 						</div>
 						<?php

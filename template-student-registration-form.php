@@ -46,7 +46,7 @@ carbon_get_theme_option( 'srf_heading_text_es' );
 					$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );     
 					$tiu_logo_alt = get_post_meta( $tiu_logo_id, '_wp_attachment_image_alt', true );
 					?>
-						<img src="<?php echo esc_url( $tiu_logo_url ); ?>" alt="<?php echo esc_attr( $tiu_logo_alt ); ?>" class="logo" loading="lazy">
+						<img src="<?php echo esc_url( $tiu_logo_url ); ?>" alt="<?php echo esc_attr( $tiu_logo_alt ); ?>" class="logo" loading="lazy" width="170" height="170">
 						<?php
 					endif;
 				?>

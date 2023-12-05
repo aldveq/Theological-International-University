@@ -9,6 +9,8 @@
 
 // Variables.
 $is_page_in_english = pll_current_language( 'slug' ) === 'en' ? true : false;
+$tiu_logo_id = get_theme_mod( 'custom_logo' );
+$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );
 ?>
 
 <!-- Sidebar Start -->
@@ -17,7 +19,7 @@ $is_page_in_english = pll_current_language( 'slug' ) === 'en' ? true : false;
 	<div>
 		<div class="brand-logo d-flex align-items-center justify-content-between">
 			<a href="<?php echo esc_url( $is_page_in_english ? home_url( 'student-dashboard' ) : home_url( 'panel-estudiantes' ) ); ?>" class="text-nowrap logo-img">
-			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/tiu-logo.svg" width="180" alt="" />
+			<img src="<?php echo esc_url( $tiu_logo_url ); ?>" width="120" height="120" alt="Theological International University of Miami" />
 			</a>
 			<div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
 			<i class="ti ti-x fs-8"></i>
