@@ -9,8 +9,8 @@
 
 // Variables.
 $is_page_in_english = pll_current_language( 'slug' ) === 'en' ? true : false;
-$tiu_logo_id = get_theme_mod( 'custom_logo' );
-$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );
+$tiu_logo_id        = get_theme_mod( 'custom_logo' );
+$tiu_logo_url       = wp_get_attachment_image_url( $tiu_logo_id, 'full' );
 ?>
 
 <!-- Sidebar Start -->

@@ -190,7 +190,7 @@ class TIU_THEME {
 	 * @return void
 	 */
 	public function theological_international_university_custom_login_background() {
-		$tiu_logo_id = get_theme_mod( 'custom_logo' );
+		$tiu_logo_id  = get_theme_mod( 'custom_logo' );
 		$tiu_logo_url = wp_get_attachment_image_url( $tiu_logo_id, 'full' );
 		?>
 			<style type='text/css'>

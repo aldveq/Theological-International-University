@@ -136,7 +136,7 @@ class CUSTOM_GUTENBERG_BLOCKS {
 		Block::make( __( 'Split View Block', 'theological-international-university' ) )
 			->add_fields(
 				array(
-					Field::make( 'separator', 'left_content', __( 'Left Content', 'theological-international-university' ) ),
+					Field::make( 'separator', 'left_content', __( 'Primary Content', 'theological-international-university' ) ),
 					Field::make( 'text', 'split_view_left_content_title', __( 'Title', 'theological-international-university' ) )
 						->help_text( 'Wrap text in __* to distinguish it with the global primary color of the theme styles. Example: The wrapped text has a __*different color*__.' ),
 					Field::make( 'rich_text', 'split_view_left_content_description', __( 'Description', 'theological-international-university' ) )
@@ -151,10 +151,13 @@ class CUSTOM_GUTENBERG_BLOCKS {
 						->set_width( 33 ),
 					Field::make( 'checkbox', 'split_view_left_content_link_target', __( 'Open in new tab?', 'theological-international-university' ) )
 						->set_width( 33 ),
-					Field::make( 'separator', 'right_content', __( 'Right Content', 'theological-international-university' ) ),
+					Field::make( 'separator', 'right_content', __( 'Secondary Content', 'theological-international-university' ) ),
 					Field::make( 'image', 'split_view_right_content_image_bg', __( 'Background Image', 'theological-international-university' ) )
 						->help_text( 'Optional' ),
 					Field::make( 'text', 'split_view_right_content_title', __( 'Title', 'theological-international-university' ) ),
+					Field::make( 'separator', 'split_view_extra_settings', __( 'Extra Settings', 'theological-international-university' ) ),
+					Field::make( 'checkbox', 'split_view_reversed_layout', __( 'Reversed Layout?', 'theological-international-university' ) ),
+
 				)
 			)
 			->set_description( __( 'Split View Block', 'theological-international-university' ) )
