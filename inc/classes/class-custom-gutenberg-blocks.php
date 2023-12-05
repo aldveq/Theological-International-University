@@ -86,6 +86,33 @@ class CUSTOM_GUTENBERG_BLOCKS {
 				// phpcs:enable
 			);
 		// Hero Slider Block - End
+		// Hero Secondary Block - Start.
+		Block::make( __( 'Hero Secondary Block', 'theological-international-university' ) )
+			->add_fields(
+				array(
+					Field::make( 'image', 'image_bg', __( 'Image Background', 'theological-international-university' ) ),
+					Field::make( 'text', 'title', __( 'Title', 'theological-international-university' ) ),
+				)
+			)
+			->set_description( __( 'Hero Secondary Block', 'theological-international-university' ) )
+			->set_category( 'tiu-blocks', __( 'Theological International University Blocks', 'theological-international-university' ) )
+			->set_icon( 'cover-image' )
+			->set_keywords( array( __( 'Hero', 'theological-international-university' ) ) )
+			->set_render_callback(
+				// phpcs:disable
+				function ( $fields, $attributes, $inner_blocks ) {
+					get_template_part(
+						'template-parts/blocks/block',
+						'hero-secondary',
+						array(
+							'hero_secondary_data' => $fields,
+							'attributes'       => $attributes,
+						) 
+					);
+				}
+				// phpcs:enable
+			);
+		// Hero Secondary Block - End
 		// Grid Data Block - Start.
 		Block::make( __( 'Grid Data Block', 'theological-international-university' ) )
 			->add_fields(
