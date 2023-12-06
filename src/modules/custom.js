@@ -248,18 +248,20 @@ jQuery( document ).ready( function( $ ) {
 		navEl.addEventListener( 'click', function( e ) {
 			e.preventDefault();
 
-			if ( Boolean( TIU_DATA.isBlog ) ||
-		Boolean( TIU_DATA.isSinglePostView ) ||
-		Boolean( TIU_DATA.isStudentRegistrationFormPage ) ) {
-				window.location.href = `${ TIU_DATA.isHome }/${ navElHrefAttr }`;
-			} else {
-				jump( `div#${ navDomEl }`, {
-					duration: 1000,
-					offset: -50,
-					callback: undefined,
-					easing: undefined,
-					a11y: false,
-				} );
+			if ( Boolean( TIU_DATA.isPage ) ||
+			Boolean( TIU_DATA.isBlog ) ||
+		Boolean( TIU_DATA.isSinglePostView ) ) {
+				if ( TIU_DATA.isFrontPage ) {
+					jump( `div#${ navDomEl }`, {
+						duration: 1000,
+						offset: -50,
+						callback: undefined,
+						easing: undefined,
+						a11y: false,
+					} );
+				} else {
+					window.location.href = `${ TIU_DATA.isHome }/${ navElHrefAttr }`;
+				}
 			}
 		} );
 	}

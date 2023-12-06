@@ -116,9 +116,10 @@ class ASSETS {
 			'tiuData',
 			array(
 				'isHome'                        => home_url(),
+				'isFrontPage'                   => is_front_page(),
 				'isBlog'                        => is_home(),
 				'isSinglePostView'              => is_single(),
-				'isStudentRegistrationFormPage' => is_page( 'student-registration-form' ) || is_page( 'registro-estudiantes' ) ? true : false,
+				'isPage'                        => is_page(),
 			)
 		);
 	}
