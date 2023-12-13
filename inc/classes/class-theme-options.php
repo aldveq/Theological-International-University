@@ -213,7 +213,10 @@ class THEME_OPTIONS {
 						->set_width( 50 ),
 					Field::make( 'rich_text', 'diploma_honoris_causa_doctorate_content', __( 'Honoris Causa Doctorate Content', 'theological-international-university' ) )
 						->set_width( 50 ),
-					Field::make( 'rich_text', 'diploma_chaplaincy_content', __( 'Chaplaincy Content', 'theological-international-university' ) ),
+					Field::make( 'rich_text', 'diploma_chaplaincy_content', __( 'Chaplaincy Content', 'theological-international-university' ) )
+						->set_width( 50 ),
+					Field::make( 'rich_text', 'diploma_magna_cum_laude_content', __( 'Magna Cum Laude Content', 'theological-international-university' ) )
+						->set_width( 50 ),
 					Field::make( 'separator', 'sds_separator_es', __( 'Texts in Spanish', 'theological-international-university' ) ),
 					Field::make( 'separator', 'welcome_message_separator_es', __( 'Student Welcome Message', 'theological-international-university' ) ),
 					Field::make( 'rich_text', 'student_welcome_message_es', __( 'Student Welcome Message', 'theological-international-university' ) ),
@@ -226,7 +229,10 @@ class THEME_OPTIONS {
 						->set_width( 50 ),
 					Field::make( 'rich_text', 'diploma_honoris_causa_doctorate_content_es', __( 'Honoris Causa Doctorate Content', 'theological-international-university' ) )
 						->set_width( 50 ),
-					Field::make( 'rich_text', 'diploma_chaplaincy_content_es', __( 'Chaplaincy Content', 'theological-international-university' ) ),
+					Field::make( 'rich_text', 'diploma_chaplaincy_content_es', __( 'Chaplaincy Content', 'theological-international-university' ) )
+						->set_width( 50 ),
+					Field::make( 'rich_text', 'diploma_magna_cum_laude_content_es', __( 'Magna Cum Laude Content', 'theological-international-university' ) )
+						->set_width( 50 ),
 				)
 			);
 	}

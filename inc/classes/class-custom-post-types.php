@@ -207,7 +207,7 @@ class CUSTOM_POST_TYPES {
 						) 
 					),
 					Field::make( 'complex', 'diplomas_info', __( 'Diplomas Info', 'theological-international-university' ) )
-					->set_max( 5 )
+					->set_max( 6 )
 					->setup_labels(
 						array(
 							'plural_name'   => 'Diplomas',
@@ -223,11 +223,12 @@ class CUSTOM_POST_TYPES {
 							->set_width( 50 )
 							->set_options(
 								array(
-									'license'    => __( 'License', 'theological-international-university' ),
-									'master'     => __( 'Master', 'theological-international-university' ),
-									'doctor'     => __( 'Doctor', 'theological-international-university' ),
+									'license'         => __( 'License', 'theological-international-university' ),
+									'master'          => __( 'Master', 'theological-international-university' ),
+									'doctor'          => __( 'Doctor', 'theological-international-university' ),
 									'honoris_causa_doctorate' => __( 'Honoris Causa Doctorate', 'theological-international-university' ),
-									'chaplaincy' => __( 'Chaplaincy', 'theological-international-university' ),
+									'chaplaincy'      => __( 'Chaplaincy', 'theological-international-university' ),
+									'magna_cum_laude' => __( 'Magna Cum Laude', 'theological-international-university' ),
 								) 
 							),
 						)

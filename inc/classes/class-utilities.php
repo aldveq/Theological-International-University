@@ -169,6 +169,13 @@ class Utilities {
 					return 'Doctorado in Honoris Causa';
 				endif;
 				// no break.
+			case 'magna_cum_laude':
+				if ( pll_current_language( 'slug' ) === 'en' ) :
+					return 'Magna Cum Laude';
+				else :
+					return 'Reconocimiento';
+				endif;
+				// no break.
 			default:
 				if ( pll_current_language( 'slug' ) === 'en' ) :
 					return ucfirst( $diploma_string );

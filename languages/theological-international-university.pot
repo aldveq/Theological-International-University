@@ -571,6 +571,10 @@ msgstr ""
 msgid "Chaplaincy"
 msgstr ""
 
+#: inc/classes/class-custom-post-types.php:230
+msgid "Magna Cum Laude"
+msgstr ""
+
 #: inc/classes/class-theme-options.php:27
 msgid "Theme Options"
 msgstr ""
@@ -744,6 +748,11 @@ msgstr ""
 
 #: inc/classes/class-theme-options.php:147
 msgid "Chaplaincy Content"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:218
+#: inc/classes/class-theme-options.php:234
+msgid "Magna Cum Laude Content"
 msgstr ""
 
 #: inc/classes/class-tiu-theme.php:72

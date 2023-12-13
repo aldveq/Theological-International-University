@@ -16,14 +16,12 @@
     ],
     "require": {
         "php": ">=5.6",
-        "wptrt/wpthemereview": "^0.2.1",
-        "wp-coding-standards/wpcs": "^2.3",
-        "phpcompatibility/phpcompatibility-wp": "2.1.4",
         "htmlburger/carbon-fields": "^3.6",
         "htmlburger/carbon-field-icon": "^3.1"
     },
     "require-dev": {
-        "wp-cli/i18n-command": "^2.2.5"
+        "wp-cli/i18n-command": "^2.2.5",
+        "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
