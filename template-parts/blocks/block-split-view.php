@@ -23,7 +23,7 @@ $split_view_left_content_link_target    = $args['split_view_data']['split_view_l
 $split_view_right_content_image_bg      = $args['split_view_data']['split_view_right_content_image_bg'];
 $split_view_image_bg_url                = ! empty( $split_view_right_content_image_bg ) ? wp_get_attachment_image_url( $split_view_right_content_image_bg, 'split_view_img_size', false ) : '';
 $split_view_right_content_title         = $args['split_view_data']['split_view_right_content_title'];
-$split_view_reversed_layout             = $args['split_view_data']['split_view_reversed_layout'];
+$split_view_reversed_layout             = isset($args['split_view_data']['split_view_reversed_layout']) ? $args['split_view_data']['split_view_reversed_layout'] : false;
 $split_view_block_attributes_classnames = ! empty( $args['attributes'] ) ? $args['attributes']['className'] : '';
 ?>
 
