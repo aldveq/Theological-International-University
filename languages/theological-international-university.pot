@@ -755,6 +755,14 @@ msgstr ""
 msgid "Magna Cum Laude Content"
 msgstr ""
 
+#: inc/classes/class-theme-options.php:197
+msgid "Form Registration Shortcode"
+msgstr ""
+
+#: inc/classes/class-theme-options.php:198
+msgid "This shortcode renders the registration form on the student registration page."
+msgstr ""
+
 #: inc/classes/class-tiu-theme.php:72
 msgid "Header Navigation"
 msgstr ""
