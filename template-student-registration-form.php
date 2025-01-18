@@ -16,6 +16,7 @@ $srf_bg_image     = carbon_get_theme_option( 'srf_bg_image' );
 $srf_heading_text = pll_current_language( 'slug' ) === 'en' ? 
 carbon_get_theme_option( 'srf_heading_text' ) : 
 carbon_get_theme_option( 'srf_heading_text_es' );
+$srf_shortcode = carbon_get_theme_option( 'srf_shortcode' );
 ?>
 	<main id="primary" class="site-main student-registration-form-wrapper">
 		<div class="home student-registration-form-wrapper__heading">
@@ -50,7 +51,11 @@ carbon_get_theme_option( 'srf_heading_text_es' );
 						<?php
 					endif;
 				?>
-				<?php echo do_shortcode( '[user_registration_form id="184"]' ); ?>
+				<?php 
+					if (!empty($srf_shortcode)):
+						echo do_shortcode( $srf_shortcode ); 
+					endif;
+				?>
 			</div>
 		</div>
 	</main><!-- #main -->

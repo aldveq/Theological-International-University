@@ -194,6 +194,8 @@ class THEME_OPTIONS {
 						->set_width( 50 ),
 					Field::make( 'text', 'srf_heading_text_es', __( 'Heading Text', 'theological-international-university' ) )
 						->set_width( 50 ),
+					Field::make( 'text', 'srf_shortcode', __( 'Form Registration Shortcode', 'theological-international-university' ) )
+						->help_text(__('This shortcode renders the registration form on the student registration page.', 'theological-international-university'))
 				)
 			);
 		// Student Dashboard Settings.
